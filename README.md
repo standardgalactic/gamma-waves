@@ -62,7 +62,3 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 - [Wikipedia: Gamma Waves](https://en.wikipedia.org/wiki/Gamma_wave)
 - Open-source signal processing libraries (e.g., NumPy, SciPy, MNE)
-
----
-
-*Feel free to customize this README for your project's specific goals and structure!*
