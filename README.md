@@ -35,7 +35,7 @@ Gamma waves are high-frequency brain waves (typically 30–100 Hz) associated wi
 
 ## Output should be:
 
-![](gamma_wave.png)
+<!-- ![](gamma_wave.png) -->
 ![](gamma_wave.gif)
 
 ## Folder Structure
