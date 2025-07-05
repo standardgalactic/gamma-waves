@@ -17,7 +17,7 @@ Gamma waves are high-frequency brain waves (typically 30–100 Hz) associated wi
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/gamma-waves.git
+   git clone https://github.com/standardgalactic/gamma-waves.git
    cd gamma-waves
    ```
 
