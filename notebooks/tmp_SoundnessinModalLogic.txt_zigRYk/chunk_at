@@ -1,0 +1,500 @@
+x
+t
+−
+η
+∇
+E
+(
+x
+t
+)
+x_{t+1} = x_t - \eta \nabla E(x_t)
+x
+t
++
+1
+​
+=
+x
+t
+​
+−
+η
+∇
+E
+(
+x
+t
+​
+)
+∂
+t
+Φ
+=
+−
+∇
+⋅
+(
+Φ
+v
+⃗
+)
+−
+δ
+S
+\partial_t \Phi = - \nabla \cdot (\Phi \vec{v}) - \delta \mathcal{S}
+∂
+t
+​
+Φ
+=
+−
+∇
+⋅
+(
+Φ
+v
+)
+−
+δ
+S
+Flow vector
+−
+∇
+E
+-\nabla E
+−
+∇
+E
+v
+⃗
+=
+−
+∇
+Φ
+\vec{v} = -\nabla \Phi
+v
+=
+−
+∇Φ
+Entropy modulation
+Not present
+Explicit via
+S
+\mathcal{S}
+S
+Learning interpretation
+Tokenwise refinement
+Semantic field relaxation
+This appendix formally justifies RSVP as the
+geometric and thermodynamic extension
+of EBT inference. It provides a principled transition from discrete gradient steps over token logits to continuous field-theoretic evolution over semantic potential, showing how recursive reasoning, modularity, and coherence can be made physically and mathematically explicit.
+Would you like a follow-up Appendix B deriving the torsion term
+∇
+×
+v
+⃗
+\nabla \times \vec{v}
+∇
+×
+v
+as a signature of representational fracture from this limit?
+You said:
+Sure
+ChatGPT said:
+Excellent! Here's
+Appendix B
+, deriving the
+torsion term
+∇
+×
+v
+⃗
+\nabla \times \vec{v}
+∇
+×
+v
+in RSVP theory and showing how it corresponds to
+representational fracture
+in the field-theoretic limit of learning. This complements Appendix A and provides a rigorous geometric signature of
+semantic instability
+, particularly in models trained with standard gradient descent.
+Appendix B: Torsion as a Marker of Representational Fracture
+B.1. Context: Semantic Flow and Field Instability
+In the RSVP framework, the
+vector field
+v
+⃗
+(
+x
+,
+t
+)
+\vec{v}(x, t)
+v
+(
+x
+,
+t
+)
+represents directional
+semantic flow
+through representation space. It may arise from gradients of the scalar field
+Φ
+\Phi
+Φ
+(semantic potential):
+v
+⃗
+(
+x
+,
+t
+)
+=
+−
+∇
+Φ
+(
+x
+,
+t
+)
+\vec{v}(x, t) = -\nabla \Phi(x, t)
+v
+(
+x
+,
+t
+)
+=
+−
+∇Φ
+(
+x
+,
+t
+)
+This conservative flow reflects smooth, coherent transitions—i.e.,
+modal alignment
+and interpretable structure.
+However, in real-world neural networks (particularly those trained via SGD), the internal representation dynamics may be
+non-conservative
+, tangled, or cyclic—what Kumar et al. (2025) identify as
+Fractured Entangled Representations (FER)
+. To capture this within RSVP, we formalize
+torsion
+.
+B.2. Definition: Torsion via Curl of the Flow Field
+The
+torsion
+of a vector field is measured via the
+curl
+:
+Torsion field:
+T
+(
+x
+,
+t
+)
+=
+∇
+×
+v
+⃗
+(
+x
+,
+t
+)
+\text{Torsion field:} \quad \mathcal{T}(x, t) = \nabla \times \vec{v}(x, t)
+Torsion field:
+T
+(
+x
+,
+t
+)
+=
+∇
+×
+v
+(
+x
+,
+t
+)
+Intuitively:
+∇
+×
+v
+⃗
+=
+0
+\nabla \times \vec{v} = 0
+∇
+×
+v
+=
+0
+indicates
+conservative flow
+—no cycles, purely gradient-driven.
+∇
+×
+v
+⃗
+≠
+0
+\nabla \times \vec{v} \ne 0
+∇
+×
+v
+
+=
+0
+implies
+rotational, looping, or swirling dynamics
+in the field—evidence of
+semantic inconsistency
+or competing gradients.
+In cognitive terms, torsion reflects internal conflicts, indecision, or recursive instability—
+when the representation "spins" rather than settles
+.
+B.3. Global Measure: Torsion Entanglement Index
+We define the
+Torsion Entanglement Index
+over a domain
+Ω
+\Omega
+Ω
+as:
+T
+ent
+=
+∫
+Ω
+∥
+∇
+×
+v
+⃗
+(
+x
+,
+t
+)
+∥
+2
+d
+x
+\mathcal{T}_{\text{ent}} = \int_{\Omega} \| \nabla \times \vec{v}(x, t) \|^2 \, dx
+T
+ent
+​
+=
+∫
+Ω
+​
+∥∇
+×
+v
+(
+x
+,
+t
+)
+∥
+2
+d
+x
+This is a scalar quantifier of
+global rotational complexity
+in the semantic flow. High values of
+T
+ent
+\mathcal{T}_{\text{ent}}
+T
+ent
+​
+signal:
+High field curvature or semantic contradictions
+Poor alignment of representations across layers
+Difficulty converging to modal fixpoints
+Such patterns align with
+FER-style behaviors
+, including:
+Oscillatory or unstable training
+Poor generalization
+Representational redundancy and entanglement
+B.4. Relationship to RSVP Stability and Modal Closure
+In RSVP, learning corresponds to gradient descent in the total energy functional:
+E
+[
+Φ
+,
+v
+⃗
+,
+S
+]
+=
+∫
+[
+1
+2
+∣
+∇
+Φ
+∣
+2
++
+1
+2
+∣
+v
+⃗
+∣
+2
++
+γ
+S
+2
++
+μ
+∥
+∇
+×
+v
+⃗
+∥
+2
+]
+d
+x
+E[\Phi, \vec{v}, \mathcal{S}] = \int \left[ \frac{1}{2} |\nabla \Phi|^2 + \frac{1}{2} |\vec{v}|^2 + \gamma \mathcal{S}^2 + \mu \| \nabla \times \vec{v} \|^2 \right] dx
+E
+[
+Φ
+,
+v
+,
+S
+]
+=
+∫
+[
+2
+1
+​
+∣∇Φ
+∣
+2
++
+2
+1
+​
+∣
+v
+∣
+2
++
+γ
+S
+2
++
+μ
+∥∇
+×
+v
+∥
+2
+]
+d
+x
+The final term penalizes torsion and encourages
+modal coherence
+:
+When
+v
+⃗
+≈
+−
+∇
+Φ
+\vec{v} \approx -\nabla \Phi
+v
+≈
+−
+∇Φ
+, we recover torsion-free conservative flow.
+When
+∇
+×
+v
+⃗
+≠
+0
+\nabla \times \vec{v} \ne 0
+∇
+×
+v
+
+=
+0
+, the flow contradicts the potential gradient, breaking semantic alignment.
+In modal terms,
+closure fails
+: the representation cannot recursively stabilize, and fixpoints (e.g. of the form
+□
+A
+→
+A
+\Box A \rightarrow A
+□
+A
+→
+A
+) do not form.
+B.5. Discrete Analogy in SGD-Trained Networks
+In discrete layer-wise networks trained by SGD:
+h
+i
+h_i
+h
+i
+​
+: representation at layer
+i
+i
+i
+v
+⃗
+i
+=
+h
+i
++
+1
+−
+h
+i
+\vec{v}_i = h_{i+1} - h_i
+v
+i
+​
+=
+h
+i
++
+1
+​
+−
+h
+i
+​
+: flow across layers
+∇
+×
+v

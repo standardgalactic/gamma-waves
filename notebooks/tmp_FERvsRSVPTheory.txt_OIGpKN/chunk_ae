@@ -1,0 +1,282 @@
+0
+\mathcal{S} : \mathbb{R}^n \times \mathbb{R} \rightarrow \mathbb{R}_{\geq 0}
+S
+:
+R
+n
+×
+R
+→
+R
+≥
+0
+​
+A.2 Field Evolution Equation
+Entropy-guided semantic transport:
+∂
+Φ
+∂
+t
++
+∇
+⋅
+(
+Φ
+⋅
+v
+⃗
+)
+=
+−
+δ
+S
+\frac{\partial \Phi}{\partial t} + \nabla \cdot (\Phi \cdot \vec{v}) = -\delta \mathcal{S}
+∂
+t
+∂
+Φ
+​
++
+∇
+⋅
+(
+Φ
+⋅
+v
+)
+=
+−
+δ
+S
+This describes scalar diffusion modulated by vector flow and entropy dissipation.
+A.3 Modal Fixpoint Operator
+Let
+□
+A
+\Box A
+□
+A
+denote modal stability:
+□
+A
+:
+=
+"A is invariant under field evolution"
+\Box A := \text{"A is invariant under field evolution"}
+□
+A
+:=
+"A is invariant under field evolution"
+Löb-stability condition (closure under recursion):
+□
+(
+□
+A
+→
+A
+)
+→
+□
+A
+\Box(\Box A \rightarrow A) \rightarrow \Box A
+□
+(
+□
+A
+→
+A
+)
+→
+□
+A
+A.4 Fracture as Torsion and Modal Instability
+Torsion Entanglement Index
+:
+T
+ent
+=
+∫
+Ω
+∥
+∇
+×
+v
+⃗
+∥
+2
+d
+x
+T_{\text{ent}} = \int_{\Omega} \| \nabla \times \vec{v} \|^2 \, dx
+T
+ent
+​
+=
+∫
+Ω
+​
+∥∇
+×
+v
+∥
+2
+d
+x
+Modal Fracture
+:
+A representation is fractured if:
+¬
+□
+A
+or
+no fixpoint reached:
+lim
+⁡
+t
+→
+∞
+Φ
+(
+t
+)
+≠
+Φ
+(
+t
+−
+1
+)
+\neg \Box A \quad \text{or} \quad \text{no fixpoint reached: } \lim_{t \to \infty} \Phi^{(t)} \neq \Phi^{(t-1)}
+¬
+□
+A
+or
+no fixpoint reached:
+t
+→
+∞
+lim
+​
+Φ
+(
+t
+)
+
+=
+Φ
+(
+t
+−
+1
+)
+🧪
+Paper 2:
+Diagnosing Representation Fracture via Scalar-Vector-Entropy Field Dynamics
+Appendix B: RSVP-Based Diagnostic Metrics for Neural Representations
+B.1 Field Construction from Model Activations
+Given hidden activations
+h
+i
+∈
+R
+d
+h_i \in \mathbb{R}^d
+h
+i
+​
+∈
+R
+d
+:
+Semantic Scalar Field:
+Φ
+i
+:
+=
+∥
+h
+i
+∥
+(norm of activation vector)
+\Phi_i := \| h_i \| \quad \text{(norm of activation vector)}
+Φ
+i
+​
+:=
+∥
+h
+i
+​
+∥
+(norm of activation vector)
+Semantic Flow:
+v
+⃗
+i
+:
+=
+h
+i
++
+1
+−
+h
+i
+(activation delta)
+\vec{v}_i := h_{i+1} - h_i \quad \text{(activation delta)}
+v
+i
+​
+:=
+h
+i
++
+1
+​
+−
+h
+i
+​
+(activation delta)
+Entropy Estimate (e.g., predictive uncertainty or variance):
+S
+i
+:
+=
+H
+(
+p
+(
+y
+∣
+x
+,
+h
+i
+)
+)
+or
+Var
+⁡
+(
+h
+i
+)
+\mathcal{S}_i := \mathbb{H}(p(y|x, h_i)) \quad \text{or } \operatorname{Var}(h_i)
+S
+i
+​
+:=
+H
+(
+p
+(
+y
+∣
+x
+,
+h
+i
+​
+))
+or
+Var

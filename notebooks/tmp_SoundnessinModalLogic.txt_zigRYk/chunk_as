@@ -1,0 +1,500 @@
+t
+)
+)
+d
+x
+′
+E[\Phi] = \int_{\Omega} \mathcal{E}(\Phi(x', t), \nabla \Phi(x', t)) \, dx'
+E
+[
+Φ
+]
+=
+∫
+Ω
+​
+E
+(
+Φ
+(
+x
+′
+,
+t
+)
+,
+∇Φ
+(
+x
+′
+,
+t
+))
+d
+x
+′
+This allows us to write a
+functional gradient descent
+in field space:
+∂
+Φ
+∂
+t
+=
+−
+δ
+E
+δ
+Φ
+\frac{\partial \Phi}{\partial t} = -\frac{\delta E}{\delta \Phi}
+∂
+t
+∂
+Φ
+​
+=
+−
+δ
+Φ
+δ
+E
+​
+For a simple energy density of the form:
+E
+(
+Φ
+,
+∇
+Φ
+)
+=
+1
+2
+∣
+∇
+Φ
+∣
+2
++
+V
+(
+Φ
+)
+\mathcal{E}(\Phi, \nabla \Phi) = \frac{1}{2} |\nabla \Phi|^2 + V(\Phi)
+E
+(
+Φ
+,
+∇Φ
+)
+=
+2
+1
+​
+∣∇Φ
+∣
+2
++
+V
+(
+Φ
+)
+we recover the classical
+gradient flow equation
+:
+∂
+Φ
+∂
+t
+=
+∇
+2
+Φ
+−
+∇
+Φ
+V
+(
+Φ
+)
+\frac{\partial \Phi}{\partial t} = \nabla^2 \Phi - \nabla_\Phi V(\Phi)
+∂
+t
+∂
+Φ
+​
+=
+∇
+2
+Φ
+−
+∇
+Φ
+​
+V
+(
+Φ
+)
+This is structurally identical to
+diffusion with a potential
+—the same structure as scalar field dynamics in RSVP.
+A.3. Introducing RSVP Fields
+We now reinterpret:
+Φ
+(
+x
+′
+,
+t
+)
+\Phi(x', t)
+Φ
+(
+x
+′
+,
+t
+)
+: scalar
+semantic potential
+(analogous to
+E
+(
+x
+)
+E(x)
+E
+(
+x
+)
+)
+v
+⃗
+(
+x
+′
+,
+t
+)
+=
+−
+∇
+Φ
+\vec{v}(x', t) = -\nabla \Phi
+v
+(
+x
+′
+,
+t
+)
+=
+−
+∇Φ
+:
+semantic flow
+(driving descent)
+S
+(
+x
+′
+,
+t
+)
+\mathcal{S}(x', t)
+S
+(
+x
+′
+,
+t
+)
+: entropy field (uncertainty modulation)
+The RSVP transport equation is:
+∂
+Φ
+∂
+t
++
+∇
+⋅
+(
+Φ
+v
+⃗
+)
+=
+−
+δ
+S
+\frac{\partial \Phi}{\partial t} + \nabla \cdot (\Phi \vec{v}) = -\delta \mathcal{S}
+∂
+t
+∂
+Φ
+​
++
+∇
+⋅
+(
+Φ
+v
+)
+=
+−
+δ
+S
+This introduces
+advection and entropic dissipation
+, generalizing scalar gradient flow into a
+conservative transport process
+modulated by internal uncertainty. The interpretation is:
+Scalar descent
+∇
+2
+Φ
+\nabla^2 \Phi
+∇
+2
+Φ
+becomes
+semantic flow divergence
+∇
+⋅
+(
+Φ
+v
+⃗
+)
+\nabla \cdot (\Phi \vec{v})
+∇
+⋅
+(
+Φ
+v
+)
+Entropy
+S
+\mathcal{S}
+S
+modulates decay toward coherence
+The dynamics conserve semantic mass under vector field transport, resembling a continuity equation in physics.
+A.4. Recovering EBT Update Rules from RSVP Discretization
+To show equivalence in the other direction, consider discretizing RSVP dynamics over time steps
+t
+=
+k
+⋅
+Δ
+t
+t = k \cdot \Delta t
+t
+=
+k
+⋅
+Δ
+t
+:
+Φ
+k
++
+1
+=
+Φ
+k
+−
+Δ
+t
+[
+∇
+⋅
+(
+Φ
+k
+v
+⃗
+k
+)
++
+δ
+S
+k
+]
+\Phi^{k+1} = \Phi^k - \Delta t \left[ \nabla \cdot (\Phi^k \vec{v}^k) + \delta \mathcal{S}^k \right]
+Φ
+k
++
+1
+=
+Φ
+k
+−
+Δ
+t
+[
+∇
+⋅
+(
+Φ
+k
+v
+k
+)
++
+δ
+S
+k
+]
+If we assume
+v
+⃗
+k
+=
+−
+∇
+Φ
+k
+\vec{v}^k = -\nabla \Phi^k
+v
+k
+=
+−
+∇
+Φ
+k
+and that entropy is held constant or negligible, we recover:
+Φ
+k
++
+1
+≈
+Φ
+k
+−
+Δ
+t
+⋅
+∇
+2
+Φ
+k
+\Phi^{k+1} \approx \Phi^k - \Delta t \cdot \nabla^2 \Phi^k
+Φ
+k
++
+1
+≈
+Φ
+k
+−
+Δ
+t
+⋅
+∇
+2
+Φ
+k
+This is
+equivalent to gradient descent in function space
+over the energy functional:
+E
+[
+Φ
+]
+=
+∫
+1
+2
+∣
+∇
+Φ
+∣
+2
+d
+x
+E[\Phi] = \int \frac{1}{2} |\nabla \Phi|^2 dx
+E
+[
+Φ
+]
+=
+∫
+2
+1
+​
+∣∇Φ
+∣
+2
+d
+x
+Thus,
+EBTs approximate RSVP in the case of scalar-only, gradient-driven energy descent
+. RSVP generalizes this by:
+Incorporating vector field structure
+v
+⃗
+\vec{v}
+v
+Modulating descent by entropy
+S
+\mathcal{S}
+S
+Allowing recursive and thermodynamic coupling
+A.5. Summary of the Mapping
+Concept
+EBT (discrete)
+RSVP (continuous limit)
+Optimization variable
+Token/state vector
+x
+t
+x_t
+x
+t
+​
+Semantic potential field
+Φ
+(
+x
+,
+t
+)
+\Phi(x, t)
+Φ
+(
+x
+,
+t
+)
+Energy scalar
+E
+(
+x
+t
+)
+E(x_t)
+E
+(
+x
+t
+​
+)
+Φ
+(
+x
+,
+t
+)
+\Phi(x, t)
+Φ
+(
+x
+,
+t
+)
+Descent rule
+x
+t
++
+1
+=

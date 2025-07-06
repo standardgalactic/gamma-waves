@@ -1,0 +1,500 @@
+Soundness in Modal Logic
+Skip to content
+Open sidebar
+Get Plus
+Saved memory full
+Saved memory full
+Get Plus
+ChatGPT
+Share
+You said:
+Bruno Marchal writes: Hello,
+
+This post answers questions that I have got, here and elsewhere, and which highlight some lack of familiarity in logic, notably the difference between syntax and semantic.
+Modal logic here can help, as the semantic is less trivial than the semantic of prop.calc. (where a model is simply a function from L to {t, f}. L being the set of propositional variables).
+
+Normal Modal Tautology, (NMT) or simply normal tautology (given that we are working in modal logic)
+
+A formula A is a NMT if, by definition, A is true in all worlds, in all frames, whatever R and V are. So the NMT are the modal proposition true in all words whatever the valuations are. They are respected by all frames.
+
+Exemple: 
+a) All classical tautologies are NMT, as well as all their instantiation with any formula, modal or not. So "p -> p" is a NMT, but []p -> []p is as well. For example ([]p -> ([][]q -> []p)) is a NMT as it is an instantiation of the axiom scheme A -> (B -> A).
+
+b) the formula K is a NMT. (We have already seen this, but ask if this is unclear, or try to prove it by yourself).
+.
+
+SOUNDNESS AND COMPLETENESS
+
+The notion of NMT is purely semantical. It does not involve the notion of theory. It provides only a sort of meaning (a semantic) for the modal formula.
+
+I illustrate why soundness can be useful, and allows to show that some formula are provable in some theories without proving them.
+
+For example, here are two ways to convince oneself that K proves [](A & B) -> ([]A & []B).
+
+1) by giving a formal (or semi-formal) proof of [](A & B) -> ([]A & []B),
+
+like:
+
+1) K proves (A & B) -> A, classical tautology 
+2) K proves []((A & B) -> A), by necessitation
+3) K proves []((A & B) -> A) -> ([](A & B) -> []A), by K (the formula)
+4) K proves [](A & B) -> []A, by modus ponens with lines "2)" and "3)"
+5) K proves (A & B) -> B, classical tautology 
+6) K proves []((A & B) -> B), by necessitation
+7) K proves []((A & B) -> B) -> ([](A & B) -> []B), by K (the formula)
+8 ) K proves [](A & B) -> []B, by modus ponens with lines "2)" and "3)"
+9) K proves [](A & B) -> ([]A & []B), using the prop. Calc. derived rule (A -> B, A -> C => A -> (B & C))
+
+2) by showing directly that [](A & B) -> ([]A & []B) is a NMT,
+
+like:
+
+Consider alpha being an arbitrary world in an arbitrary frame (W, R), with an arbitrary valuation. 
+So W is an arbitrary non empty set, and R is any binary relation. We must show that [](A & B) -> ([]A & []B) is true in alpha. 
+a) If alpha is a terminal world, [](A & B), and []A and []B are true in alpha (why?), and so is ([]A & []B) by classical logic in alpha.
+B) if alpha is not terminal, there are world beta, gamma, and possibly others. Suppose that [](A & B) is true in alpha. Then (A & B) are true in all worlds accessible from alpha. This entails that A is true in all those worlds, and similarly B is true in all these worlds. But then, by Kripke semantic, []A is true in alpha, and []B is true in alpha, so by classical logic in alpha, we have ([]A & []B) true in alpha as well, and [](A & B) -> ([]A & []B) is true by deduction (available at this meta level).
+.
+
+QUESTIONS:
+
+1) Does the fact that K proves A makes always A into a NMT? Answer: yes, this should be easy to justify. That is the soundness theorem of the theory K.  Not only the formula K is a NMT, but all theorems in the theory K are NMT as well.
+This is needed to be proved to validate the second method we have used to justified the theory K can prove  [](A & B) -> ([]A & []B).
+
+2) Does the fact that A is a NMT makes always A provable by the theory K? (Yes, but that is not so easy to prove). That is the completeness theorem of the theory K. The theory K proves all NMT! We might come back on this later.
+
+Exercise: try to proves "1)". By this I mean: try to convince yourself that if A is a theorem of the theory K, then it is a NMT.
+
+Hint. You need to prove two things: 
+A) that K is a NMT 
+B) that Necessitation and modus ponens preserve respect. 
+
+Do you see this?
+
+I recall that the theory K is an extension of classical propositional calculus with the formula K as (unique) modal axiom, and closed under the rule of Modus Ponens and the rule of Necessitation (you can derive []A from a derivation of A).
+ChatGPT said:
+Great! Let's walk through this carefully and clearly.
+Bruno Marchal's post is articulating the relationship between
+syntax
+(provability in the modal system
+K
+) and
+semantics
+(truth in
+all Kripke frames
+), particularly focusing on
+Normal Modal Tautologies (NMTs)
+—modal formulas true in all worlds of all Kripke frames.
+✅ The Goal
+To prove
+Soundness
+of modal logic
+K
+:
+If a formula
+A
+is provable in system
+K
+, then
+A
+is a
+Normal Modal Tautology
+(NMT)—i.e.,
+A
+is valid in
+all
+Kripke models.
+This is:
+If
+K ⊢ A
+, then
+A
+is a NMT.
+You are asked to
+convince yourself
+of this, which means
+prove
+it—semiformally or intuitively.
+✅ Recap: What is System K?
+System
+K
+consists of:
+All classical tautologies
+Axiom K
+:
+□
+(
+A
+→
+B
+)
+→
+(
+□
+A
+→
+□
+B
+)
+\boxed{\Box(A \rightarrow B) \rightarrow (\Box A \rightarrow \Box B)}
+□
+(
+A
+→
+B
+)
+→
+(
+□
+A
+→
+□
+B
+)
+​
+Modus Ponens (MP)
+: from
+A → B
+and
+A
+, infer
+B
+.
+Necessitation (Nec)
+: from
+⊢ A
+, infer
+⊢ □A
+.
+System
+K
+works over
+Kripke semantics
+:
+A
+model
+is a triple
+M
+=
+(
+W
+,
+R
+,
+V
+)
+M = (W, R, V)
+M
+=
+(
+W
+,
+R
+,
+V
+)
+, where:
+W
+W
+W
+: a non-empty set of possible worlds
+R
+⊆
+W
+×
+W
+R \subseteq W \times W
+R
+⊆
+W
+×
+W
+: accessibility relation
+V
+V
+V
+: valuation function assigning propositional letters to subsets of
+W
+W
+W
+A formula is a
+NMT
+if it is true at
+every world
+in
+every model
+.
+✅ Proof Strategy
+We must show:
+All theorems of K are NMT (i.e., true at all worlds in all Kripke models).
+We'll do this by
+induction
+on the derivation of a formula in K:
+Base Cases
+1. Classical tautologies are NMTs
+In modal logic, every world is evaluated using
+classical propositional logic
+for non-modal connectives.
+So any classical tautology (e.g.
+A → A
+,
+A ∨ ¬A
+, etc.) is valid at every world in every model.
+✅
+Base case holds.
+2. Axiom K is a NMT
+We want to show:
+□
+(
+A
+→
+B
+)
+→
+(
+□
+A
+→
+□
+B
+)
+\Box(A \rightarrow B) \rightarrow (\Box A \rightarrow \Box B)
+□
+(
+A
+→
+B
+)
+→
+(
+□
+A
+→
+□
+B
+)
+is valid in all models.
+Proof (semantic check):
+Let
+M
+=
+(
+W
+,
+R
+,
+V
+)
+M = (W, R, V)
+M
+=
+(
+W
+,
+R
+,
+V
+)
+be any Kripke model, and let
+w
+∈
+W
+w \in W
+w
+∈
+W
+be any world.
+Assume:
+M
+,
+w
+⊨
+□
+(
+A
+→
+B
+)
+M, w \models \Box(A \rightarrow B)
+M
+,
+w
+⊨
+□
+(
+A
+→
+B
+)
+M
+,
+w
+⊨
+□
+A
+M, w \models \Box A
+M
+,
+w
+⊨
+□
+A
+Then:
+For all
+w
+′
+w'
+w
+′
+with
+w
+R
+w
+′
+w R w'
+wR
+w
+′
+,
+M
+,
+w
+′
+⊨
+A
+→
+B
+M, w' \models A \rightarrow B
+M
+,
+w
+′
+⊨
+A
+→
+B
+For all
+w
+′
+w'
+w
+′
+with
+w
+R
+w
+′
+w R w'
+wR
+w
+′
+,
+M
+,
+w
+′
+⊨
+A
+M, w' \models A
+M
+,
+w
+′
+⊨
+A
+Hence:
+For all
+w
+′
+w'
+w
+′
+,
+M
+,
+w
+′
+⊨
+B
+M, w' \models B
+M
+,
+w
+′
+⊨
+B
+(by classical logic)
+Thus:
+M
+,
+w
+⊨
+□
+B
+M, w \models \Box B
+M
+,
+w
+⊨
+□
+B
+Therefore:
+M
+,
+w
+⊨
+□
+A
+→
+□
+B
+M, w \models \Box A \rightarrow \Box B
+M
+,
+w
+⊨
+□
+A
+→
+□
+B
+So:
+M
+,
+w
+⊨
+□
+(
+A
+→
+B
+)
+→
+(
+□
+A
+→
+□
+B
+)
+M, w \models \Box(A \rightarrow B) \rightarrow (\Box A \rightarrow \Box B)
+M
+,
+w
+⊨
+□
+(
+A
+→
+B
+)
+→
+(
+□
+A
+→
+□
+B
+)
+✅ Axiom K is a NMT.
+Inductive Step
+We must show that:

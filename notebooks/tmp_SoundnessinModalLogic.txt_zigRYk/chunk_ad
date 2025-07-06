@@ -1,0 +1,500 @@
+2
+​
+)
+Which is clearly a
+tautology
+in standard propositional logic.
+✅ Thus, the modal formula
+□(A ∧ B) → (□A ∧ □B)
+is
+valid in this Kripke frame
+.
+🔁 Step 4: Generalize
+Let's say
+w₁
+accesses
+multiple
+worlds:
+w₂
+,
+w₃
+, etc.
+Then:
+□(A ∧ B)@w₁
+becomes:
+(
+A
+@
+w
+2
+∧
+B
+@
+w
+2
+)
+∧
+(
+A
+@
+w
+3
+∧
+B
+@
+w
+3
+)
+∧
+...
+(A@w₂ \land B@w₂) \land (A@w₃ \land B@w₃) \land \dots
+(
+A
+@
+w
+2
+​
+∧
+B
+@
+w
+2
+​
+)
+∧
+(
+A
+@
+w
+3
+​
+∧
+B
+@
+w
+3
+​
+)
+∧
+...
+□A@w₁
+becomes:
+A
+@
+w
+2
+∧
+A
+@
+w
+3
+∧
+...
+A@w₂ \land A@w₃ \land \dots
+A
+@
+w
+2
+​
+∧
+A
+@
+w
+3
+​
+∧
+...
+Similarly for
+□B@w₁
+Then:
+□(A ∧ B) → (□A ∧ □B)
+becomes:
+[
+(
+A
+@
+w
+2
+∧
+B
+@
+w
+2
+)
+∧
+(
+A
+@
+w
+3
+∧
+B
+@
+w
+3
+)
+∧
+...
+]
+→
+[
+(
+A
+@
+w
+2
+∧
+A
+@
+w
+3
+∧
+...
+)
+∧
+(
+B
+@
+w
+2
+∧
+B
+@
+w
+3
+∧
+...
+)
+]
+[(A@w₂ \land B@w₂) \land (A@w₃ \land B@w₃) \land \dots] \rightarrow [(A@w₂ \land A@w₃ \land \dots) \land (B@w₂ \land B@w₃ \land \dots)]
+[(
+A
+@
+w
+2
+​
+∧
+B
+@
+w
+2
+​
+)
+∧
+(
+A
+@
+w
+3
+​
+∧
+B
+@
+w
+3
+​
+)
+∧
+...
+]
+→
+[(
+A
+@
+w
+2
+​
+∧
+A
+@
+w
+3
+​
+∧
+...
+)
+∧
+(
+B
+@
+w
+2
+​
+∧
+B
+@
+w
+3
+​
+∧
+...
+)]
+And again, this is a
+tautology
+in propositional logic—because the conjunctions just distribute.
+✅ So this holds in
+any
+Kripke frame: 1 world, 2 worlds, many worlds.
+🔒 Therefore:
+The formula
+□(A ∧ B) → (□A ∧ □B)
+is a
+normal modal tautology
+—i.e., it's valid in all Kripke models—and we just proved it
+using propositional logic with indexing
+.
+Want to Try the Converse?
+Would you like to check whether the
+converse
+is valid?
+(
+□
+A
+∧
+□
+B
+)
+→
+□
+(
+A
+∧
+B
+)
+\boxed{(□A \land □B) \rightarrow □(A \land B)}
+(
+□
+A
+∧
+□
+B
+)
+→
+□
+(
+A
+∧
+B
+)
+​
+Let's test that next—it's a
+debatable case
+(not valid in all frames), and shows the
+limits
+of how conjunctions interact with necessity.
+Shall we try it?
+You said:
+Ok
+ChatGPT said:
+Awesome — let's now test the
+converse
+of the previous formula:
+(
+□
+A
+∧
+□
+B
+)
+→
+□
+(
+A
+∧
+B
+)
+\boxed{(□A \land □B) \rightarrow □(A \land B)}
+(
+□
+A
+∧
+□
+B
+)
+→
+□
+(
+A
+∧
+B
+)
+​
+🧠 Intuition: What Is It Saying?
+If A is necessarily true, and B is necessarily true,
+then their conjunction (A ∧ B) is necessarily true.
+This seems intuitively reasonable, but
+modal logic is picky
+— we'll see this
+does not always hold
+in all Kripke frames (so it is
+not
+a modal tautology).
+We'll use
+indexed propositional logic over a counterexample frame
+to test it.
+🧩 Step 1: Define a Kripke Frame That Could Break It
+Let's define a frame with
+two accessible worlds
+, but with
+non-uniform truth values
+.
+Let:
+W
+=
+{
+w
+1
+,
+w
+2
+,
+w
+3
+}
+W = \{w_1, w_2, w_3\}
+W
+=
+{
+w
+1
+​
+,
+w
+2
+​
+,
+w
+3
+​
+}
+Accessibility:
+w
+1
+R
+w
+2
+w_1 R w_2
+w
+1
+​
+R
+w
+2
+​
+,
+w
+1
+R
+w
+3
+w_1 R w_3
+w
+1
+​
+R
+w
+3
+​
+Visual:
+markdown
+Copy code
+w₂  ←
+      ↗     
+w₁         
+      ↘     
+       w₃  ←
+So from
+w₁
+, we can reach both
+w₂
+and
+w₃
+.
+🧠 Step 2: Assign Truth Values (Valuation V)
+Let's assign:
+A
+is true in
+w₂
+but false in
+w₃
+:
+A@w₂ = true
+,
+A@w₃ = false
+B
+is false in
+w₂
+but true in
+w₃
+:
+B@w₂ = false
+,
+B@w₃ = true
+🔍 Step 3: Evaluate
+□A
+and
+□B
+at
+w₁
+We now evaluate:
+□A
+at
+w₁
+= "A is true in
+all
+worlds accessible from
+w₁
+"
+→ But
+A@w₃ = false
+→ So
+□A@w₁ = false
+Same for
+□B
+→
+B@w₂ = false
+→
+□B@w₁ = false
+So
+(□A ∧ □B)@w₁ = false
+✅ The
+antecedent is false
+here — so the implication is
+true
+(false → anything = true)
+But we want a
+stronger test
+— we want a case where the
+antecedent is true but the conclusion is false
+, to disprove validity.
+🧪 Step 4: Modify to Make Antecedent True
+Try this:
+Let's modify so:
+A@w₂ = true
+,
+A@w₃ = true
+→
+□A@w₁ = true
+B@w₂ = true
+,
+B@w₃ = true
+→
+□B@w₁ = true
+So now:
+□A ∧ □B = true
+at
+w₁
+But now test:
+A ∧ B
+at
+w₂
+=
+true ∧ true = true
+A ∧ B
+at
+w₃
+=
+true ∧ true = true
+→ So
+□(A ∧ B)@w₁ = true
+Darn! Still holds.

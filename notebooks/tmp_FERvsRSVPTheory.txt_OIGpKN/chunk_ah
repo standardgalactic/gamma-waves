@@ -1,0 +1,282 @@
+ent
+=
+∫
+∥
+∇
+×
+v
+⃗
+∥
+2
+d
+x
+T_{\text{ent}} = \int \| \nabla \times \vec{v} \|^2 dx
+T
+ent
+​
+=
+∫
+∥∇
+×
+v
+∥
+2
+d
+x
+Modal paradoxes, self-reference, and loops in field dynamics
+6. Factored Representations as Thermodynamic Attractors
+Stability conditions:
+lim
+⁡
+t
+→
+∞
+d
+Φ
+d
+t
+=
+0
+\lim_{t \to \infty} \frac{d\Phi}{dt} = 0
+t
+→
+∞
+lim
+​
+d
+t
+d
+Φ
+​
+=
+0
+Coherence = alignment of Φ, 𝒗, and ∇𝒮
+Relationship to energy minimization
+7. Metaphors and Intuition (optional or as appendix)
+Tangled thread vs. spools
+Zen garden vs. jigsaw puzzle
+Recursive trust vs. doubt loops
+8. Conclusion
+RSVP reframes representation quality as field stability
+Predictive hypothesis: modal coherence enables generalization
+Sets the stage for empirical validation (Paper 2)
+🧪
+Paper 2: Diagnostics Toolkit
+Title (Example):
+Diagnosing Representation Fracture via Scalar-Vector-Entropy Field Dynamics
+🔍 Objective:
+Introduce and test RSVP-based metrics to measure representational quality in deep networks. Provide a toolkit for analyzing fracture, entanglement, and modularity using field-theoretic principles.
+📚 Outline:
+1. Motivation
+Why FER is hard to detect with current tools
+The need for theory-driven diagnostics
+RSVP as a geometrically motivated solution
+2. Constructing RSVP Fields from Networks
+Map activations to:
+Scalar field
+Φ
+\Phi
+Φ
+(e.g., norm, projection, class score)
+Vector field
+v
+⃗
+\vec{v}
+v
+(layer-to-layer deltas)
+Entropy
+S
+\mathcal{S}
+S
+(variance, predictive entropy)
+Example: applying to transformer embeddings
+3. Diagnostic Metrics
+A. Torsion Entanglement
+T
+(
+x
+)
+=
+∥
+∇
+×
+v
+⃗
+(
+x
+)
+∥
+,
+T
+avg
+=
+1
+∣
+Ω
+∣
+∫
+Ω
+T
+(
+x
+)
+2
+d
+x
+T(x) = \| \nabla \times \vec{v}(x) \|, \quad T_{\text{avg}} = \frac{1}{|\Omega|} \int_\Omega T(x)^2 dx
+T
+(
+x
+)
+=
+∥∇
+×
+v
+(
+x
+)
+∥
+,
+T
+avg
+​
+=
+∣Ω∣
+1
+​
+∫
+Ω
+​
+T
+(
+x
+)
+2
+d
+x
+B. Modal Closure Depth
+D
+□
+=
+min
+⁡
+{
+t
+∣
+∥
+Φ
+(
+t
++
+1
+)
+−
+Φ
+(
+t
+)
+∥
+<
+ε
+}
+D_{\Box} = \min \left\{ t \,|\, \| \Phi^{(t+1)} - \Phi^{(t)} \| < \varepsilon \right\}
+D
+□
+​
+=
+min
+{
+t
+∣
+∥
+Φ
+(
+t
++
+1
+)
+−
+Φ
+(
+t
+)
+∥
+<
+ε
+}
+C. Redundancy Score
+R
+ˉ
+=
+1
+n
+(
+n
+−
+1
+)
+∑
+i
+≠
+j
+I
+(
+h
+i
+;
+h
+j
+)
+\bar{R} = \frac{1}{n(n-1)} \sum_{i \neq j} I(h_i; h_j)
+R
+ˉ
+=
+n
+(
+n
+−
+1
+)
+1
+​
+i
+
+=
+j
+∑
+​
+I
+(
+h
+i
+​
+;
+h
+j
+​
+)
+4. Experimental Setup
+Models:
+Standard MLPs, CNNs, transformers (trained via SGD)
+Evolutionary-trained networks (e.g., NEAT, novelty search)
+RSVP-inspired networks (if available)
+Tasks:
+Modular classification
+Symbolic reasoning
+Vision with compositional cues
+5. Results
+Torsion heatmaps across layers
+Closure depth profiles
+Redundancy matrices
+Visual and statistical comparisons: FER vs. UFR fingerprints
+6. Toolkit Overview
+rsvp_diag
+Python package
+API:
+compute_phi
+,
+compute_v
+,
+estimate_entropy
+,
+torsion
