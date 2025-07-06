@@ -1,0 +1,128 @@
+From Neural Activity to Field Topology: How Coupling Kernels Shape Consciousness
+
+Feb 21, 2025
+
+Andrés Gómez Emilsson
+
+
+have to kind of like walk in that world
+you know embedded in a geometric space
+and you know maybe in the medieval time
+you know or earlier you know before
+there were kind of like these long roads
+or like long distances that people were
+traveling yes you know the social
+distance between individuals was like
+pretty large in a way but not anymore no
+I mean there was kind of like a
+threshold in in in in Social Evolution
+where enough people were kind of like
+making long trips that is effectively
+kind of like adding this random Network
+on top of a geometric Network um and uh
+when you do that then uh you you shrink
+the diameter uh and you turn it into a
+small world so you don't actually need
+many random connections there's kind of
+like a threshold a percentage of random
+connections where
+the the the diameter completely
+collapses and then like everybody is
+right next to everybody else um
+so you know that's one one important
+kind of like way of modulating the
+activity of the system of coupled
+oscillators is adding this small world
+Network which is a you know effectively
+a way of either scrambling the activity
+when uh the you know coupling
+coefficient is negative uh in the small
+world Network or a way of as
+synchronizing everybody when it is
+positive but you don't have to worry
+about it you know that's that's just
+kind of like a hack
+to significantly increase the state
+space of uh configurations accessible
+with this lever system um but uh you
+know just let's just like Focus for a
+moment on on on actually just the um the
+the geometric components you know the
+coupling one coupling two coupling three
+and four and uh you know early on one
+one thing that I did was apply what is
+called a discrete cosine transform on
+this system um even just on a on a flat
+system and uh as you can see in the
+article you know what what happens is
+that well the discrete [ __ ] transform is
+kind of like a fouryear transform I mean
+effectively what you're doing is like um
+showing in what way kind of like waves
+of different uh spatial frequencies I
+mean I guess for for context for those
+who don't know um a wave with a low
+spatial frequency is kind of like a wave
+that is very large a wave with a high
+spatial frequencies is a very kind of
+like um intricate detailed wave okay so
+it turns out that you know you can
+essentially tune into Global resonant
+modes of the entire system of coupled
+oscillators by just modulating the
+coefficients of the coupling kernel you
+know like what is the coupling of uh
+coupling 1 2 3 and
+four this was to me very intuitive you
+know um but then it turns out that you
+know you can actually rigorously uh
+prove this to be the case uh with a
+techniques from uh you know a field
+that's called a spectral graph Theory
+where you effectively kind of like apply
+uh filters on a graph uh for kind of
+like different distances um I'm not
+going to abore you with the
+technicalities but but you know
+effectively what's called yeah the
+various powers of the plon of the system
+effectively will be modulating the the
+amplitude for you know different
+resonant modes of different spatial
+frequencies and so it turns out you know
+that we just kind of like stumbled Upon
+This Way of modulating the amplitude of
+the
+energy for waves of different spatial
+frequencies which it's actually kind of
+mind-blowing because you know systems of
+coupled oscillators they they're
+considered you know these very complex
+systems you know they're considered
+these very intractable hard to predict
+you know dynamic systems and the fact
+you know that you can actually tune into
+Global resonant modes of them just by
+modulating you know the amplitude of a
+coupling kernel is is utterly
+fascinating you know it's it gives you a
+handle with predictable effects and
+predictable resonance effects that are
+holistic and global of the entire brain
+or the entire you know graph in this
+case
+um by just kind of like modulating the
+amplitude on levers so you know that was
+uh pretty mind-blowing and pretty
+important for for me kind of like a
+milestone really kind of like how to
+make sense of uh complex you know
+systems of coupled
+oscillators and uh well it turns out
+that you know I'm not the first one to
+to realize this in fact you know down
+the line uh actually no November of last
+year at a work retreat in in tempos SL
+um with other people at qri yeah we we
+we encountered a paper by um Marco Akil
+6/17

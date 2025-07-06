@@ -1,0 +1,128 @@
+From Neural Activity to Field Topology: How Coupling Kernels Shape Consciousness
+
+Feb 21, 2025
+
+Andrés Gómez Emilsson
+
+
+coupled
+ulators well uh what I kind of like
+stumbled upon by by playing with these
+systems was well maybe we can actually
+modulate What's called the the the
+coupling constant the between Queen
+oscillators at different
+distances and maybe that way we can gain
+some control over kind of like the
+overall you know emergent oscillations
+that happen at at the microscopic level
+and uh and so you know it looks
+something like this
+where okay let's see if this
+works yeah yeah I mean in in some of the
+simulations that you will
+see uh you know for any given oscillator
+you know there's a if you look at
+oscillators a distance one from it
+especially if it's a let's say Square
+lattice um you know there's going to be
+four oscillators at that distance and so
+there's a lever that you know depending
+on the value that you you you set it up
+at is going to modulate a positive or
+negative coefficient for the coupling
+constant for oscillators at that
+distance in this case there's going to
+be just four um I guess like yeah for
+clar
+or for those who are curious this is is
+called Manhattan distance which is um
+you sort of like add up independently
+kind of like the distance in the x- axis
+and the y- axis they call it Manhattan
+distance because it's sort of like the
+number of blocks that you would have to
+kind of uh go from one place to another
+in a c grid you know so so you know you
+don't care about like kind of like the
+diagonal distance you care about like
+the you know the streets and avenues
+added together um
+and then at a distance two you know from
+yeah this let's say intersection uh it
+starts to actually form kind of like a
+DI on the shape you know where now you
+have like eight oscillators at distance
+two and there's going to be a lever that
+modulates the coupling constant to those
+eight oscillators and then there's going
+to be a 12 at distance three you know
+and 16 at distance four and so on and so
+forth so the you know the central idea
+of a coupling
+kernel is a system of levers that
+modulate the coupling constant of the
+oscillators for each of those different
+you know Manhattan distances well it
+doesn't have to be Manhattan you know
+this is just in a square grid if we're
+talking about a 3D continuous space and
+a lot of our simulations are like that
+then you know it can be ukian distance
+it can also be like distance in other
+geometries you know it could be on the
+surface of a sphere you know it could be
+in a hyperbolic space you know this is
+very General but you know for the sake
+of Simplicity in a square lattice we're
+talking about you know X+ Y in terms of
+like the the streets and
+avenues um well if you play with this
+system you will kind of like
+realize that uh and this is the the
+second point or point one you know point
+zero is what is a coupling kernel point1
+uh is um yeah uh in the article coupling
+kernels as neural global Bridges so let
+me get here well even before I go there
+I'm going to explain briefly what a a
+small world network is because there's
+another lever that we usually also
+include um and uh you know at the
+beginning of a simulation essentially
+what we do is like for every given
+oscillator we choose two other
+oscillators at random in the entire grid
+and we wire them to it and then the
+small world lever is going to be
+modulating effectively the coupling
+constant to those two at random which I
+mean it's effectively it's a random
+Network and we call it small world
+because uh you know this is um what is
+very well known you know that like the
+the the social distance between people
+you know it's actually pretty small on
+average you know between you and the
+Queen Elizabeth I mean the classic
+example or you know anybody in the world
+um chances are you know somebody who
+knows somebody who knows somebody who
+knows somebody who knows that person you
+know like the the number of hops that
+you need to take between you and that
+person usually doesn't go above six you
+know it there's such a thing that's
+called that is called the diameter of a
+graph which is like what is the the
+longest shortest path essentially what
+is what is the pair of nodes such that
+the shortest path is the longest that is
+the diameter of a graph and you know
+what happens is that yeah if you have a
+kind of Network that is geometric where
+noes are connected to you know their
+neighbors or neighbors within a certain
+distance um you know the diameter is
+very large you know because you actually
+5/17

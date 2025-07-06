@@ -1,0 +1,128 @@
+From Neural Activity to Field Topology: How Coupling Kernels Shape Consciousness
+
+Feb 21, 2025
+
+Andrés Gómez Emilsson
+
+
+who um um you know I went to his thesis
+defense and he presented at the
+Amsterdam qri Meetup so thank you very
+much and that was actually super awesome
+this is uh his thesis which he defended
+last month uh his PSD thesis called
+levels of vision um which you know he
+touches upon some of these uh there's
+another key piece of the puzzle which is
+called divisive normalization which I'll
+I'm going to explain in a moment but uh
+he developed a a a method uh called
+chaos with two s's um which uh
+effectively is a way of analyzing the
+the resonant modes of a brain in terms
+of modulating kind of something that is
+very equip mathematically equivalent to
+something like a coupling kernel
+although he doesn't call it exactly that
+way
+but um you know to me that was kind of
+like mind-blowing it was like oh my gosh
+actually in Academia they're arriving at
+something quite similar from a very
+different perspective you know because
+from our perspective we're taking you
+know phenomenology seriously you know
+we're trying to replicate the the
+features of different um you know exotic
+States Of Consciousness U by using like
+you know graph Theory and dynamic
+systems and so on and and in this case
+you know they're primarily actually not
+so much actually trying to rep replicate
+phenomenology they're trying to
+replicate psychophysical measurements
+and neuroscientific measurements you
+know neuroimaging data sets uh empirical
+so it is kind of like the objective you
+know uh scientific measurements of the
+brain from a third person
+perspective all of a sudden arriving and
+converging into very similar ideas and
+very similar models to you know Q who is
+effectively kind of like championing
+taking phenomenology seriously and you
+know bringing you know Advanced
+meditators and and and physicists and
+mathematicians and visual artists um to
+you know depict and make sense of exotic
+States Of Consciousness and and so yeah
+chaos effectively yeah kind of like
+converge in in in very similar idea so
+just to
+recap um cobbling kernels are kind of
+this bridge you know between neural
+activity and kind of like global global
+activity now the other thing which is is
+very relevant from from Marco is a
+divisive normalization um you know it's
+it's a paradigm that he worked on I
+don't think he developed although he or
+he invented but like he he definitely
+has kind of like developed and and
+furthered quite a bit and that is this
+notion that you know the probability for
+a given oscillator in the brain you know
+populations of neurons not not
+individual neurons but essentially
+populations of neurons um to to kind of
+like oscillate is a function of both of
+the kind of like sensory inputs that to
+go into them and the activity uh in in
+the surrounding of them especially when
+you have kind of this like layered
+system uh where you know you have like
+several layers of neurons um where you
+know there's kind of like int layer
+connections you know lateral connections
+as it were and then connections between
+the layers uh divisive normalization is
+effectively a mathematical technique to
+to explain how um the activity of one
+layer triggers activity in the next
+layer and then you know you can repeat
+that over again over and over and and
+the really cool thing here you know
+without making you know precise claims
+or connections between the parameters of
+the divisive normalization and effects
+of different substances um although we
+want to get there you know we're not
+there but like we want to get there and
+we we're crafting studies to eventually
+actually be able to get there and
+publish about that but you know just
+conceptually you know I think this is
+conceptually sound
+that all of a sudden the picture starts
+to become crisp where you have kind of
+these lowlevel what they call canonical
+competition this low-level method for um
+making sense of how like contexual
+activity in populations of neurons
+translates you know into things like
+traveling waves and and and and dynamic
+system Behavior which then through
+something like a coupling kernel or or
+chaos can be understood as these like
+Global resonant modes of the entire
+system and so oh my gosh you know the
+brain starts to look more tractable you
+know it starts to makes more make more
+sense and so um you know I think that's
+wonderful you know like I highly
+recommend yeah diving into divisive
+normalization and and and Chaos uh in
+maril work you know he he's building on
+top of also you know work by morn
+Kringle Bach and senin atasoy um um and
+7/17

@@ -1,0 +1,1947 @@
+hello hello welcome welcome back welcome
+back okay so today we're going to talk
+about a really interesting topic well
+this is actually potentially really
+foundational for what the qualia
+research institute is doing this year
+and that is well going
+from neur activity to field
+topology and back essentially how
+coupling kernels can shape Consciousness
+uh you know this is a very important
+topic because it's uh based on a lot of
+research at qri you know a lot of uh our
+Retreat outputs our research outputs and
+it's something that is essentially
+guiding a lot of our uh strategy for
+where to um invest the resources in
+order to you know understand
+Consciousness understand how to modulate
+it develop neurotechnology you know even
+tackle things like chronic pain or how
+to induce beautiful kind of like
+meditation States in a accelerated but
+uh healthy and Wholesome Way so you know
+it's very very Central to kind of like a
+lot of the ways in which we're thinking
+about Consciousness these days um and
+for that reason you know this will
+probably be kind of like a big overview
+a
+conversational casual in a sense
+overview of this whole topic um and
+there's going to be a lot more content
+about this uh in aot lot of different
+ways from uh you know simulations to
+technology to yeah actual like you know
+presentations in academic venues
+so before I get started um I want to
+point out yes you know to carry me
+through the qual of the day
+is Rose
+tulsy tulsy Sweet Rose uh caffeine free
+herbal tea it's
+a quite delicious I mean it really
+definitely does have kind of like a Rosy
+quality and uh if you know me and my
+tastes in Scent qualia you know you will
+know that yes some of my all-time
+favorites include you know Bergamot and
+and Rose uh and so I love rose tea as
+well as Earl Gray because of the the
+burgot component
+um yeah I mean Rose is beautiful for a
+lot of reasons um in particular it has
+kind of this fil ethal uh alcohol uh
+component which is kind of like
+remarkably soft in a way that is kind of
+the synesthetic equivalent of you know
+effectively the um kind of like feathery
+or the um um very very soft aspect of a
+of a of a rose petal
+um yeah that but you know in in in the
+scent scent domain okay so anyway anyway
+I recommend uh tulc Sweet Rose uh for
+you to try the other thing I want to
+mention you know and this is very
+important um is that we're revamping our
+um the qualia research institute Discord
+and so I'm actually going to be doing a
+live Q&A in two days from now so today
+is February 20th um so on February 22nd
+which is a Saturday at noon Pacific time
+I'm going to be doing doing a yeah
+Discord live Q&A so I'm going to add a
+link in the description essentially the
+the Discord invite and um you know I I
+recommend joining you will yeah
+essentially find likeminded individuals
+and I know there's a lot of really cool
+interesting people uh here in this
+community people who watch these videos
+and comment um I'm often yeah quite
+Overjoyed with the you know fascinating
+content uh of the comments that you guys
+provide whether it is you know
+spontaneous tree reports or you know
+object level analysis of what I'm
+talking about or you know just like nice
+encouragement I all of it I I very much
+appreciated um and yeah in the Discord
+um I think like it's it's a place where
+we can actually kind of like start
+building a a long-term Community here um
+you know if you don't follow me on
+Twitter uh yet well I recommend you do
+not that you should get Twitter that's
+not necessarily good for your for your
+mental health and uh you know longterm
+productivity but but if you already have
+a Twitter account yeah definitely follow
+me on Twitter I'm alj calyo um yeah X
+uh.com I guess like formerly Twitter um
+we also actually have like a Facebook
+group um which a lot of kind of like OG
+people um and it's uh called qual
+Computing networking and uh we do have a
+bit of a kind of like entry bar so we
+definitely ask that you answer the
+questions you know to be uh admitted
+into the club as it were um you know
+essentially to keep the conversation um
+yeah very high quality and uh actually
+build a community of people who like
+actually really passionate about these
+and and and know quite a bit about this
+so you know Community
+announcements okay
+so I have been kept quite busy in a
+number of fronts I've been traveling a
+lot um I went to Amsterdam in January
+for about two weeks um in collaboration
+with uh people from the Cyber delic
+Nexus uh and I'm going to mention them
+you know by name at the end of the video
+um but you know we we we have a a
+recording of a presentation I gave uh in
+Amsterdam um I mean essentially about
+like yeah new research paradigms for
+making sense of psychedelic States Of
+Consciousness um in a quantitative
+algorithmic way so expect a video about
+that is going to be I think yeah I think
+it's really high quality that one in
+particular because it's very
+professionally recorded and um I thought
+the the content was particularly good uh
+as far as yeah qri content is concerned
+uh I worked very hard on making that
+presentation really really high quality
+um for you to learn a lot um also you
+know earlier this week I actually had a
+podcast with h Kurt from theories of
+everything uh in YouTube and uh that's
+GNA come out I believe in a a week or
+two so definitely be in the lookout for
+that uh I also recorded last week a
+conversation with Jos abach um who is
+yeah essentially currently you know he's
+a famous computationalist and a very
+very bright guy and also I really really
+like him as a friend um you know very
+very sensitive soul and uh yeah really
+appreciated that conversation and uh
+yeah that's also going to come out
+pretty soon um and more content you know
+also recorded a video with um um Carl
+Heiden smth uh and other people
+essentially in kind of like the sphere
+of people who are essentially trying to
+um formalize the study of uh
+psychedelics and taking them very
+seriously in yeah legal and ethical ways
+um we recorded yeah some some content in
+Amsterdam so anyway and and that's just
+the tip of the asberg you know we've
+been busy doing a bunch of other things
+as well u i will actually just mention
+very quickly um you know we also
+recently published a very thorough
+analysis of essentially yeah these
+ethical tragedy which is uh cluster
+headaches um and the potential for DMT
+to
+effectively uh abort and and prevent
+future cluster headaches and we think
+that yeah as far as you know reducing
+suffering at scale this is probably one
+of the top interventions and the reason
+why in effective altruism this is not
+taking more seriously is because the you
+know the loss function the way that
+optimization cost prioritization triage
+is done is by trying to maximize quality
+adjusted life years or at least reduce
+the amount of quality lust adjusted life
+years that is lost because of different
+medical conditions not by making a you
+know good faith effort to actually
+quantify suffering because if you do
+that and then you try to reduce
+suffering as much as possible then all
+of a sudden the you know exponential
+nature of the intensity of suffering as
+a function of kind of the the reported
+value in a pain skill actually becomes
+really relevant so anyway you know it
+turns out that if you want to minimize
+suffering you shouldn't try to minimize
+the kind of like average paint score no
+no no you need to actually raise the
+paint use the pain scores as an exponent
+you know in in an exponential scale and
+then try to minimize you know the
+expected value of you know the aggregate
+of all of those values which
+essentially you know to the extent that
+you care about suffering specifically um
+it turns out that it prioritizes the
+extreme levels of suffering out there um
+and uh you know DMT seems to be really
+effective for aborting cluster
+headaches um so I don't think it's an
+exaggeration to say that it might be one
+of the if not the most cost-effective
+way of reducing suffering in the world
+if we figure out how to uh legalize and
+bring access to this therapy to you know
+people worldwide who suffer from this
+condition if I live a a legacy of my
+life as it we and the work at Q and it's
+that you know I would be very satisfied
+with what I have done in the world so um
+you know please you know support us in
+any way you can we're going to be
+writing an open letter uh to essentially
+push for legislation in this domain and
+um yeah you know donations uh you know
+moral support you know signing the
+letter Etc all of that super super
+welcome at the same time also um just
+this week yeah with alfredo par somebody
+who have been collaborating with at qri
+we also released an analysis of kidney
+stones and uh how chanka Pedra which is
+a yeah sou American herb uh as a
+preventative as a prophylactic may also
+be one of these like ridiculously good
+kind of like top interventions for
+minimizing suffering so uh you know yeah
+if if you're at risk of kidney stones
+and most people are you know in some
+places in the world the incidence is
+going as high as 25% uh you know
+lifetime prevalence um yeah actually
+probably taking uh chanap Pedra in a
+preventative fashion you know maybe once
+a week might actually be a a massively
+coste effective way of reducing
+suffering okay so those are yeah some
+kind of like important announcements you
+know Community wise you know ethics wise
+big picture
+now let's get on to the content so the
+title of this uh video you know is the
+same title as the latest uh qualia
+Computing post which is from neural
+activity to field topology and there's
+quite a bit of content to go through um
+and I'm just going to go you know one
+point after another and there's
+essentially 10 points um and I'm going
+to explain them okay so you know very
+you know be before I kind of like dive
+into the details I just want to say you
+know the very very big picture here is I
+think yeah that this Paradigm might be
+able to
+explain why different substances produce
+radically you know radically different
+effects in Consciousness where it's not
+only a matter of like well this
+substance makes you know your visual
+field more bright or like this one makes
+it a little bit wavy or something like
+that but he's like no like why is there
+such a thing as like DMT quote unquote
+the spirit model molecule that you take
+and you feel fragmented into a thousand
+different components and it it it sort
+of like feels that you're contacting
+other reals and other you know entities
+or embodying other entities inside you
+etc etc and then there's a completely
+different experience by an analog you
+know very similar molecule called five
+amuno DMT which they call the the god
+molecule which if you consume if you
+vaporize and and and consume it it gives
+rise to kind of this found feeling of
+undeniable Oneness as as it were an
+extreme Simplicity and kind of like
+getting in touch with a with a ground of
+being and and this sense of you know
+profound Simplicity mixed with profound
+intensity you know very very extremely
+different experiences by just tweaking a
+molecule a little bit so what what's
+going on okay so at a you know a very
+very high level picture here is that
+we think that different substances might
+be modulating through you know a a
+complicated ultimately but tractable
+causal chain the coupling dynamics of
+oscillators in the body in particular
+something like electric oscillators
+although I actually will leave that kind
+of like a somewhat agnostic about what
+exactly is oscillating in the body but
+you know things would fit pretty well if
+it turns out it you know it's modulating
+kind of macroscopic electric
+oscillations which in turn because of
+things such as like the you know the
+right hand rule of
+electromagnetism electric oscillations
+cause vortices you know in the magnetic
+field and because as we hypothesized at
+qri you know this is actually something
+I I came up with a good number of years
+ago uh and and we have polish in
+Academia um we we we suspect that you
+know the the phenomenal boundaries you
+know what distinguishes one person from
+another is the topology of the
+electromagnetic field effectively
+creating looping structures that have an
+inside and an outside with a actual kind
+of like holistic causal effects
+something that Evolution would have a
+reason to recruit you know for for
+causal reasons for information
+processing reasons in other words you
+know we we we all of a sudden have a a
+story for how is it possible that
+different substances can modulate you
+know not only neural activity
+but field topology the the boundaries
+inside you and outside of you the the
+way in which you're connected to the
+universe so it's really profound I mean
+it it really cuts to kind of the these
+very deep ontological questions of like
+what separates you from the rest of the
+universe and and and
+why something like a drug would actually
+mess with that which is kind of
+incredible right it's like the reported
+effects of something like fiveo DMT are
+just not credible unless you have
+actually experimented with the substance
+or you know you trust whoever actually
+is reporting it just sounds too
+extraordinary you know too
+extreme how can a drug do this okay so
+we're going to explain it we're going to
+explain it or at least provide an an
+outline of a conceptually satisfying you
+know
+um set of building blocks that that that
+build up to something that makes sense
+hopefully so okay the first thing that I
+want to say is talk about the coupling
+kernel okay so what is a coupling
+kernel you know this is something that
+came up um when I was uh trying to come
+up with a way to interact with systems
+of coupled oscillators uh in a you know
+reliable predictable way um without
+having to kind of
+like you know train sophisticated you
+know neural networks uh controls systems
+or mechanisms um or or really for that
+matter you know to to kind of like hard
+code specific geometries of the network
+for particular control systems like no
+no no I wanted a way of interfacing with
+a system of coupled oscillators that was
+very natural and and very very bottom up
+but reliable and uh and predictable so
+what I you know ultimately arrived at by
+you know coding dozens of systems of
+coupled oscillators and and and trying
+to wire them in different ways um was
+you know the first thing that that had
+really emerged as kind of like something
+that had a clear utility and clearly was
+kind of like starting to replicate some
+yeah psychedelic phenomenology to some
+extent was um kuramoto oscillators and
+I'm not going to get into the the
+mathematical details uh there uh
+although it's not very complicated but I
+I don't think it is necessary for this
+conceptual kind of like
+overview um and then geometri them okay
+so so in in a traditional kind of like
+system of couple dos lers at least in
+the the classic formulation of of
+kuramoto oscillators um what you have is
+kind of like an all to--all relationship
+where like every oscillator is connected
+with every other oscillator and then um
+they're all trying to be in Phase with
+each other you see and and and when
+they're out of phase with each other um
+there's kind of like an error you know
+they're all kind of like moving around
+in a circle or you could even think of
+it as for example like metronomes in a
+in a table or something like that maybe
+they're like tuned to slightly different
+natural frequencies okay so so they they
+actually want to oscillate at slightly
+different speeds so to speak but because
+they all belong to the same table you
+know they're all on the same ground as
+it were there's tiny vibrations that
+that are actually shared between them
+and then what happens is that with those
+tiny vibrations they are kind of like
+pulling and pushing each other and and
+so when they're out of phase you know
+the the more out of phase they are the
+the more there's kind of like a a
+correcting you know mechanism that is
+realigning them so in in in the classic
+formulation of kuramoto systems uh you
+know they're all connected to each other
+and equally connected and then there's
+yeah some fascinating you know
+mathematics that you can show
+analytically uh there's like some some
+convergence conditions that that under
+certain circumstances all of the
+oscillators actually you know click
+together as it were or they they all
+kind of end up being dragged Along by
+you know what's kind of the the mean of
+the phase of all of the oscillators um
+you know that's a really interesting
+system and and again like what's nice
+about it is it's very tractable you know
+it is not even trying to kind of uh
+accurately model um some you know
+physical systems of oscillators is more
+kind of like a mathematical abstraction
+that just works very
+nicely but you know in in in the realm
+of phenomenology we're talking about you
+know these very complex networks you
+know like your visual cortex your your
+vasculature your um somatosensory cortex
+you know you have a lot of different
+networks and connected in different ways
+and so you know it's not the case that
+all of the oscillators are connected to
+each other that is not like the wiring
+right so instead is actually some kind
+of like geometric
+embedding you know all of these
+oscillators are in some kind of
+geometric space and then whether they're
+two you know two oscillators are
+connected or not it's it's kind of like
+a function of their distance you know in
+in some simple systems and you know most
+of the simulations you know in this
+particular context are like that they're
+you know kind of like toy models for
+explanatory
+purposes they're might be like a simple
+rule something like you know if if two
+oscillators are within a certain
+distance then there is a connection
+between them and if they're further away
+than than that distance then they're not
+connected um so in that way you know
+you're kind of like represent a
+geometric space in terms of some kind of
+like connectivity uh between systems of
+coupled
+ulators well uh what I kind of like
+stumbled upon by by playing with these
+systems was well maybe we can actually
+modulate What's called the the the
+coupling constant the between Queen
+oscillators at different
+distances and maybe that way we can gain
+some control over kind of like the
+overall you know emergent oscillations
+that happen at at the microscopic level
+and uh and so you know it looks
+something like this
+where okay let's see if this
+works yeah yeah I mean in in some of the
+simulations that you will
+see uh you know for any given oscillator
+you know there's a if you look at
+oscillators a distance one from it
+especially if it's a let's say Square
+lattice um you know there's going to be
+four oscillators at that distance and so
+there's a lever that you know depending
+on the value that you you you set it up
+at is going to modulate a positive or
+negative coefficient for the coupling
+constant for oscillators at that
+distance in this case there's going to
+be just four um I guess like yeah for
+clar
+or for those who are curious this is is
+called Manhattan distance which is um
+you sort of like add up independently
+kind of like the distance in the x- axis
+and the y- axis they call it Manhattan
+distance because it's sort of like the
+number of blocks that you would have to
+kind of uh go from one place to another
+in a c grid you know so so you know you
+don't care about like kind of like the
+diagonal distance you care about like
+the you know the streets and avenues
+added together um
+and then at a distance two you know from
+yeah this let's say intersection uh it
+starts to actually form kind of like a
+DI on the shape you know where now you
+have like eight oscillators at distance
+two and there's going to be a lever that
+modulates the coupling constant to those
+eight oscillators and then there's going
+to be a 12 at distance three you know
+and 16 at distance four and so on and so
+forth so the you know the central idea
+of a coupling
+kernel is a system of levers that
+modulate the coupling constant of the
+oscillators for each of those different
+you know Manhattan distances well it
+doesn't have to be Manhattan you know
+this is just in a square grid if we're
+talking about a 3D continuous space and
+a lot of our simulations are like that
+then you know it can be ukian distance
+it can also be like distance in other
+geometries you know it could be on the
+surface of a sphere you know it could be
+in a hyperbolic space you know this is
+very General but you know for the sake
+of Simplicity in a square lattice we're
+talking about you know X+ Y in terms of
+like the the streets and
+avenues um well if you play with this
+system you will kind of like
+realize that uh and this is the the
+second point or point one you know point
+zero is what is a coupling kernel point1
+uh is um yeah uh in the article coupling
+kernels as neural global Bridges so let
+me get here well even before I go there
+I'm going to explain briefly what a a
+small world network is because there's
+another lever that we usually also
+include um and uh you know at the
+beginning of a simulation essentially
+what we do is like for every given
+oscillator we choose two other
+oscillators at random in the entire grid
+and we wire them to it and then the
+small world lever is going to be
+modulating effectively the coupling
+constant to those two at random which I
+mean it's effectively it's a random
+Network and we call it small world
+because uh you know this is um what is
+very well known you know that like the
+the the social distance between people
+you know it's actually pretty small on
+average you know between you and the
+Queen Elizabeth I mean the classic
+example or you know anybody in the world
+um chances are you know somebody who
+knows somebody who knows somebody who
+knows somebody who knows that person you
+know like the the number of hops that
+you need to take between you and that
+person usually doesn't go above six you
+know it there's such a thing that's
+called that is called the diameter of a
+graph which is like what is the the
+longest shortest path essentially what
+is what is the pair of nodes such that
+the shortest path is the longest that is
+the diameter of a graph and you know
+what happens is that yeah if you have a
+kind of Network that is geometric where
+noes are connected to you know their
+neighbors or neighbors within a certain
+distance um you know the diameter is
+very large you know because you actually
+have to kind of like walk in that world
+you know embedded in a geometric space
+and you know maybe in the medieval time
+you know or earlier you know before
+there were kind of like these long roads
+or like long distances that people were
+traveling yes you know the social
+distance between individuals was like
+pretty large in a way but not anymore no
+I mean there was kind of like a
+threshold in in in in Social Evolution
+where enough people were kind of like
+making long trips that is effectively
+kind of like adding this random Network
+on top of a geometric Network um and uh
+when you do that then uh you you shrink
+the diameter uh and you turn it into a
+small world so you don't actually need
+many random connections there's kind of
+like a threshold a percentage of random
+connections where
+the the the diameter completely
+collapses and then like everybody is
+right next to everybody else um
+so you know that's one one important
+kind of like way of modulating the
+activity of the system of coupled
+oscillators is adding this small world
+Network which is a you know effectively
+a way of either scrambling the activity
+when uh the you know coupling
+coefficient is negative uh in the small
+world Network or a way of as
+synchronizing everybody when it is
+positive but you don't have to worry
+about it you know that's that's just
+kind of like a hack
+to significantly increase the state
+space of uh configurations accessible
+with this lever system um but uh you
+know just let's just like Focus for a
+moment on on on actually just the um the
+the geometric components you know the
+coupling one coupling two coupling three
+and four and uh you know early on one
+one thing that I did was apply what is
+called a discrete cosine transform on
+this system um even just on a on a flat
+system and uh as you can see in the
+article you know what what happens is
+that well the discrete [ __ ] transform is
+kind of like a fouryear transform I mean
+effectively what you're doing is like um
+showing in what way kind of like waves
+of different uh spatial frequencies I
+mean I guess for for context for those
+who don't know um a wave with a low
+spatial frequency is kind of like a wave
+that is very large a wave with a high
+spatial frequencies is a very kind of
+like um intricate detailed wave okay so
+it turns out that you know you can
+essentially tune into Global resonant
+modes of the entire system of coupled
+oscillators by just modulating the
+coefficients of the coupling kernel you
+know like what is the coupling of uh
+coupling 1 2 3 and
+four this was to me very intuitive you
+know um but then it turns out that you
+know you can actually rigorously uh
+prove this to be the case uh with a
+techniques from uh you know a field
+that's called a spectral graph Theory
+where you effectively kind of like apply
+uh filters on a graph uh for kind of
+like different distances um I'm not
+going to abore you with the
+technicalities but but you know
+effectively what's called yeah the
+various powers of the plon of the system
+effectively will be modulating the the
+amplitude for you know different
+resonant modes of different spatial
+frequencies and so it turns out you know
+that we just kind of like stumbled Upon
+This Way of modulating the amplitude of
+the
+energy for waves of different spatial
+frequencies which it's actually kind of
+mind-blowing because you know systems of
+coupled oscillators they they're
+considered you know these very complex
+systems you know they're considered
+these very intractable hard to predict
+you know dynamic systems and the fact
+you know that you can actually tune into
+Global resonant modes of them just by
+modulating you know the amplitude of a
+coupling kernel is is utterly
+fascinating you know it's it gives you a
+handle with predictable effects and
+predictable resonance effects that are
+holistic and global of the entire brain
+or the entire you know graph in this
+case
+um by just kind of like modulating the
+amplitude on levers so you know that was
+uh pretty mind-blowing and pretty
+important for for me kind of like a
+milestone really kind of like how to
+make sense of uh complex you know
+systems of coupled
+oscillators and uh well it turns out
+that you know I'm not the first one to
+to realize this in fact you know down
+the line uh actually no November of last
+year at a work retreat in in tempos SL
+um with other people at qri yeah we we
+we encountered a paper by um Marco Akil
+who um um you know I went to his thesis
+defense and he presented at the
+Amsterdam qri Meetup so thank you very
+much and that was actually super awesome
+this is uh his thesis which he defended
+last month uh his PSD thesis called
+levels of vision um which you know he
+touches upon some of these uh there's
+another key piece of the puzzle which is
+called divisive normalization which I'll
+I'm going to explain in a moment but uh
+he developed a a a method uh called
+chaos with two s's um which uh
+effectively is a way of analyzing the
+the resonant modes of a brain in terms
+of modulating kind of something that is
+very equip mathematically equivalent to
+something like a coupling kernel
+although he doesn't call it exactly that
+way
+but um you know to me that was kind of
+like mind-blowing it was like oh my gosh
+actually in Academia they're arriving at
+something quite similar from a very
+different perspective you know because
+from our perspective we're taking you
+know phenomenology seriously you know
+we're trying to replicate the the
+features of different um you know exotic
+States Of Consciousness U by using like
+you know graph Theory and dynamic
+systems and so on and and in this case
+you know they're primarily actually not
+so much actually trying to rep replicate
+phenomenology they're trying to
+replicate psychophysical measurements
+and neuroscientific measurements you
+know neuroimaging data sets uh empirical
+so it is kind of like the objective you
+know uh scientific measurements of the
+brain from a third person
+perspective all of a sudden arriving and
+converging into very similar ideas and
+very similar models to you know Q who is
+effectively kind of like championing
+taking phenomenology seriously and you
+know bringing you know Advanced
+meditators and and and physicists and
+mathematicians and visual artists um to
+you know depict and make sense of exotic
+States Of Consciousness and and so yeah
+chaos effectively yeah kind of like
+converge in in in very similar idea so
+just to
+recap um cobbling kernels are kind of
+this bridge you know between neural
+activity and kind of like global global
+activity now the other thing which is is
+very relevant from from Marco is a
+divisive normalization um you know it's
+it's a paradigm that he worked on I
+don't think he developed although he or
+he invented but like he he definitely
+has kind of like developed and and
+furthered quite a bit and that is this
+notion that you know the probability for
+a given oscillator in the brain you know
+populations of neurons not not
+individual neurons but essentially
+populations of neurons um to to kind of
+like oscillate is a function of both of
+the kind of like sensory inputs that to
+go into them and the activity uh in in
+the surrounding of them especially when
+you have kind of this like layered
+system uh where you know you have like
+several layers of neurons um where you
+know there's kind of like int layer
+connections you know lateral connections
+as it were and then connections between
+the layers uh divisive normalization is
+effectively a mathematical technique to
+to explain how um the activity of one
+layer triggers activity in the next
+layer and then you know you can repeat
+that over again over and over and and
+the really cool thing here you know
+without making you know precise claims
+or connections between the parameters of
+the divisive normalization and effects
+of different substances um although we
+want to get there you know we're not
+there but like we want to get there and
+we we're crafting studies to eventually
+actually be able to get there and
+publish about that but you know just
+conceptually you know I think this is
+conceptually sound
+that all of a sudden the picture starts
+to become crisp where you have kind of
+these lowlevel what they call canonical
+competition this low-level method for um
+making sense of how like contexual
+activity in populations of neurons
+translates you know into things like
+traveling waves and and and and dynamic
+system Behavior which then through
+something like a coupling kernel or or
+chaos can be understood as these like
+Global resonant modes of the entire
+system and so oh my gosh you know the
+brain starts to look more tractable you
+know it starts to makes more make more
+sense and so um you know I think that's
+wonderful you know like I highly
+recommend yeah diving into divisive
+normalization and and and Chaos uh in
+maril work you know he he's building on
+top of also you know work by morn
+Kringle Bach and senin atasoy um um and
+uh you know that that that whole kind of
+like tradition of in a sense making
+sense of the brain as a dynamic system
+with turbulent processes and resonant
+modes you know it's is starting to cash
+out into things that are very concrete
+and maybe even insightful at the level
+of phenomenology okay so the next point
+is geometric constraints as uh
+modulators for coupling
+effects h so this is more uniquely kind
+of qri as um reflection or
+Insight um and uh as you will see you
+know if you have this kind of like
+hierarchical system of coupled
+oscillators like individual cortex um a
+particular coupling kernel will have
+predictable effects um but those effects
+are going to be somewhat different then
+if if the you know the network topology
+and geometry is more simple like just a
+a simple grid for example so the the
+main point uh I want to kind of like
+highlight in this context is how um the
+N Network
+architecture comes together with a
+coupling kernel in order to you know
+together give rise to the emergent
+Dynamic effects that uh take place um in
+other words you know maybe a substance
+is effectively modulating the couple and
+Cur
+but then the effect that it has in the
+body you know in your Consciousness
+depends on the network geometry the
+network architecture that it is
+affecting um and uh you know one very
+important kind of like takeaway from
+this
+point is that you know a a psychedelic
+effect you know the effect of LSD you
+know let's say the the effect of
+masculine the effect of DMT etc etc may
+actually be very s
+you know it may be through a process of
+divisive normalization that it
+instantiates a coupling kernel and then
+that affects different systems
+differently depending on its Network
+architecture but then it's very
+predictable you know
+you let me give you an example like LSD
+affects your visual you know
+phenomenology it affects your audio
+phenomenology it affects your tactile
+phenomenology you know and and there's
+something kind of similar about that you
+you know like if you introspect them
+like okay like the the the body feeling
+on LSD is kind of the same vibratory
+tone as it were as as what's happening
+in the visual field right but but
+there's also differences but but there's
+similarities right so so it would be
+just very parsimonious you know aam's
+razor would be very beautiful if we can
+explain that kind of like diversity of
+effects with just one simple kind of
+like coupling kernel induced by the
+substance and you know ultimately it's
+not going to be that simple um because
+you know different systems will have
+like
+different uh divisive normalization and
+as a consequence you know different
+coupling kernels but I do think that you
+know to a first approximation you know
+we will be able to do something like
+characterize LSD in terms of a coupling
+kernel in a crossmodal fashion meaning
+in a way that um works the same in
+different sensory modalities and and
+even different systems entirely like for
+example the the the cardiovascular
+system I mean that is one of the very
+fascinating things I've learned recently
+that you know the vascular system is um
+very active and it's not just the heart
+you know there's these smooth muscle
+cells that are essentially modulating
+the the the Vaso um dilation and
+constriction and and there's serotonin
+mediated you know with 5hd 1A and 5hd 2A
+as as key neurotransmitters that that
+modulate some of those you know circuit
+level uh activity which would cash out
+in terms of divisive normalization and
+as a consequence into coupling kernel so
+we we're we're developing effectively a
+paradigm for making sense of how waves
+different types of waves may be
+traveling in your cardiovascular system
+as a function of taking a particular
+substance so anyway to me this is
+utterly mind-blowing and and and
+potentially massive explanatory power
+with with just very simple principles uh
+which is what we want in science of
+course um okay but but but there's more
+I recently made made a video and I've
+written about this you know this concept
+that we are calling projective
+intelligence um you know I recommend
+watching the video because this a little
+bit more we'll go into like more more
+depth although in this video this kind
+of like gets contextualized within the
+overall recent paradigms that we're
+exploring at qri well the overall idea
+here is that a lot of what conscious
+intelligence is about is the interaction
+between Fields with different
+dimensionalities and top ologies so
+there is a constant kind of like Drive
+in your overall conscious system to sync
+up and reduce the kind of like error
+signals between your visual field and
+your tactile field and and I hope that
+makes sense rather that like when when
+you see something and you try to grab it
+you know you're you're kind of like
+anticipating tactile Sensations right
+like you're anticipating a somatic
+feeling as a consequence of that
+movement so in fact you know this is an
+Insight that originally came from Roger
+theel and and West and Brian Scott and
+Cube Fleer and uh um Asher
+araki in the Canada Retreat uh Q
+sponsored and for yeah researching
+meditation and exotic States Of
+Consciousness that
+effectively you know almost always you
+know visual Sensations are somatically
+tracked that part of what allows you to
+have kind of like a visual working
+memory is that you you associate and you
+anchor you know Visual qualia and
+geometry to tactile Sensations and and
+maybe that is essential for object
+permanence you know I've talked to
+people with Autism for example who who
+have difficulties with object permanence
+and it might be because that connection
+is a little bit severed or broken and
+doesn't work entirely that that visual
+Sensations are not necessarily super
+well tracked by somatic Sensations and
+of course that's going to generate a lot
+of very strange kind of like errors and
+and deficiencies very hard to diagnose
+um but effectively I would um describe
+that as kind of like a a failure mode of
+projective intelligence in this context
+that visual Sensations are not being
+somatically track in in a in a proper
+way uh and there's a bunch of things
+that must happen uh for that to to to to
+be the case you know like you know the
+anticipation of somatic Sensations must
+be finally tuned with the visual
+Sensations and then on top of that uh
+projective transformations in the visual
+field you know like as you move around
+like a a cup in your visual field the
+the the same kind of like projective
+transformations in that visual field
+must in some sense correspond to
+projective transformations in the
+somatic
+field and very crucially here um these
+have different dimensionalities you know
+and the visual field to a first
+approximation is you know like one I
+mean two dimens you know it's kind of
+like this flat surface and if you
+actually relax completely you know in
+meditation if you let go entirely in
+like Jana practice and you get absorbed
+into Infinite Space or infinite
+Consciousness or you know into Universal
+Consciousness thank you Asher for this
+t-shirt a very wonderful gift um then
+actually your visual field becomes
+flattened right so so in fact embodiment
+you know the feeling of being someone
+and
+somewhere uh where you have like a depth
+to your visual field that requires some
+degree of somatic tension so the main
+thing that I'm trying to communicate
+here is that there is an extraordinarily
+deep connection between um the the
+relationship between fields of different
+dimensionalities like you know two
+dimensions in the visual field three
+dimensions in the sematic field um and
+and the intercoupling between those the
+the projection or mapping between those
+fields onto each other um and you know
+intelligence you know conscious
+processing uh the the embodiment of a
+multi-sensory world
+so
+now the next um kind of like Insight
+here and it's still part of the same
+point is that the way in which these
+different fields can talk to each other
+with
+hypothesize is by modulating the
+projection and the coupling kernel and
+if you want to dive kind of like very
+deep into this particular hypothesis I
+recommend uh reading our paper on
+meditation meditative Sensations so it
+turns out that yeah if you meditate a
+lot um you go very deep into
+concentration there are these like very
+special moments where everything
+disappears uh this also happens in high
+do 5o DMT um and when everything
+disappears um what we're hypothesizing
+is happening is that you're finding a
+projection from one of these fields onto
+another and also finding a coupling
+kernel in both of those fields in such a
+way that the waves in each of those
+fields can interlock perfectly with each
+other and they look the same uh and we
+have yeah like some some honestly yeah
+quite beautiful simulations here of uh
+being able to kind of like rotate a
+three-dimensional lattice uh effectively
+representing theed resonant modes of a
+threedimensional system like the somatic
+field and then also being able to kind
+of like uh look at a distance function
+that is on the screen meaning that is 2D
+effectively representing the geometry of
+the visual field and then we show that
+there are particular projections like
+for example looking at the cube from one
+of the corners until it looks actually
+kind of like a hexagon um and particular
+combinations of coupling kernels in both
+the 3D space and the 2D space where all
+of a sudden it's impossible to tell if
+the system is two-dimensional or
+three-dimensional that is what we think
+is kind of these like very high veence
+you know very
+bful uh kind of like State of
+Consciousness that lacks prediction
+errors and and therefore there's just no
+information content you know in some
+sense like there's nothing that is
+happening because everything is
+perfectly in sync and it is you know
+it's very difficult to actually find
+those those States Of Consciousness
+because there's a combinatorial
+explosion of possible projections from
+one field onto another and and on top of
+that a combinatorial explosion of
+possible combinations of coupling
+kernels so a cessation would actually be
+a really special configuration like it
+would be the right coupling kernels and
+the right projection in such a way that
+the waves look the same in both um yeah
+I think I think that was an important
+Insight that yeah I had I had last year
+and uh we we formerly wrote it up and
+you know it's going to I think keep keep
+U explaining a lot of things you know
+like yeah even things like
+U uh reactivations on fiveo DMT like
+they might involve kind of like priming
+the system to um enter configurations
+where there's kind of this the right
+projection and the right coupling kernel
+such that like the waves look the same
+in in different
+fields now you know this is mostly
+analyzing yeah you know the visual
+system the tactile system of course
+there's also the auditory system and
+there's like other fields as well if you
+go you know if you go by shenen Young's
+kind of like carving of the stat SP of
+Consciousness um qualia Fields there's
+at least kind of like these like six
+fields which is a uh inner and outer see
+hear and and feel you know with for
+example feel has like the the outer
+component which is tactile Sensations
+and the inner component which is
+emotions um there's also of course like
+you know scent you know o Rose tulsy
+M scent qualia you know and all of those
+you know would essentially correspond to
+different dimensionalities different
+geometries and they would have different
+coupling kernels and so a true sensation
+you know does require a lot of
+fine-tuning you know it's not is not
+just the visual and tactile Fields
+although those may be some of kind of
+the principal components some of the
+things you absolutely need to get right
+and then the other things might be more
+kind of like the the details Perhaps
+Perhaps okay so the next point where
+yeah it starts to to in some sense
+connect with metaphysics and have big
+important solutions to problems in in in
+philosophy of mind is yeah the
+topological solution to the boundary
+problem um I'm not going to go very deep
+into this because I've talked a lot you
+know I've talked at length about these
+um lots of Articles and videos and you
+know peer- reviewed paper on these with
+Chris spy as a collaborator and but what
+I'm going to say is that you know if you
+start out with kind of like a Field view
+of pan psychism
+where the universe is a gigantic field
+of Consciousness then you have the
+boundary problem which is okay if we're
+all one if we're all this gigantic field
+of Consciousness how come you are there
+and and I'm here and we're kind of like
+different moments of experience
+different perspectives how how is this
+possible aren't we all the same
+field well um uh the solution that we
+have here is that you know the field um
+is effectively something like a vector
+field where you know there's kind of
+like Arrow at every point and there's
+many formulations here and many ways of
+arriving at field topology but you know
+this is a a relatively simple one that
+aligns with the electromagnetic field um
+and you know effectively there are
+things you can do to the field that
+changes up the topology of the field um
+in
+particular with electric oscillations
+you can essentially create like vortices
+in the magnetic field and you know
+vortices in the magnet field is just
+kind of the simplest example of how to
+create kind of like a change in the
+field topology and there's many other
+ways of doing this um and I'm not
+married to any particular one you know I
+I just think there's going to be some
+field topology property um but you know
+bices is is is a great kind of like
+entryway into like okay this is
+falsifiable and maybe even physically
+plausible and and the the the core idea
+would be something like you know you
+know how like in the sun you know you
+have kind of this huge FL tubes these
+plasma tubes you know is not just kind
+of like a sphere but you have these
+protuberances right and and it's crazy
+that when a solar flare happens or
+what's called a coronal mass ejection um
+you know when the sun kind of like spews
+you know like millions of tons of hot
+plasma into outer space um that is the
+result of a top topological
+transformation a macroscopic topological
+transformation which is very significant
+because most people tend to think well
+maybe topology matters at the
+microscopic level you know maybe at the
+level of atoms and molecules but what
+we're saying here is that the field
+topology actually has macroscopic top
+down effects uh at the level of you know
+the size of one of these coronal mass
+ejections which is like much larger than
+for example the planet Earth um so
+massive massive massive massive things
+um and uh and the way in which this
+happens is that you know the the flux
+tubes will be kind of like trapping
+plasma but then if they touch then the
+magnetic field lines exchange partners
+and and then when that happens you you
+essentially kind of like release these
+uh trapped plasma which was what's
+called topologically confined by the
+shape of the field um okay so that that
+is just kind of like a good example of
+the sort of thing that I suspect is
+happening in the brain that the brain at
+least some deep parts of it perhaps the
+the thalamus and the lateral gen nucleus
+um together maybe the thalamocortical
+loop um something deep and very
+fundamental for being awake um or
+dreaming I mean effectively conscious uh
+kind of like as a unified moment of
+experience the the neural macroscopic
+neural oscillations are causing these
+electric oscillations that result in
+looping structures in the
+electromagnetic field and these looping
+structures they're not a phenomenal you
+know the moment you actually make these
+looping structures and you trap energy
+then you have the resonant modes
+inside these looping structures and and
+you have this holistic Behavior you have
+something that behaves as more than the
+sum of its
+parts especially as I will touch upon in
+the end um if you add something like a
+path integral formulation of like what
+is going on with you know light and and
+electrons moving around in these Pockets
+um but even even without that you know
+you do have kind of this emergent
+holistic more than the sum of the parts
+Behavior with objective boundaries that
+are causally significant they they they
+have like computational properties uh
+and we think you know that is what
+solves the boundary problem that like
+these looping structures is creating is
+what is creating an inside and an
+outside with kind of like a an objective
+clear boundary um would be wonderful if
+this is the case because it solves so
+many philosophical problems all at once
+um the next point is electromagnetic
+field topology
+modulation which is is a if indeed you
+know something like the coupling kernel
+is modulating you know the the way in
+which electric activity of these
+oscillators um the relative phase
+between them as a function of the
+distance as you you can see in some of
+these
+simulations what happens is that um you
+can use the coupling kernel not only to
+determine kind of like how sprinkly or
+how like uniform the the traveling waves
+or the chaotic processes in in in kind
+of these like oscillatory Dynamics are
+you can also use the coupling kernel and
+hear these very well you can also use
+the coupling kernel to modulate the
+field
+topology that if you apply kind of these
+like uh on off center surround lateral
+inhibition type of coupling kernel um
+you may get lots of different vortices
+or maybe kind of these nested structures
+of vortices that then are going to be
+trying to interact with each other and
+minimiz the energy which is what phys
+physics is always trying to do um but in
+this very exotic topology whereas for
+example if you make all of the
+oscillators go up and down at the same
+time then uh instead as a consequence uh
+what you will have
+is just one gigantic
+Vortex uh or or sometimes not even a
+Vortex I mean especially if you have
+like a a clear kind of like a boundary
+uh or like a circle for example and you
+have like this macroscopic coupling
+kernel that goes up and down all at once
+that actually may raise the internal
+topology and makes it make it entirely
+flat which effectively maybe
+subjectively corresponds to complete ego
+dissolution you know or or complete
+emptiness there just no manufacturing of
+internal boundaries you know maybe maybe
+associated with kind of like a full
+complete mystical experience right plus
+four in the shulan
+scale so that is very important you know
+just to recap you can modulate the
+electromagnetic field topology with a
+coupling kernel which okay all of the
+pieces of the puzzle are starting to
+become assembled very exciting right
+well and and importantly you know the
+way in which the field topology will be
+modulated by a given kernel depends on
+the geometry of the network so again
+there's going to be some characteristic
+ways in which you know the oscillations
+in electromagnetic field will be tuning
+into field topologies which is going to
+be different then what is happening in
+the somat sensory cortex or the visual
+field all depend you know even if you're
+using the same kernel all depending on
+the particular Network geometry of these
+subsystems and of course then where it
+becomes really non-trivial and
+fascinating is how they couple to each
+other you know how they project onto
+each other map onto each other um so
+yeah this is where okay we might be
+really starting to get kind of like a
+lot of traction for like how a
+drug causes these crazy effects on the
+field
+in a reliable predictable way right like
+why this is the next Point why five a
+DMT may actually be reliably something
+that for example causes topological
+simplification and you know I'm actually
+going to not go very deep into these
+because I don't want to bias you too
+much I mean there's like some studies
+that we want to run and uh I don't want
+to give you sort of like exactly what is
+the answer that we expect um I don't you
+know I don't think that that matters all
+that much because most of the people who
+GNA be answering are surveys and studies
+you know are not going to get to this
+part of the video and so on you know but
+you know um I I will give you kind of
+like the overall arching kind of like
+idea here which I think has explanatory
+power and that is you know on 5 DMT
+often times people report yeah maybe
+they become kind of this huge Taurus
+right or or sometimes they just become a
+point or just a big pin wheel or or
+sometimes like not even that maybe they
+feel kind of like all of their attention
+field lines as it we like become
+perfectly aligned or something like that
+well that effectively maps on to
+something like a a topological
+simplification process where you have
+like fewer vertices that that you used
+to have and there's going to be a
+characteristic kernel here and what we
+want to find out and and and really
+write a research uh on this year is to
+see if we can square something like the
+divisive normalization low level effects
+together with an understanding of the
+network geometry and topology of
+different subsystems
+in such a way that we can you know
+predict and generate the same visual and
+tactile phenomenology that is actually
+reported by people who you know have
+experience with 5mo
+DMT again this would be amazing because
+it's like the marriage even if it
+doesn't work out right like even just as
+a as an you know you know wide Blue Sky
+attempt at kind of like marrying you
+know kind of like third person
+neuroscience and first person taking
+phenomenology seriously kind of like
+approaches
+you know finally you have like one way
+of creating a bridge even if the bridge
+is completely wrong I mean I still think
+it's very worth it and it's it's very
+much a milestone a new way of thinking
+of how to tackle this problem which yeah
+again even even if we're wrong I I still
+consider it a sort of accomplishment
+although yeah it's next level if we can
+actually make it work um yeah you know
+the next point is just a little bit of
+yeah kind of this observation that you
+know if the couling kernel effectively
+is tuning into specific field topology
+then the field topology would have like
+top down effects as well so you're kind
+of like sculping the field topology I
+mean it's kind of like you know if you
+have like a Reaver which is maybe the
+laminer flow so to speak of of the
+electromagnetic field you know if you
+put a bunch of rocks in the river and
+and and you have kind of like foam and
+turbulence you know you're you're
+effectively affecting the the topology
+you see of the way the field lines the
+the laminer flow in in in the water uh
+is interacting with each other and and
+that has like top down causal effects
+right like if you can keep the flow of
+the water in the river perfectly laminer
+and kind of like parallel with each
+other then you will have a certain kind
+of behavior for the raver you know and
+the river is going to be carving
+particular paths uh whereas if it's full
+of rocks and you get turbulence then the
+paths that he's going to be generating
+is going to be different maybe it's
+going to Branch out more well I I don't
+know I'm not geophysicist but you know I
+think that's the sort of thing that you
+observe that like if you add turbulence
+the the top down effects of the reer are
+different right so and and more so it it
+will feed into kind of like how you know
+the raver in the future gets carved and
+and so you may discover more rocks for
+example that you know maintains the
+turbulence or or or it may be
+self-defeating you know maybe turbulence
+generates laminar flow which generates
+turbulence which generates laminar flow
+you know something along those lines and
+so I strongly suspect that by modulating
+the field topology with a kernel you
+then will modulate the kernel with field
+topology and this connects with I mean
+essentially yeah the next level of what
+we call near and kneeling which we coed
+it now as neural field the kneeling
+where effectively you know what happens
+when you do a lot of Jana meditation you
+know this very concentration Blissful
+States Of Consciousness is that you're
+tuning not only into kind of like a
+macroscopic atory Dynamic you're tuning
+into a field Dynamic you know a a wave
+function you're you're tuning into waves
+for the field to evolve over time and
+and and that has like top down effects
+and so you know I think I think kernels
+can therefore be used to tune into field
+topologies that then affect the kernels
+themselves because of things like heavy
+and learning you know neurons that fire
+together they together so the more you
+play with a particular kernel the more
+you create a topology a kernel
+consistent topology which in turn will
+be reinforcing that kernel and that
+might explain things such as yeah
+reactivation effects okay the next point
+is yeah a little bit of a deeper dive
+into something like DMT and 5mo DMT and
+you know the main thing I want to drive
+home here is that yeah maybe the sense
+of you know entities you know the sense
+of uh Hey DMT is kind of like an
+ecosystem system of consciousnesses that
+might very well be um a side effect of
+increased topological complexity that
+you know within the boundary the
+topological pocket that you are of the
+field if you have a bunch of vortices
+that effectively kind of like functions
+as different observers in the field uh
+you know ultimately there's just one
+Observer and like you know maybe open
+individualism is is true in a certain
+sense that we're all one we're all the
+field but the way in which Sensations
+get rendered depends on the number of
+anchor points or kind of like this uh
+pavots within the the topology of the
+field and and every Vortex is kind of a
+particular perspective for the rest of
+the field and and you know the field
+requires these perspectives requires
+these anchor points to kind of be able
+to observe itself in a way that breaks
+the Symmetry whereas yeah you know like
+topological
+simplification May on the other hand
+create this uh Power feeling of kind of
+a superposition of all possible paths
+all at once and and I suspect that yeah
+you know classic Buddhist Awakening and
+F DMT maybe are much more related to
+that related to topological
+simplification where there isn't an
+anchor point there isn't a sense of self
+that you can use to kind of like observe
+and break the symmetry of the field if
+you can't break the symmetry of the
+field you just have a superposition of
+all POS possible points of view at the
+same time and this takes me yeah to the
+last Point uh which
+is um the path integral you
+know yeah I mean how does light you know
+find the shortest path you know or how
+how how does an electron you know find
+the shortest path you know when you when
+you have a Tesla coil right like and
+you're kind of like playing with it and
+and and you put your finger close to it
+like how does it know to actually touch
+your finger right like it's almost you
+know finean Richard man would put it as
+it's almost as if the electrons can kind
+of like smell their surroundings in a
+way and it is very non-trivial I mean
+this is a a very very fascinating topic
+and and it's complex but I'm going to
+add a link in the description for a a
+video that sort of explains how this
+happens and you know the very
+parsimonious way to explain this is that
+well actually electrons and light they
+go through every possible path at once
+it just so happens that most of them end
+up canceling each other out their their
+amplitudes end up um for any given path
+you can find like another path with kind
+of like equal you know amplitude that
+cancels it out except in What's called
+the the um extremes which are like
+shortest paths and longest
+paths saddle paths as well I'm not going
+to get into but but but it is
+fascinating that in in in fact light
+very often doesn't only go through the
+shortest path it also goes through the
+longest path um something that you can
+observe you know in a in a mirror room
+for example you you will observe that
+yes if there is a longest path that
+light can take you will also see it take
+that path which you know breaks a lot of
+intuitions and and you require something
+like this and and path integral I guess
+for for those who haven't heard this
+this term it means you're kind of like
+taking the integral of paths so integral
+is kind of like you know the the area
+under the curve um and rather than let's
+say like you know the thing that you're
+Computing is kind of like an area under
+the curve you're kind of like Computing
+the summation of all possible paths and
+their
+amplitudes well I think this is actually
+the way also to explain one of the key
+causal roles of Consciousness that in in
+in in the current qri model a moment of
+experience is actually kind of the
+superposition of all of the allowed
+paths within a topological pocket and I
+think this is actually necessary to
+explain phenomenology because often
+times like let's say for example on on
+LSD you you may find yourself in in a
+situation where there's these very
+complex fractal structures that are
+happening and then you kind of like see
+them from a certain angle and everything
+collapses into just one point meaning
+that you know in configuration space of
+NE activity very complex fractal
+structures are right neighbors you know
+to just point like States Of
+Consciousness and and the only way in
+which I can make sense of this you know
+especially taking phenomenal binding
+seriously you know that like hey this
+this is kind of like happening all at
+once that all of those pieces of
+information are put together
+simultaneously the only way I can make
+sense of that is that you know it is
+something
+like you know what is it like to be a
+particular person is what is the
+superposition of all possible paths
+within the pocket that is being carved
+out thanks to the oscillatory Dynamics
+of let's say the electric field um and
+then uh what happens is that any kind of
+like symmetry breaking within that
+pocket is essentially kind of like
+observed from every Point within that
+pocket and and so there's a lot of
+configurations actually especially when
+you're getting to kind of like fairly
+simple
+configurations where you're going to
+have kind of these infinite laes right
+because I mean think about it like if if
+you're like in the surface of a Taurus
+you know the surface of a of a donut and
+there's like one black spot somewhere or
+maybe two black spots just to make it
+more more clear
+um and you look at that from a
+particular point you know you may say
+like oh there's one black spot over
+there there's one black spot over there
+um but if what's actually happening is
+you're you're kind of like the
+superposition of all of the possible
+points of view within the Taurus you're
+going to see like kind of like an
+infinite grid you know in some context
+actually you're going to see like a
+lattice of points not in this particular
+example but in very similar examples um
+or or for example like yeah if um if you
+think of like what is it like to be a
+cube you know and and you're looking at
+it from the point of view of a path
+integral you know all possible
+perspectives within the cube if the cube
+is perfectly symmetrical it only has one
+corner right because you cannot
+distinguish between the corners but like
+as you're approaching kind of this
+perfectly symmetrical Cube you will have
+like this multiple Corners suddenly kind
+of like align and collapse into just one
+and likewise you know in the surface of
+a Taurus the moment you actually remove
+these imperfections you know these tiny
+defects in the
+field then all of a sudden you just have
+like nothingness you know because you
+used to have kind of this like lattice
+of imperfections this infinite lattice
+of how it looks like from every point of
+view at once but then you remove that
+imperfection and then the whole thing
+collapses why because now every
+perspective looks the same and so
+effectively you know this might also be
+a way of arriving at something like the
+Symmetry Theory veence by by Mike in in
+a rigorous bottomup way which is that if
+hey the nature of the universe is this
+kind of like maximum entropy path
+integral
+superpositions then if you can actually
+achieve perfect symmetries that entails
+in fact kind of like a a a collaps of
+what it is like to be that because every
+point of view within you know a pocket
+that is perfectly symmetrical looks
+exactly the same and so yeah you know
+very Advanced janas and and and Peak 5o
+DMT experiences may be the result of
+simplifying the field topology to such
+an extent that all of a sudden all the
+perspectives within that pocket look
+exactly the same okay so that is yeah
+the very very big picture uh I'm just
+going to kind of yeah like recap because
+I know it's a lot um you know first of
+all the couple in kernel that it's it's
+a way of uh effectively controlling
+systems of coupled oscillators by
+modulating the coupling constant uh for
+oscillators at different distances and
+coupling constant here is hey do you
+want to be in the same phase or opposite
+phase you know you want to be the same
+color or a different
+color then you know we show that uh
+using a coupling kernel you can modulate
+whole field resonant
+modes uh so that's kind of like the
+neural to Global Bridge um and you know
+you can rigorously show this uh and so
+you have kind of like this connection
+with maybe something like divisive
+normalization going from the lowlevel
+you know system architecture to Global
+resonant modes perhaps being able to
+explain empirical data like connectum
+specific harmonic waves uh on
+psychedelics where you show hey LSD
+produces higher amplitude in the high
+frequencies um as well as just more
+energy overall um then uh we have this
+kind of yeah geometric constraints on
+coupling effects that the effect that a
+given coupling kernel has is a function
+of not only the coupling kernel but also
+the geometry and topology of the network
+that it is affecting um which is a very
+parsimonious way of maybe accounting for
+the zoo of effects of
+psychedelics then there is yeah Network
+geometry interactions and projective
+intelligence how a lot of conscious
+processing may actually be about the way
+these different fields with different
+dimensionalities interact with each
+other and how they can couple together
+they project they map onto each other
+and you modulate the coupling kernel uh
+in such a way that errors or prediction
+errors are minimized um then in turn you
+know there's a topological solution to
+the boundary problem um which we then
+connect with coupling kernels and how by
+modulating the coupling kernels in
+particular geometries um gives rise to
+Global topological boundaries as well as
+local internal topological boundaries um
+and then in turn these May account for
+perhaps the subjective differences
+between DMT and FAO DMT and different
+psychedelics maybe even ketamine
+ketamine I didn't really touch upon it
+but I suspect it's actually a temporal
+kernel I'm not going to not going to go
+there but you know maybe in a future
+video um and then finally to wrap up all
+of these kind of um perspectives
+literally we talk about the the path
+integral of perspectives that within a
+topological pocket what is it like you
+know the what in principia qualia by by
+Mike Johnson you know it was defined as
+qualia formalism you know this idea that
+there are mathematical objects that map
+onto moments of experience and and their
+phenomenology that that mapping uh it's
+a new hypothesis by by me and others at
+Q that like that mapping the the the
+solution to Quia formalism is through
+path integrals that you have this field
+topology and then to interpret that
+field topology as an experience what you
+do is you superimpose all of the
+possible paths within it
+and and if you do that then you have
+yeah enormous explanatory power and you
+may be able finally to really have an
+explanation for why substances that are
+so similar produce radically different
+effects there are like mystical you know
+in nature like why does it feel like
+we're all one on 5mo DMT why does it
+feel like it's an ecosystem of
+intelligences on
+DMT in summary because different
+substances uh produce changes in the
+low-level circuitry which causes
+different coupling kernels which tune
+into different Global resonant modes
+which modulate the field topology which
+in
+turn um gets processed through different
+path integrals and then you get the
+phenomenology um and and finally you
+know the last thing I will say here is
+that uh that Global Effect that uh kind
+of like changing topology then feeds
+back causally so actually the the the
+boundaries and the experiences that you
+have because of the path integral nature
+um they are really more than the sum of
+the parts it's not a it's not a metaphor
+it's not like in Conway's Game of Life
+or in acceler automaton where you know
+you can kind of squint your eyes and
+think of it as more than the Su of the
+parts but really the system is still
+just accounted for by these like
+lowlevel interactions like no no no no
+when you're talking about path integrals
+um you really truly have more than the
+sum of the parts um in a completely
+non-trivial way and that my friends is
+why we are conscious because we're
+actually providing non-trivial
+computational leverage on biological
+organisms for their survival H but you
+know hopefully we can actually break
+free from the replicator imperative and
+yeah essentially aim towards uh the
+values of Consciousness team
+Consciousness okay with that I mean I
+just want to yeah say kind of like thank
+you to to people uh who have yeah been
+supportive uh recently you know
+especially there's like so many people
+to to thank of course but um yeah you
+know like the director of operations
+Hunter Meer uh you know none of these
+would be possible without uh him and his
+wife uh Crystal um you know uh Maggie
+and and Anders uh emiline have been um
+yeah you know Anders died unfortunately
+but uh uh you know super supportive you
+know marsin uh as well David Pierce wins
+strong more recently David Langer um and
+you know people who helped with the
+Amsterdam Meetup you know uh I want to
+mention yellak Teel
+um you know uh Joel Diaz Noah Clark Teo
+Torsten uh George feure Carl Heiden
+Smith um Marco ail of course for yeah
+making a presentation about divisive
+normalization and Chaos at at the event
+uh zo's t uh aidea uh more broadly the
+Psychedelic Nexus um yeah and and
+longterm contributors like you know
+people like um scry and symmetric Vision
+taru uh honin uh Emil Hall um Rudolphs
+balers um and uh David Lobster uh who
+developed brain candy and Cosmic sugar
+um the people who are collaborating for
+uh doing studies with couple kernels now
+in Academia including uh well in this
+project that's called
+viscerality um
+viscerality uh by George feaser Mesmer
+prism um David Lobster tar symmetric
+Vision um Selica who featured in the in
+the amster Meetup by John desnoyer
+Stewart um contrast features by
+Lo sorry I'm sorry for for not exactly
+being able to pronounce anoun that and
+and yeah till holdap Phil who has been
+really really helpful uh especially as
+of late and yeah I mean actually I also
+want to highlight Emil hall because he
+um uh has been really really really
+instrumental in um advancing essentially
+this Paradigm uh in what we're calling
+the replication tool which um you're
+going to hear more about this but
+essentially we're creating you know from
+scratch this really powerful engine to
+be able to replicate you know the visual
+and also down the line the tactile
+effects of different psychedelics uh
+with therapeutic applications as well as
+well crazy artistic applications I
+mean and there's going to be some events
+where I'm going to be like DJing you
+know different Trice psychedelic
+patterns in combination with music uh at
+parties and I think this is going to be
+a big deal I mean I think it's going to
+change how people in Academia in science
+uh artists meditators how they think of
+different states of consciousness I see
+a Revolution coming I'm calling it The
+coupling kernels Revolution um which
+yeah it's all it's all fascinating and
+very exciting so um I guess yeah the
+last thing is uh uh yes please join us
+in the Q&A uh for the Q Discord in a
+couple days more Broly yeah just
+interact with us in the the Q Discord um
+and yeah the Cyber delic Nexus is going
+to be uh essentially holding a wonderful
+event where they're going to be using
+the the coupling kernels for decorating
+a really impressive artistic Dome um and
+uh I'm going to put a link in the
+description about that um the seber
+delic society uh so yeah I mean we're
+collaborating with um yeah various other
+nonprofits and uh artist collectives to
+yeah make this you know actually super
+awesome and mind-blowing as well uh in
+other words yeah the first applications
+of like rigorous mathematics from you
+know first principles and taking
+phenomenology seriously to how to
+actually yeah change the world make it
+much better so with that thank you so
+much for yeah sticking around and seeing
+this whole this whole video
+um infinite please everybody and I'll
+talk to you uh on another time on
+another topic take care everybody
+

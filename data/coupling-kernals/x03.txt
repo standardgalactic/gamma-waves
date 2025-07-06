@@ -1,0 +1,128 @@
+From Neural Activity to Field Topology: How Coupling Kernels Shape Consciousness
+
+Feb 21, 2025
+
+Andrés Gómez Emilsson
+
+
+hopefully so okay the first thing that I
+want to say is talk about the coupling
+kernel okay so what is a coupling
+kernel you know this is something that
+came up um when I was uh trying to come
+up with a way to interact with systems
+of coupled oscillators uh in a you know
+reliable predictable way um without
+having to kind of
+like you know train sophisticated you
+know neural networks uh controls systems
+or mechanisms um or or really for that
+matter you know to to kind of like hard
+code specific geometries of the network
+for particular control systems like no
+no no I wanted a way of interfacing with
+a system of coupled oscillators that was
+very natural and and very very bottom up
+but reliable and uh and predictable so
+what I you know ultimately arrived at by
+you know coding dozens of systems of
+coupled oscillators and and and trying
+to wire them in different ways um was
+you know the first thing that that had
+really emerged as kind of like something
+that had a clear utility and clearly was
+kind of like starting to replicate some
+yeah psychedelic phenomenology to some
+extent was um kuramoto oscillators and
+I'm not going to get into the the
+mathematical details uh there uh
+although it's not very complicated but I
+I don't think it is necessary for this
+conceptual kind of like
+overview um and then geometri them okay
+so so in in a traditional kind of like
+system of couple dos lers at least in
+the the classic formulation of of
+kuramoto oscillators um what you have is
+kind of like an all to--all relationship
+where like every oscillator is connected
+with every other oscillator and then um
+they're all trying to be in Phase with
+each other you see and and and when
+they're out of phase with each other um
+there's kind of like an error you know
+they're all kind of like moving around
+in a circle or you could even think of
+it as for example like metronomes in a
+in a table or something like that maybe
+they're like tuned to slightly different
+natural frequencies okay so so they they
+actually want to oscillate at slightly
+different speeds so to speak but because
+they all belong to the same table you
+know they're all on the same ground as
+it were there's tiny vibrations that
+that are actually shared between them
+and then what happens is that with those
+tiny vibrations they are kind of like
+pulling and pushing each other and and
+so when they're out of phase you know
+the the more out of phase they are the
+the more there's kind of like a a
+correcting you know mechanism that is
+realigning them so in in in the classic
+formulation of kuramoto systems uh you
+know they're all connected to each other
+and equally connected and then there's
+yeah some fascinating you know
+mathematics that you can show
+analytically uh there's like some some
+convergence conditions that that under
+certain circumstances all of the
+oscillators actually you know click
+together as it were or they they all
+kind of end up being dragged Along by
+you know what's kind of the the mean of
+the phase of all of the oscillators um
+you know that's a really interesting
+system and and again like what's nice
+about it is it's very tractable you know
+it is not even trying to kind of uh
+accurately model um some you know
+physical systems of oscillators is more
+kind of like a mathematical abstraction
+that just works very
+nicely but you know in in in the realm
+of phenomenology we're talking about you
+know these very complex networks you
+know like your visual cortex your your
+vasculature your um somatosensory cortex
+you know you have a lot of different
+networks and connected in different ways
+and so you know it's not the case that
+all of the oscillators are connected to
+each other that is not like the wiring
+right so instead is actually some kind
+of like geometric
+embedding you know all of these
+oscillators are in some kind of
+geometric space and then whether they're
+two you know two oscillators are
+connected or not it's it's kind of like
+a function of their distance you know in
+in some simple systems and you know most
+of the simulations you know in this
+particular context are like that they're
+you know kind of like toy models for
+explanatory
+purposes they're might be like a simple
+rule something like you know if if two
+oscillators are within a certain
+distance then there is a connection
+between them and if they're further away
+than than that distance then they're not
+connected um so in that way you know
+you're kind of like represent a
+geometric space in terms of some kind of
+like connectivity uh between systems of
+4/17
