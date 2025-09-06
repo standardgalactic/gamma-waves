@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Retro Planet Explorer</title>
+<style>
+    body { margin: 0; overflow: hidden; background: black; }
+    canvas { display: block; }
+</style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script>
+// === Scene Setup ===
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000);
+camera.position.z = 1000;
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// === Starfield ===
+const starGeometry = new THREE.BufferGeometry();
+const starCount = 1000;
+const starPositions = new Float32Array(starCount * 3);
+for (let i = 0; i < starCount; i++) {
+    starPositions[i*3] = Math.random() * 4000 - 2000;
+    starPositions[i*3+1] = Math.random() * 4000 - 2000;
+    starPositions[i*3+2] = Math.random() * -4000;
+}
+starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+const starMaterial = new THREE.PointsMaterial({ color: 0x00ff00, size: 2 });
+const stars = new THREE.Points(starGeometry, starMaterial);
+scene.add(stars);
+
+// === Planets & Asteroids ===
+const planets = [];
+const asteroids = [];
+const planetCount = 20;
+for(let i=0;i<planetCount;i++){
+    const geometry = new THREE.SphereGeometry(20 + Math.random()*30, 16,16);
+    const material = new THREE.MeshBasicMaterial({color:0x00ff00});
+    const planet = new THREE.Mesh(geometry, material);
+    planet.position.set(Math.random()*4000-2000, Math.random()*4000-2000, Math.random()*-4000);
+    scene.add(planet);
+    planets.push(planet);
+
+    // Create surrounding bubbles for asteroids
+    for(let j=0;j<5;j++){
+        const geo = new THREE.SphereGeometry(5,8,8);
+        const mat = new THREE.MeshBasicMaterial({color:0x00ff00});
+        const asteroid = new THREE.Mesh(geo, mat);
+        asteroid.position.set(
+            planet.position.x + (Math.random()-0.5)*200,
+            planet.position.y + (Math.random()-0.5)*200,
+            planet.position.z + (Math.random()-0.5)*200
+        );
+        scene.add(asteroid);
+        asteroids.push(asteroid);
+    }
+}
+
+// === Controls ===
+const keys = {};
+document.addEventListener('keydown', e=>keys[e.key.toLowerCase()]=true);
+document.addEventListener('keyup', e=>keys[e.key.toLowerCase()]=false);
+
+// === Animate ===
+function animate(){
+    requestAnimationFrame(animate);
+
+    // Simple flight
+    if(keys['w']) camera.position.z -= 20;
+    if(keys['s']) camera.position.z += 20;
+    if(keys['a']) camera.position.x -= 20;
+    if(keys['d']) camera.position.x += 20;
+
+    renderer.render(scene, camera);
+}
+animate();
+
+// === Handle Resize ===
+window.addEventListener('resize', ()=>{
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

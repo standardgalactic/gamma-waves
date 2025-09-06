@@ -1,0 +1,46 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{AKSZ97}
+
+\bibitem[AKSZ97]{aksz}
+P.~S. Alexandrov, M.~Kontsevich, A.~Schwarz, and O.~Zaboronsky, \emph{The
+  geometry of the master equation and topological quantum field theory},
+  International Journal of Modern Physics A \textbf{12} (1997), no.~6,
+  1405--1429.
+
+\bibitem[Bry20]{ai_ethics}
+Joanna Bryson, \emph{Ai ethics: Principles and guidelines}, Oxford University
+  Press, 2020.
+
+\bibitem[Eva10]{evans}
+Lawrence~C. Evans, \emph{Partial differential equations}, American Mathematical
+  Society, 2010.
+
+\bibitem[Lin68]{lindenmayer}
+Aristid Lindenmayer, \emph{Mathematical models for cellular interactions in
+  development}, Journal of Theoretical Biology \textbf{18} (1968), no.~3,
+  280--299.
+
+\bibitem[Lur09]{lurie}
+Jacob Lurie, \emph{Higher topos theory}, Princeton University Press, 2009.
+
+\bibitem[ML98]{maclane}
+Saunders Mac~Lane, \emph{Categories for the working mathematician}, Springer,
+  1998.
+
+\bibitem[{Nat}21]{ai_ethics_framework}
+{National Security Commission on Artificial Intelligence}, \emph{Artificial
+  intelligence ethics framework for the intelligence community}, Tech. report,
+  National Security Commission on Artificial Intelligence, 2021.
+
+\bibitem[W{\etalchar{+}}23]{fractal_brain}
+M.~Werner et~al., \emph{The fractal brain: scale-invariance in structure and
+  dynamics}, Cognitive Systems Research \textbf{81} (2023), 1--12.
+
+\end{thebibliography}

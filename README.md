@@ -1,5 +1,12 @@
 # gamma-waves
 
+![](project-map.png)
+
+**[Interactive Project Map](https://standardgalactic.github.io/gamma-waves/idea-map.html)**
+
+**[Space Shooter Prototype](https://standardgalactic.github.io/gamma-waves/prospectus.html)**
+
+
 Welcome to **gamma-waves**! This repository is designed to explore, experiment with, and demonstrate concepts related to gamma wave phenomena—whether in neuroscience, signal processing, machine learning, or creative coding.
 
 ## Overview

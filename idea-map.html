@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Retro Planet Explorer – No Categories, Toggle Legend</title>
+<style>
+    body { margin: 0; overflow: hidden; background: black; font-family: monospace; }
+    .project-label {
+        position: absolute;
+        color: #00ff00;
+        font-size: 14px;
+        pointer-events: none;
+        background: rgba(0,0,0,0.8);
+        padding: 2px 8px;
+        border-radius: 4px;
+        display: none;
+        z-index: 10;
+        max-width: 400px;
+        white-space: pre-line;
+        text-align: center;
+        transition: opacity 0.2s;
+    }
+    #description-popup {
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translateX(-50%);
+        min-width: 300px;
+        max-width: 600px;
+        background: rgba(20,20,10,0.98);
+        color: #ffd060;
+        border: 2px solid #ffaa40;
+        border-radius: 8px;
+        padding: 16px 18px;
+        font-size: 16px;
+        font-family: monospace;
+        z-index: 20;
+        box-shadow: 0 4px 24px #000;
+        display: none;
+        white-space: pre-line;
+        text-align: left;
+    }
+    #legend {
+        position: absolute;
+        left: 14px;
+        top: 12px;
+        background: rgba(0,0,0,0.85);
+        color: #00ff00;
+        border-radius: 7px;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-family: monospace;
+        z-index: 30;
+        max-width: 320px;
+        line-height: 1.7;
+        border: 1px solid #0a0;
+        box-shadow: 0 2px 12px #000;
+        letter-spacing: 0.02em;
+        transition: opacity 0.2s;
+    }
+    .amber-highlight {
+        pointer-events: none;
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 3px solid #ffd060;
+        box-shadow: 0 0 18px #ffd06080;
+        background: none;
+        z-index: 15;
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div id="legend">
+<b>Retro Planet Explorer</b><br>
+W/A/S/D: Move<br>
+Z: Toggle all labels<br>
+X: Show/hide description<br>
+H/J: Previous<br>
+L/;: Next<br>
+K: Random<br>
+C: Toggle this panel<br>
+<small>(Amber circle highlights selected. Try X!)</small>
+</div>
+<div id="description-popup"></div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script>
+// ==== Projects, Descriptions ====
+const projectData = [
+    {name:"Inforganic Codex", desc:"A structured knowledge system blending organic cognition with inorganic computation."},
+    {name:"Aspect Relegation Theory", desc:"Framework for distributing cognitive load by shifting aspects of thought to peripheral systems."},
+    {name:"Inforganic Wildtype Ecosystem", desc:"Simulation of hybrid digital-biological minds evolving in shared environments."},
+    {name:"Trodden Path Mind", desc:"Cognitive model based on reinforcement from repeated neural and behavioral pathways."},
+    {name:"Relegated Mind", desc:"Concept of outsourcing entire mental functions to external agents or systems."},
+    {name:"Living Mind", desc:"Mind as a self-sustaining ecosystem of interacting sub-agents."},
+    {name:"Semantic Ladle Theory", desc:"Mechanism for scooping, redistributing, and mixing meaning across contexts."},
+    {name:"SITH", desc:"Theory of cognition persisting regardless of material substrate."},
+    {name:"Geometric Bayesianism with Sparse Heuristics", desc:"Geometric framework for probabilistic reasoning with minimal heuristics."},
+    {name:"Ergodic Mind Medication", desc:"Applying ergodic theory to stabilize mental states across time."},
+    {name:"Glass Mind", desc:"A transparent cognitive model where every process is observable but fragile."},
+    {name:"Forest Mind", desc:"Networked consciousness modeled on interlinked trees and fungal root systems."},
+    {name:"Dynamic Mind", desc:"Mind as a constantly adapting, non-equilibrium dynamical system."},
+    {name:"Pattern Generalizer Neuron", desc:"Hypothetical neuron optimized for abstraction across domains."},
+    {name:"Swarm Syntax System", desc:"Grammar emerging from multi-agent coordination."},
+    {name:"Semantic Metabolism", desc:"The intake, breakdown, and recombination of meaning as a metabolic process."},
+    {name:"Reflex Arc Logistics Manager", desc:"Cognitive subsystem for routing quick responses efficiently."},
+    {name:"Idiomatic Drift Tracker", desc:"Tool to follow shifts in language and expression over time."},
+    {name:"Neurofungal Network Simulator", desc:"Model of fungal-like cognitive connections for decentralized processing."},
+    {name:"Conceptual Metabolism Engine", desc:"A formal system that processes, transforms, and excretes ideas like nutrients."},
+    {name:"RSVP Theory", desc:"Relativistic Scalar Vector Plenum: an entropic cosmology replacing expansion with smoothing."},
+    {name:"Crystal Plenum Theory", desc:"Universe as crystallized plenum with structured lattice energy."},
+    {name:"Lamphron & Lamphrodyne States", desc:"Exotic energy states bridging entropy and order."},
+    {name:"5D Ising Synchronization Model", desc:"Multidimensional Ising model for cosmic coherence."},
+    {name:"Neutrino Fossil Registry", desc:"Catalog of ancient neutrino imprints as cosmic memory."},
+    {name:"Deferred Thermodynamic Reservoirs", desc:"Hypothesis of hidden entropy reservoirs delaying dissipation."},
+    {name:"Poincaré Lattice Recrystallization", desc:"Universe undergoing cyclic lattice resets."},
+    {name:"Scalar Irruption via Entropic Differential", desc:"Sudden scalar field emergence driven by entropy imbalance."},
+    {name:"Inflaton Field Embedding", desc:"RSVP embedding of inflaton-like scalar fields."},
+    {name:"Universe-as-Sponge Cosmology", desc:"Universe modeled as porous medium absorbing and redistributing energy."},
+    {name:"Cyclex Climate Stabilization Architecture", desc:"Feedback-driven geoengineering for balanced climate cycles."},
+    {name:"Volsorial Pediments", desc:"Geological structures for energy storage and terraforming."},
+    {name:"Gravitational Batteries", desc:"Power generation through controlled gravity wells."},
+    {name:"Polar Nuclear Refrigerators", desc:"Devices to refreeze melting poles with nuclear cooling."},
+    {name:"Orthodromic Rivers System", desc:"Engineered rivers optimized for shortest flow paths."},
+    {name:"Vertical Rainforest Trellises", desc:"Sky-reaching rainforest habitats on trellis towers."},
+    {name:"Terra Preta Engineered Soil Layering", desc:"Artificial soil ecosystems for fertility and carbon capture."},
+    {name:"Oceanic Kelp Parachutes", desc:"Floating kelp systems stabilizing climate and supporting ecosystems."},
+    {name:"Intervolsorial Infrastructure Grids", desc:"Network of terraforming infrastructure across regions."},
+    {name:"Geozotic Power Systems", desc:"Hybrid geological-biological energy harvesters."},
+    {name:"GAIACRAFT", desc:"Civilization evolution engine simulating planetary societies."},
+    {name:"Hyperplural Divergence Core", desc:"Framework for modeling diverging cultural timelines."},
+    {name:"Behavioral Wetware Loop", desc:"Feedback model of human-machine behavioral cycles."},
+    {name:"EvoGlyph Symbolic Language", desc:"Evolutionary symbolic language generator."},
+    {name:"Recursive Narrative Layer", desc:"Self-referential storytelling engine."},
+    {name:"Stars!-Inspired Epistemic Scouting", desc:"Knowledge-exploration modeled on 4X space games."},
+    {name:"Constraint-Driven Memetic Drift Simulator", desc:"Memetic change under systemic constraints."},
+    {name:"Myth-Biological Governance Systems", desc:"Political systems modeled on myth and biology."},
+    {name:"Cymatic Yogurt Computer", desc:"Acoustic-computational system using fluid vibrations."},
+    {name:"Magnetic Fluidic Computer", desc:"Analog computation with ferrofluids."},
+    {name:"Codex Singularis", desc:"Singular philosophical codex for all systems."},
+    {name:"The Yarnball Earth Book", desc:"Earth as tangled narrative threads."},
+    {name:"Motile Womb Theory", desc:"Ontology of womb as moving, generative site."},
+    {name:"Lunar-Notch Divine Continuum", desc:"Sacred cycles marked by lunar irregularities."},
+    {name:"Tawḥīd-Gödel Paradox Synthesis", desc:"Synthesis of divine unity and incompleteness."},
+    {name:"Biblical Cloak Motif Framework", desc:"Symbolism of cloaks as interpretive device."},
+    {name:"Negative-Space Signature Theory", desc:"Identities defined by what is absent."},
+    {name:"Semantic Cloak/Residue Indexing", desc:"Catalog of hidden or leftover meanings."},
+    {name:"Gospel of Cognitive Snake Oil", desc:"Satirical critique of pseudoscience."},
+    {name:"Semantic Intertextuality Map", desc:"Linking texts via semantic overlaps."},
+    {name:"Womb Body Bioforge", desc:"Biotech device for body regeneration."},
+    {name:"Mechatronic Diapers", desc:"Responsive, sensor-equipped care systems."},
+    {name:"Thermovariable Membrane Clothing", desc:"Adaptive clothing for climate regulation."},
+    {name:"Ontological Dishwasher", desc:"Device cleaning symbolic as well as physical residue."},
+    {name:"Fractal Brain Keel", desc:"Structural support for brain-like computation."},
+    {name:"Semi-Automatic Bread Slicer", desc:"Playful precision tool for slicing bread."},
+    {name:"Spindle Womb Recorder", desc:"Device for recording generative events."},
+    {name:"Hyperdense Scroll Printer", desc:"Printer producing ultra-condensed scrolls."},
+    {name:"Womb Sound Synth Interface", desc:"Synthesizer based on biological signals."},
+    {name:"Emotion-Sorted Document Organizer", desc:"Filing system categorizing by affect."},
+    {name:"Peritellurian Geozotic Technium", desc:"Global-scale techno-bio infrastructure."},
+    {name:"Holistic Anocracy", desc:"Hybrid governance beyond autocracy/democracy."},
+    {name:"Oblicosm Doctrine", desc:"Oblique world-order philosophy."},
+    {name:"Uber-Draconianism", desc:"Extreme regulatory governance."},
+    {name:"Cyclofabian Urban Charter", desc:"Circular economy-based urbanism."},
+    {name:"Flux Sphere Accord", desc:"Treaty framework for flux-based societies."},
+    {name:"AI Ethics via Dinim Scaffold", desc:"Jewish law-inspired ethical framework for AI."},
+    {name:"Postcapitalist Room-Build Protocol", desc:"Alternative economic architecture via shared spaces."},
+    {name:"Hierarchically Gated Usufruct Access", desc:"Structured access to common goods."},
+    {name:"Fractal Labor Encoding System", desc:"Work modeled as fractal tasks."},
+    {name:"Flyxion", desc:"Eco-poetic music project."},
+    {name:"Hydrolysis", desc:"Music track/theme on dissolution and recombination."},
+    {name:"Standard Galactic Alphabet Decoding", desc:"Deciphering symbolic alphabets."},
+    {name:"Arabic Phonetic Keyboard", desc:"Phonetic-friendly input method."},
+    {name:"SpherePop Typing Tutor", desc:"Playful typing training system."},
+    {name:"Earth Cube Translator", desc:"Conceptual translation of Earth systems."},
+    {name:"SGA Spell Syntax", desc:"Language rules inspired by Minecraft alphabet."},
+    {name:"Semantic Layered Translation Engines", desc:"Multi-layer translation framework."},
+    {name:"Lexical Compression Rituals", desc:"Ritualistic reduction of language into minimal forms."},
+    {name:"Musical Reflex Conditioning Systems", desc:"Conditioning cognition via sound."},
+    {name:"99 Ways to Make a Paper Globe", desc:"Playful manual for paper worldmaking."},
+    {name:"Scapelambda Quadrilateral", desc:"Narrative engine shaped as a quadrilateral."},
+    {name:"Purple Pill Mythos & One-Eyed Pill Eater", desc:"Satirical myth critique."},
+    {name:"Lavender Planet Symbolic World", desc:"World-model colored by lavender aesthetics."},
+    {name:"Recursive Cloakproof Chain Generator", desc:"Infinite symbolic protection generator."},
+    {name:"ABRAXAS: Riddle Engine and Archive", desc:"Engine for riddles and mystical archives."},
+    {name:"Codex Scroll Artifact Generator", desc:"Tool for creating codex-like scrolls."},
+    {name:"Mythopoetic Trading Card System", desc:"Myth-based collectible system."},
+    {name:"Paper Straw Ion Channel Analogy", desc:"Educational tool for bioelectricity."},
+    {name:"Post-Theological Acrostic Converter", desc:"Generator for coded theological texts."}
+];
+
+// Color by index (not shown in labels, but keeps planets visually distinct)
+function indexColor(idx) {
+    // Pick from green range, but add some variance for visual distinction
+    const base = 0x00ff00;
+    const variance = ((idx * 47) % 0x80) << 8; // varies green channel
+    return base - variance;
+}
+
+// ==== Scene Setup ====
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 12000);
+camera.position.z = 3000;
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Starfield
+const starGeometry = new THREE.BufferGeometry();
+const starCount = 1000;
+const starPositions = new Float32Array(starCount * 3);
+for (let i = 0; i < starCount; i++) {
+    starPositions[i*3] = Math.random() * 10000 - 5000;
+    starPositions[i*3+1] = Math.random() * 10000 - 5000;
+    starPositions[i*3+2] = Math.random() * -10000;
+}
+starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+const starMaterial = new THREE.PointsMaterial({ color: 0x003300, size: 2 });
+const stars = new THREE.Points(starGeometry, starMaterial);
+scene.add(stars);
+
+// Planets & Labels
+const planets = [];
+const labels = [];
+projectData.forEach((p, idx) => {
+    const geo = new THREE.SphereGeometry(25,12,12);
+    const mat = new THREE.MeshBasicMaterial({color:indexColor(idx)});
+    const planet = new THREE.Mesh(geo, mat);
+    planet.position.set(
+        Math.random()*8000-4000,
+        Math.random()*8000-4000,
+        Math.random()*-8000
+    );
+    planet.userData = {...p, index: idx};
+    scene.add(planet);
+    planets.push(planet);
+
+    // Overhead label
+    const label = document.createElement('div');
+    label.className = 'project-label';
+    label.innerText = p.name;
+    document.body.appendChild(label);
+    labels.push(label);
+});
+
+// Amber Highlight Circle
+const amberCircle = document.createElement('div');
+amberCircle.className = 'amber-highlight';
+document.body.appendChild(amberCircle);
+
+// State
+let labelsVisible = true; // Start ON
+let legendVisible = true; // Start ON
+let selectedIndex = 0;
+let descriptionVisible = false;
+
+// Controls
+const keys = {};
+document.addEventListener('keydown', e=>{
+    keys[e.key.toLowerCase()] = true;
+    // Z: toggle labels
+    if(e.key.toLowerCase() === 'z') {
+        labelsVisible = !labelsVisible;
+        labels.forEach(label => {
+            label.style.display = labelsVisible ? 'block' : 'none';
+        });
+        amberCircle.style.display = labelsVisible ? 'block' : 'none';
+    }
+    // X: toggle description popup
+    if(e.key.toLowerCase() === 'x') {
+        descriptionVisible = !descriptionVisible;
+        updateDescriptionPopup();
+    }
+    // H/J: previous
+    if(e.key.toLowerCase() === 'h' || e.key.toLowerCase() === 'j') {
+        selectedIndex = (selectedIndex - 1 + planets.length) % planets.length;
+        updateDescriptionPopup();
+    }
+    // L/;: next
+    if(e.key.toLowerCase() === 'l' || e.key === ';') {
+        selectedIndex = (selectedIndex + 1) % planets.length;
+        updateDescriptionPopup();
+    }
+    // K: random
+    if(e.key.toLowerCase() === 'k') {
+        selectedIndex = Math.floor(Math.random() * planets.length);
+        updateDescriptionPopup();
+    }
+    // C: toggle legend panel
+    if(e.key.toLowerCase() === 'c') {
+        legendVisible = !legendVisible;
+        document.getElementById('legend').style.opacity = legendVisible ? "1" : "0";
+        document.getElementById('legend').style.pointerEvents = legendVisible ? "auto" : "none";
+    }
+});
+document.addEventListener('keyup', e=>keys[e.key.toLowerCase()]=false);
+
+// Description Popup
+const descPopup = document.getElementById('description-popup');
+function updateDescriptionPopup() {
+    if (!descriptionVisible) {
+        descPopup.style.display = "none";
+    } else {
+        const p = projectData[selectedIndex];
+        descPopup.textContent = `${p.name}\n\n${p.desc}`;
+        descPopup.style.display = "block";
+    }
+}
+
+// Animate
+function animate(){
+    requestAnimationFrame(animate);
+
+    // Camera controls
+    if(keys['w']) camera.position.z -= 30;
+    if(keys['s']) camera.position.z += 30;
+    if(keys['a']) camera.position.x -= 30;
+    if(keys['d']) camera.position.x += 30;
+    camera.updateProjectionMatrix();
+
+    // Position labels overhead
+    if(labelsVisible) {
+        planets.forEach((planet, i) => {
+            // Overhead world position
+            const worldPos = planet.position.clone();
+            worldPos.y += 35;
+            const screenPos = worldPos.project(camera);
+            const x = (screenPos.x * 0.5 + 0.5) * window.innerWidth;
+            const y = (-screenPos.y * 0.5 + 0.5) * window.innerHeight;
+            labels[i].style.left = `${x - labels[i].offsetWidth/2}px`;
+            labels[i].style.top = `${y - labels[i].offsetHeight}px`;
+            // Hide if behind camera
+            labels[i].style.opacity = (screenPos.z < 1 && screenPos.z > -1) ? '1' : '0';
+            labels[i].style.display = 'block';
+        });
+        // Amber highlight for selected
+        const planet = planets[selectedIndex];
+        const worldPos = planet.position.clone();
+        worldPos.y += 35;
+        const screenPos = worldPos.project(camera);
+        amberCircle.style.left = `${(screenPos.x * 0.5 + 0.5) * window.innerWidth - amberCircle.offsetWidth/2}px`;
+        amberCircle.style.top = `${(-screenPos.y * 0.5 + 0.5) * window.innerHeight - amberCircle.offsetHeight - 12}px`;
+        amberCircle.style.opacity = (screenPos.z < 1 && screenPos.z > -1) ? '1' : '0';
+        amberCircle.style.display = 'block';
+    } else {
+        labels.forEach(label => label.style.display = 'none');
+        amberCircle.style.display = 'none';
+    }
+
+    renderer.render(scene, camera);
+}
+animate();
+
+// Resize
+window.addEventListener('resize', ()=>{
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

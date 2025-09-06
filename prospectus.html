@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>Retro Green Solar Explorer — Master Portfolio Map</title>
+<style>
+  :root {
+    --bg: #001100;
+    --bright: #00ff66;
+    --mid: #00cc44;
+    --dim: #009933;
+    --very-dim: #003300;
+  }
+  html,body { height:100%; margin:0; background:var(--bg); color:var(--bright); font-family: monospace; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+  #canvas { display:block; width:100vw; height:100vh; touch-action:none; }
+  .hud {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color:var(--bright);
+    font-size:13px;
+    background: rgba(0,17,0,0.35);
+    padding:8px 10px;
+    border-radius:6px;
+    box-shadow: 0 0 20px rgba(0,255,102,0.03);
+  }
+  .credits {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    color: rgba(0,255,102,0.6);
+    font-size:12px;
+    background: rgba(0,10,0,0.15);
+    padding:6px 8px;
+    border-radius:6px;
+  }
+  button { background:transparent;border:1px solid rgba(0,255,102,0.08); color:var(--bright); padding:4px 8px; border-radius:4px; }
+  @media (pointer:coarse) {
+    .hud { font-size:14px; }
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="hud" id="hud">
+  <div><strong>Retro Solar Explorer</strong></div>
+  <div style="margin-top:6px">Controls: W/S zoom • A/D pan • Arrow keys pan • Space fire • Z toggle labels</div>
+  <div style="margin-top:6px">Touch: drag to pan • pinch to zoom • tap to aim & fire</div>
+  <div style="margin-top:6px"><button id="resetView">Reset View</button> <span id="labelsState"></span></div>
+</div>
+<div class="credits">Monochrome CRT • Projects → Planets</div>
+
+<script>
+/* =========================
+   Retro Solar Explorer
+   Single-file HTML + JS
+   ========================= */
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d', { alpha: false });
+let DPR = Math.max(1, window.devicePixelRatio || 1);
+
+function resize() {
+  DPR = Math.max(1, window.devicePixelRatio || 1);
+  canvas.width = Math.floor(window.innerWidth * DPR);
+  canvas.height = Math.floor(window.innerHeight * DPR);
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+window.addEventListener('resize', resize);
+resize();
+
+/* -------------------------
+   Project data (100 names)
+   Grouped by categories A..I (5 stars)
+   ------------------------- */
+
+const projectNames = [
+  // A. Cognitive Systems & AI Architecture (A1–A20)
+  "Inforganic Codex","Aspect Relegation Theory","Inforganic Wildtype Ecosystem","Trodden Path Mind","Relegated Mind",
+  "Living Mind (Cognitive Rainforest)","Semantic Ladle Theory","Substrate Independent Thinking Hypothesis (SITH)","Geometric Bayesianism with Sparse Heuristics","Ergodic Mind Medication",
+  "Glass Mind","Forest Mind","Dynamic Mind","Pattern Generalizer Neuron","Swarm Syntax System",
+  "Semantic Metabolism","Reflex Arc Logistics Manager","Idiomatic Drift Tracker","Neurofungal Network Simulator","Conceptual Metabolism Engine",
+  // B. Speculative Physics & Cosmology (B21–B30)
+  "RSVP Theory (Relativistic Scalar Vector Plenum)","Crystal Plenum Theory","Lamphron & Lamphrodyne States","5D Ising Synchronization Model","Neutrino Fossil Registry",
+  "Deferred Thermodynamic Reservoirs","Poincaré Lattice Recrystallization","Scalar Irruption via Entropic Differential","Inflaton Field Embedding","Universe-as-Sponge Cosmology",
+  // C. Environmental & Terraforming Systems (C31–C40)
+  "Cyclex Climate Stabilization Architecture","Volsorial Pediments","Gravitational Batteries","Polar Nuclear Refrigerators","Orthodromic Rivers System",
+  "Vertical Rainforest Trellises","Terra Preta Engineered Soil Layering","Oceanic Kelp Parachutes","Intervolsorial Infrastructure Grids","Geozotic Power Systems",
+  // D. Civilization-Scale Simulations (D41–D50)
+  "GAIACRAFT (Civilization Evolution Engine)","Hyperplural Divergence Core","Behavioral Wetware Loop","EvoGlyph Symbolic Language","Recursive Narrative Layer",
+  "Stars!-Inspired Epistemic Scouting Model","Constraint-Driven Memetic Drift Simulator","Myth-Biological Governance Systems","Cymatic Yogurt Computer (CYC)","Magnetic Fluidic Computer (MFC)",
+  // E. Philosophy, Language, and Ontology (E51–E60)
+  "Codex Singularis","The Yarnball Earth Book","Motile Womb Theory","Lunar-Notch Divine Continuum","Tawḥīd-Gödel Paradox Synthesis",
+  "Biblical Cloak Motif Framework","Negative-Space Signature Theory","Semantic Cloak/Residue Indexing System","Gospel of Cognitive Snake Oil","Semantic Intertextuality Map",
+  // F. Hardware Prototypes & Designs (F61–F70)
+  "Womb Body Bioforge","Mechatronic Diapers","Thermovariable Membrane Clothing","Ontological Dishwasher","Fractal Brain Keel",
+  "Semi-Automatic Bread Slicer","Spindle Womb Recorder","Hyperdense Scroll Printer","Womb Sound Synth Interface","Emotion-Sorted Document Organizer",
+  // G. Societal Systems & Governance (G71–G80)
+  "Peritellurian Geozotic Intervolsorial Technium","Holistic Anocracy","Oblicosm Doctrine","Uber-Draconianism","Cyclofabian Urban Charter",
+  "Flux Sphere Accord","AI Ethics via Dinim Scaffold","Postcapitalist Room-Build Protocol","Hierarchically Gated Usufruct Access","Fractal Labor Encoding System",
+  // H. Music, Language, and Interface Experiments (H81–H90)
+  "Flyxion (Eco-Poetic Music Project)","Hydrolysis (Track + Theme)","Standard Galactic Alphabet Decoding Projects","Arabic Phonetic Keyboard","SpherePop Typing Tutor",
+  "Earth Cube Translator","SGA Spell Syntax","Semantic Layered Translation Engines","Lexical Compression Rituals","Musical Reflex Conditioning Systems",
+  // I. Cultural Artifacts, Tools & Satire (I91–I100)
+  "99 Ways to Make a Paper Globe","Scapelambda Quadrilateral","Purple Pill Mythos & One-Eyed Pill Eater","Lavender Planet Symbolic World","Recursive Cloakproof Chain Generator",
+  "ABRAXAS: Riddle Engine and Archive","Codex Scroll Artifact Generator","Mythopoetic Trading Card System","Paper Straw Ion Channel Analogy Tool","Post-Theological Acrostic Converter"
+];
+
+/* -------------------------
+   Categories (stars)
+   We'll place 5 stars across a large conceptual map
+   ------------------------- */
+
+const categories = [
+  { key: 'B21', name: 'RSVP Theory', indexRange: [20,29], color:'#00ff66' }, // Speculative Physics (B)
+  { key: 'A8', name: 'SITH', indexRange: [6,15], color:'#00ff66' },         // Cognitive Systems (A)
+  { key: 'E51', name: 'Codex Singularis', indexRange: [50,59], color:'#00ff66' }, // Philosophy (E)
+  { key: 'D41', name: 'GAIACRAFT', indexRange: [40,49], color:'#00ff66' }, // Civ sims (D)
+  { key: 'F61', name: 'Womb Body Bioforge', indexRange: [60,69], color:'#00ff66' } // Hardware (F)
+];
+
+// generate star positions (spread out)
+const starPositions = [
+  { x: -2200, y: -600 }, // RSVP left-top
+  { x: 1100, y: -400 },  // SITH right-top
+  { x: -300, y: 900 },   // Codex bottom-left
+  { x: 1600, y: 800 },   // GAIACRAFT bottom-right
+  { x: -1300, y: 400 }   // Womb Body Bioforge mid-left
+];
+
+/* -------------------------
+   World objects: stars, planets, asteroid bubbles
+   ------------------------- */
+
+const world = {
+  stars: [],
+  planets: [],    // 100 planets, each with bubble(s)
+  asteroids: []   // small floating bubbles in transition zones
+};
+
+function seedWorld() {
+  world.stars = [];
+  world.planets = [];
+  world.asteroids = [];
+
+  // Build stars
+  for (let i=0;i<categories.length;i++){
+    const cat = categories[i];
+    world.stars.push({
+      id: cat.key,
+      name: cat.name,
+      x: starPositions[i].x,
+      y: starPositions[i].y,
+      color: cat.color,
+      radius: 120 + Math.random()*40
+    });
+  }
+
+  // Assign planets to categories by index ranges (use projectNames order)
+  for (let i=0;i<projectNames.length;i++){
+    const name = projectNames[i];
+    // find a category that contains this index
+    let catIdx = Math.floor(i/ (projectNames.length / categories.length));
+    if (catIdx >= categories.length) catIdx = categories.length - 1;
+    const star = world.stars[catIdx];
+
+    // place planet in an orbit band around its star
+    const orbitRadius = (star.radius + 80) + 120 * (Math.random()); // vary orbit
+    const angle = Math.random() * Math.PI*2;
+    const px = star.x + Math.cos(angle) * orbitRadius;
+    const py = star.y + Math.sin(angle) * orbitRadius;
+
+    // each planet has a bubble (big) and some small orbiting bubbles (asteroid-like)
+    const bigBubbleRadius = 30 + Math.random()*40;
+    const orbiting = [];
+    const orbitCount = Math.floor(Math.random()*4)+1;
+    for (let j=0;j<orbitCount;j++){
+      const a = Math.random()*Math.PI*2;
+      const r = bigBubbleRadius + 20 + Math.random()*50;
+      orbiting.push({
+        x: px + Math.cos(a)*r,
+        y: py + Math.sin(a)*r,
+        size: 4 + Math.random()*3,
+        acknowledged: false,
+        type: 'sat'
+      });
+    }
+
+    world.planets.push({
+      id: 'P'+(i+1),
+      name,
+      starId: star.id,
+      x: px,
+      y: py,
+      radius: bigBubbleRadius,
+      acknowledged: false,
+      orbiting: orbiting,
+      categoryIndex: catIdx
+    });
+  }
+
+  // Add many asteroid bubbles scattered in transition zones
+  for (let i=0;i<300;i++){
+    world.asteroids.push({
+      x: (Math.random()-0.5)*6000,
+      y: (Math.random()-0.5)*6000,
+      size: 3 + Math.random()*5,
+      acknowledged: false
+    });
+  }
+}
+seedWorld();
+
+/* -------------------------
+   View / Camera / Controls
+   ------------------------- */
+
+let view = {
+  zoom: 0.5,       // scale multiplier (1 is nominal)
+  x: window.innerWidth/2,  // viewport center (screen coords)
+  y: window.innerHeight/2,
+  targetZoom: null
+};
+
+const ship = {
+  // ship stays at center of screen in map coords (we interpret view.x,y as screen center)
+  // Use aim point for flares
+  aim: { x: 0, y: 0 }
+};
+
+const input = {
+  keys: {},
+  mouse: { x:0, y:0, down:false },
+  touch: { active:false, touches:[], lastPinchDist:null, singleHold:false }
+};
+
+window.addEventListener('keydown', (e)=> {
+  input.keys[e.key.toLowerCase()] = true;
+  if (e.key.toLowerCase() === 'z') {
+    toggleLabels();
+  }
+  if (e.code === 'Space') {
+    e.preventDefault();
+    shootFlareAtScreenPoint(input.mouse.x, input.mouse.y);
+  }
+});
+window.addEventListener('keyup', (e)=> {
+  input.keys[e.key.toLowerCase()] = false;
+});
+document.getElementById('resetView').addEventListener('click', ()=>{
+  view.zoom = 0.5;
+  view.x = window.innerWidth/2;
+  view.y = window.innerHeight/2;
+  localStorage.removeItem('retro_labels_on');
+  setLabelsState(true);
+});
+
+/* mouse */
+canvas.addEventListener('mousemove', (e)=>{
+  const rect = canvas.getBoundingClientRect();
+  input.mouse.x = (e.clientX - rect.left);
+  input.mouse.y = (e.clientY - rect.top);
+});
+canvas.addEventListener('mousedown', (e)=>{
+  input.mouse.down = true;
+  // shoot flare toward mouse
+  shootFlareAtScreen(e.clientX, e.clientY);
+});
+canvas.addEventListener('mouseup', ()=>{ input.mouse.down = false; });
+
+/* touch */
+canvas.addEventListener('touchstart', (ev)=>{
+  ev.preventDefault();
+  input.touch.active = true;
+  input.touch.touches = Array.from(ev.touches).map(t => ({ id: t.identifier, x: t.clientX, y: t.clientY }));
+  if (input.touch.touches.length === 1) {
+    input.touch.singleHold = true;
+    // single-finger hold will zoom in gradually if held (we also treat brief tap as shot)
+    // we detect tap vs hold by timeout; here, immediate tap -> shoot
+    shootFlareAtScreen(input.touch.touches[0].x, input.touch.touches[0].y);
+  }
+  if (input.touch.touches.length === 2) {
+    input.touch.lastPinchDist = Math.hypot(
+      input.touch.touches[0].x - input.touch.touches[1].x,
+      input.touch.touches[0].y - input.touch.touches[1].y
+    );
+  }
+}, { passive:false });
+
+canvas.addEventListener('touchmove', (ev)=>{
+  ev.preventDefault();
+  const rect = canvas.getBoundingClientRect();
+  if (ev.touches.length === 1) {
+    const t = ev.touches[0];
+    // drag to pan
+    // use movement delta by comparing previous positions if stored
+    const prev = input.touch.touches.find(p=>p.id===t.identifier);
+    if (prev) {
+      const dx = t.clientX - prev.x;
+      const dy = t.clientY - prev.y;
+      view.x += dx;
+      view.y += dy;
+    }
+    input.touch.touches = [{ id: t.identifier, x: t.clientX, y: t.clientY }];
+  } else if (ev.touches.length === 2) {
+    const t1 = ev.touches[0], t2 = ev.touches[1];
+    const dist = Math.hypot(t2.clientX-t1.clientX, t2.clientY-t1.clientY);
+    if (input.touch.lastPinchDist) {
+      const ratio = dist / input.touch.lastPinchDist;
+      view.zoom *= ratio;
+      // clamp
+      view.zoom = Math.min(3.5, Math.max(0.06, view.zoom));
+    }
+    input.touch.lastPinchDist = dist;
+    input.touch.touches = [{ id: t1.identifier, x: t1.clientX, y: t1.clientY }, { id: t2.identifier, x: t2.clientX, y: t2.clientY }];
+  }
+}, { passive:false });
+
+canvas.addEventListener('touchend', (ev)=>{
+  ev.preventDefault();
+  input.touch.active = ev.touches.length > 0;
+  input.touch.touches = Array.from(ev.touches).map(t => ({ id: t.identifier, x: t.clientX, y: t.clientY }));
+  if (ev.touches.length < 2) input.touch.lastPinchDist = null;
+  input.touch.singleHold = false;
+}, { passive:false });
+
+/* wheel zoom */
+canvas.addEventListener('wheel', (e)=> {
+  e.preventDefault();
+  const delta = Math.sign(e.deltaY);
+  if (delta > 0) view.zoom *= 0.95;
+  else view.zoom *= 1.05;
+  view.zoom = Math.min(4, Math.max(0.04, view.zoom));
+}, { passive:false });
+
+/* -------------------------
+   Labels toggle persistent
+   ------------------------- */
+let labelsOn = localStorage.getItem('retro_labels_on');
+labelsOn = labelsOn === null ? true : (labelsOn === 'true');
+function toggleLabels() {
+  labelsOn = !labelsOn;
+  localStorage.setItem('retro_labels_on', String(labelsOn));
+  updateLabelsUI();
+}
+function setLabelsState(v) {
+  labelsOn = !!v;
+  localStorage.setItem('retro_labels_on', String(labelsOn));
+  updateLabelsUI();
+}
+function updateLabelsUI() {
+  document.getElementById('labelsState').textContent = `Labels: ${labelsOn ? 'ON (Z)' : 'OFF (Z)'}`;
+}
+updateLabelsUI();
+
+/* -------------------------
+   Visual / Effects state
+   ------------------------- */
+
+const flares = [];  // active projectile flares
+const flareEffects = []; // expanding flare visuals
+let particles = []; // particles for pops/explosions
+const particleLimit = 1200;
+
+/* -------------------------
+   Audio setup (WebAudio synthesized)
+   ------------------------- */
+
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const audioCtx = new AudioContext();
+
+function playFlareSound() {
+  const osc = audioCtx.createOscillator();
+  const bass = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  const distortion = audioCtx.createWaveShaper();
+
+  // simple saw + sub-bass
+  osc.type = 'sawtooth';
+  bass.type = 'sine';
+  osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(420, audioCtx.currentTime + 0.18);
+  bass.frequency.setValueAtTime(60, audioCtx.currentTime);
+  bass.frequency.exponentialRampToValueAtTime(30, audioCtx.currentTime + 0.18);
+
+  gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.35);
+
+  // light distortion curve
+  distortion.curve = makeDistortionCurve(200);
+  distortion.oversample = '2x';
+
+  osc.connect(distortion);
+  distortion.connect(gain);
+  bass.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  osc.start();
+  bass.start();
+  osc.stop(audioCtx.currentTime + 0.35);
+  bass.stop(audioCtx.currentTime + 0.35);
+}
+
+function playPopSound() {
+  const o = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  o.type = 'triangle';
+  o.frequency.setValueAtTime(600, audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.08);
+  g.gain.setValueAtTime(0.12, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.12);
+  o.connect(g); g.connect(audioCtx.destination);
+  o.start(); o.stop(audioCtx.currentTime + 0.12);
+}
+
+function makeDistortionCurve(amount) {
+  const k = typeof amount === 'number' ? amount : 50;
+  const n_samples = 44100;
+  const curve = new Float32Array(n_samples);
+  const deg = Math.PI / 180;
+  for (let i = 0; i < n_samples; ++i) {
+    const x = (i * 2) / n_samples - 1;
+    curve[i] = ((3 + k) * x * 20 * deg) / (Math.PI + k * Math.abs(x));
+  }
+  return curve;
+}
+
+/* -------------------------
+   Flare / projectile logic
+   ------------------------- */
+
+function worldToScreen(wx, wy) {
+  // world coords to screen (pixels)
+  // map center: view.x, view.y is the screen center position in pixels for world 0,0 translation
+  // world scaled by view.zoom
+  const sx = view.x + wx * view.zoom;
+  const sy = view.y + wy * view.zoom;
+  return { x: sx, y: sy };
+}
+function screenToWorld(sx, sy) {
+  const wx = (sx - view.x) / view.zoom;
+  const wy = (sy - view.y) / view.zoom;
+  return { x: wx, y: wy };
+}
+
+function shootFlareAtScreen(sx, sy) {
+  // create a flare from screen center toward screen point
+  const originScreen = { x: window.innerWidth/2, y: window.innerHeight/2 }; // ship is centered visually
+  const dirX = sx - originScreen.x;
+  const dirY = sy - originScreen.y;
+  const dist = Math.hypot(dirX, dirY) || 1;
+  const speed = 10 * Math.min(2.5, Math.max(0.5, 1 / view.zoom)); // scale speed by zoom a bit
+  const vx = (dirX / dist) * speed;
+  const vy = (dirY / dist) * speed;
+  const startWorld = screenToWorld(originScreen.x, originScreen.y);
+
+  flares.push({
+    x: startWorld.x,
+    y: startWorld.y,
+    vx: vx / view.zoom,
+    vy: vy / view.zoom,
+    life: 120,
+    radius: 3,
+    maxLife: 120
+  });
+  // flash effect
+  flareEffects.push({
+    x: originScreen.x,
+    y: originScreen.y,
+    life: 28,
+    maxLife: 28,
+    radius: 4
+  });
+  // audio
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  playFlareSound();
+}
+
+function shootFlareAtWorld(wx, wy) {
+  const screen = worldToScreen(0,0); // not used
+  shootFlareAtScreen(view.x + wx*view.zoom, view.y + wy*view.zoom);
+}
+
+function shootFlareAtScreenPoint(sx, sy) {
+  // used when pressing space and mouse coords are known
+  shootFlareAtScreen(sx, sy);
+}
+
+/* -------------------------
+   Collisions & Acknowledgements
+   ------------------------- */
+
+function updateCollisions() {
+  // update flares, move them in world coords and check collision with planet bubbles and asteroids
+  for (let i = flares.length - 1; i >= 0; i--) {
+    const f = flares[i];
+    f.x += f.vx;
+    f.y += f.vy;
+    f.life--;
+    if (f.life <= 0) {
+      flares.splice(i,1);
+      continue;
+    }
+    // check planets (big bubbles)
+    for (let p of world.planets) {
+      if (!p.acknowledged) {
+        const dx = f.x - p.x;
+        const dy = f.y - p.y;
+        const d = Math.hypot(dx,dy);
+        if (d < (p.radius/1.3) / 1.0) {
+          // hit big bubble
+          p.acknowledged = true;
+          spawnPopParticles(p.x, p.y, 'planet', 18);
+          playPopSound();
+          flares.splice(i,1);
+          break;
+        }
+      }
+      // check small orbiting bubbles
+      for (let s of p.orbiting) {
+        if (!s.acknowledged) {
+          const dx = f.x - s.x;
+          const dy = f.y - s.y;
+          const d = Math.hypot(dx,dy);
+          if (d < (s.size + f.radius) / 1.0) {
+            s.acknowledged = true;
+            spawnPopParticles(s.x, s.y, 'sat', 10);
+            playPopSound();
+            flares.splice(i,1);
+            break;
+          }
+        }
+      }
+    }
+    // check asteroids
+    for (let a of world.asteroids) {
+      if (!a.acknowledged) {
+        const dx = f.x - a.x;
+        const dy = f.y - a.y;
+        const d = Math.hypot(dx,dy);
+        if (d < (a.size + f.radius)/1.0) {
+          a.acknowledged = true;
+          spawnPopParticles(a.x, a.y, 'asteroid', 6);
+          playPopSound();
+          flares.splice(i,1);
+          break;
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------
+   Particles & visual pops
+   ------------------------- */
+
+function spawnPopParticles(wx, wy, type='planet', n=12) {
+  if (particles.length > particleLimit) particles.splice(0, Math.floor(particles.length/3));
+  for (let i=0;i<n;i++){
+    const ang = Math.random()*Math.PI*2;
+    const speed = (Math.random()*2 + (type==='planet'?1.6:0.7)) / Math.max(0.2, view.zoom);
+    particles.push({
+      x: wx,
+      y: wy,
+      vx: Math.cos(ang)*speed,
+      vy: Math.sin(ang)*speed,
+      life: 24 + Math.floor(Math.random()*20),
+      size: (type==='planet'?2.5:1.2) * (1 + Math.random()*1.2),
+      type
+    });
+  }
+  // small screen-local flare at screen position
+  const s = worldToScreen(wx, wy);
+  flareEffects.push({ x: s.x, y: s.y, life: 26, maxLife: 26, radius: 6 + Math.random()*6 });
+}
+
+/* -------------------------
+   Update loop
+   ------------------------- */
+
+let lastTime = performance.now();
+function update(dt) {
+  // keyboard camera controls
+  const panSpeed = 420 * dt * (1/60) * (1/Math.max(0.12, view.zoom));
+  if (input.keys['a']) view.x += panSpeed;
+  if (input.keys['d']) view.x -= panSpeed;
+  if (input.keys['arrowleft']) view.x += panSpeed;
+  if (input.keys['arrowright']) view.x -= panSpeed;
+  if (input.keys['arrowup']) view.y += panSpeed;
+  if (input.keys['arrowdown']) view.y -= panSpeed;
+
+  // zoom keys
+  if (input.keys['w']) {
+    view.zoom *= 1 + 0.02 * Math.min(1.6, 1 + dt*60);
+  }
+  if (input.keys['s']) {
+    view.zoom *= 1 - 0.02 * Math.min(1.6, 1 + dt*60);
+  }
+  view.zoom = Math.min(4.5, Math.max(0.03, view.zoom));
+
+  // single-finger hold to zoom in gradually (mobile)
+  if (input.touch.singleHold) {
+    view.zoom *= 1.005;
+    view.zoom = Math.min(4.5, Math.max(0.03, view.zoom));
+  }
+
+  // update flares life
+  for (let i = flareEffects.length - 1; i >= 0; i--) {
+    const fe = flareEffects[i];
+    fe.life--;
+    if (fe.life <= 0) flareEffects.splice(i,1);
+  }
+
+  // update particle physics (world coords)
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vx *= 0.98;
+    p.vy *= 0.98;
+    p.life--;
+    if (p.life <= 0) particles.splice(i,1);
+  }
+
+  // slowly rotate orbiting satellites around their planet for visual motion
+  for (let p of world.planets) {
+    for (let s of p.orbiting) {
+      const ang = Math.atan2(s.y - p.y, s.x - p.x);
+      const r = Math.hypot(s.x - p.y + p.x - p.x, s.y - p.y); // <- placeholder for stable radius (we'll compute fresh)
+      // compute radius properly
+      const rr = Math.hypot(s.x - p.x, s.y - p.y);
+      const speed = 0.0015 + (0.002 * Math.random());
+      const newAng = ang + speed;
+      const newX = p.x + Math.cos(newAng) * rr;
+      const newY = p.y + Math.sin(newAng) * rr;
+      s.x = newX; s.y = newY;
+    }
+  }
+
+  // update collision detections
+  updateCollisions();
+}
+
+/* -------------------------
+   Draw loop: world -> screen
+   ------------------------- */
+
+function drawBackground() {
+  // filled black-green background
+  ctx.fillStyle = '#000a00';
+  ctx.fillRect(0,0,canvas.width/DPR, canvas.height/DPR);
+
+  // subtle star field (green)
+  ctx.save();
+  ctx.globalAlpha = 0.06;
+  for (let i=0;i<120;i++){
+    const x = Math.random() * canvas.width/DPR;
+    const y = Math.random() * canvas.height/DPR;
+    ctx.fillStyle = `rgba(0,255,120,0.02)`;
+    ctx.fillRect(x, y, 1, 1);
+  }
+  ctx.restore();
+}
+
+function drawCRTOverlay(w, h) {
+  ctx.save();
+  // scanlines
+  ctx.globalAlpha = 0.12;
+  ctx.strokeStyle = 'rgba(0,255,102,0.035)';
+  ctx.lineWidth = 1;
+  for (let y = 0; y < h; y += 2) {
+    ctx.beginPath();
+    ctx.moveTo(0, y + (Math.random()*0.2));
+    ctx.lineTo(w, y + (Math.random()*0.2));
+    ctx.stroke();
+  }
+  // static flicker
+  for (let i=0;i<200;i++){
+    const x = Math.random()*w;
+    const y = Math.random()*h;
+    const alpha = Math.random()*0.04;
+    ctx.fillStyle = `rgba(0,255,102,${alpha})`;
+    ctx.fillRect(x,y,1,1);
+  }
+  ctx.restore();
+}
+
+function drawHUDOverlay() {
+  // subtle vignette / glow center
+  ctx.save();
+  const cx = window.innerWidth/2, cy = window.innerHeight/2;
+  const grad = ctx.createRadialGradient(cx,cy,10,cx,cy,Math.max(window.innerWidth, window.innerHeight));
+  grad.addColorStop(0,'rgba(0,255,102,0.02)');
+  grad.addColorStop(1,'rgba(0,0,0,0.0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0,0,window.innerWidth, window.innerHeight);
+  ctx.restore();
+}
+
+function draw() {
+  // clear
+  ctx.fillStyle = '#000a00';
+  ctx.fillRect(0,0,canvas.width/DPR, canvas.height/DPR);
+
+  // draw stars (category centers)
+  for (let s of world.stars) {
+    const sc = worldToScreen(s.x, s.y);
+    // star glow
+    ctx.save();
+    const g = ctx.createRadialGradient(sc.x, sc.y, 0, sc.x, sc.y, s.radius * view.zoom * 1.8);
+    g.addColorStop(0, 'rgba(0,255,120,0.06)');
+    g.addColorStop(0.4, 'rgba(0,255,102,0.06)');
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(sc.x, sc.y, s.radius * view.zoom * 1.8, 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+
+    // star body
+    ctx.save();
+    ctx.fillStyle = '#00ff66';
+    ctx.beginPath();
+    ctx.arc(sc.x, sc.y, Math.max(6, s.radius * view.zoom * 0.12), 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+
+    // label near star
+    if (labelsOn && view.zoom > 0.08) {
+      ctx.save();
+      ctx.fillStyle = 'rgba(0,255,102,0.95)';
+      ctx.font = `${12 * Math.min(1.4, view.zoom)}px monospace`;
+      ctx.fillText(s.name, sc.x + (10 * view.zoom), sc.y - (6 * view.zoom));
+      ctx.restore();
+    }
+  }
+
+  // draw asteroid bubbles (small)
+  ctx.save();
+  for (let a of world.asteroids) {
+    const sc = worldToScreen(a.x, a.y);
+    const alpha = a.acknowledged ? 0.25 : 0.08;
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(0,170,0,${alpha})`;
+    const r = Math.max(1.0, a.size * view.zoom);
+    ctx.arc(sc.x, sc.y, r, 0, Math.PI*2);
+    ctx.fill();
+  }
+  ctx.restore();
+
+  // draw planets
+  for (let p of world.planets) {
+    const sc = worldToScreen(p.x, p.y);
+    // orbit ring (faint)
+    ctx.save();
+    const star = world.stars[p.categoryIndex];
+    const ssc = worldToScreen(star.x, star.y);
+    const or = Math.hypot(p.x - star.x, p.y - star.y) * view.zoom;
+    ctx.globalAlpha = 0.03;
+    ctx.strokeStyle = '#00ff66';
+    ctx.beginPath();
+    ctx.ellipse(ssc.x, ssc.y, or, or, 0, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.restore();
+
+    // planet main body (filled)
+    ctx.save();
+    ctx.fillStyle = p.acknowledged ? '#004400' : '#00aa00';
+    ctx.beginPath();
+    ctx.arc(sc.x, sc.y, Math.max(3, p.radius * 0.6 * view.zoom), 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+
+    // big bubble ring
+    ctx.save();
+    ctx.strokeStyle = p.acknowledged ? 'rgba(0,255,255,0.12)' : 'rgba(0,255,102,0.06)';
+    ctx.lineWidth = Math.max(1, 2 * view.zoom);
+    ctx.beginPath();
+    ctx.arc(sc.x, sc.y, Math.max(6, p.radius * view.zoom), 0, Math.PI*2);
+    ctx.stroke();
+    ctx.restore();
+
+    // orbiting small bubbles (satellites)
+    for (let s of p.orbiting) {
+      const ssc2 = worldToScreen(s.x, s.y);
+      ctx.beginPath();
+      ctx.fillStyle = s.acknowledged ? '#006600' : '#00cc44';
+      ctx.arc(ssc2.x, ssc2.y, Math.max(1.3, s.size * view.zoom), 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    // label
+    if (labelsOn && view.zoom > 0.12) {
+      ctx.save();
+      ctx.fillStyle = '#00ff66';
+      ctx.font = `${10 * Math.min(1.6, view.zoom)}px monospace`;
+      ctx.fillText(p.name, sc.x + (p.radius*view.zoom)*0.7 + 4, sc.y + 3);
+      ctx.restore();
+    }
+  }
+
+  // draw flares (world flares)
+  for (let f of flares) {
+    const s = worldToScreen(f.x, f.y);
+    const alpha = Math.max(0.06, Math.min(0.95, f.life / f.maxLife));
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = `rgba(0,255,150,${alpha})`;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, Math.max(1.8, f.radius * view.zoom * 1.2), 0, Math.PI*2);
+    ctx.fill();
+    // flare trail
+    ctx.globalAlpha = alpha * 0.4;
+    ctx.beginPath();
+    ctx.arc(s.x - f.vx*3, s.y - f.vy*3, Math.max(1, f.radius * view.zoom), 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // screen-space flare effects (small bloom)
+  for (let fe of flareEffects) {
+    ctx.save();
+    const alpha = Math.max(0, fe.life / fe.maxLife);
+    ctx.globalAlpha = 0.7 * alpha;
+    const size = fe.radius * (1 + (1 - alpha) * 2);
+    ctx.fillStyle = 'rgba(0,255,180,' + (0.6*alpha) + ')';
+    ctx.beginPath();
+    ctx.arc(fe.x, fe.y, size, 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // draw particles (pop bits)
+  for (let p of particles) {
+    const s = worldToScreen(p.x, p.y);
+    const alpha = Math.max(0.02, Math.min(0.98, p.life/40));
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    let color = 'rgba(0,255,120,'+alpha+')';
+    if (p.type === 'asteroid') color = 'rgba(0,200,80,' + alpha + ')';
+    if (p.type === 'sat') color = 'rgba(0,255,90,' + alpha + ')';
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, Math.max(0.6, p.size * view.zoom * 0.65), 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // center ship indicator
+  ctx.save();
+  ctx.translate(window.innerWidth/2, window.innerHeight/2);
+  ctx.beginPath();
+  ctx.strokeStyle = 'rgba(0,255,120,0.95)';
+  ctx.lineWidth = 1;
+  ctx.arc(0,0,6* (1 + Math.max(0, (view.zoom-0.5))*0.2), 0, Math.PI*2);
+  ctx.stroke();
+  ctx.restore();
+
+  drawCRTOverlay(window.innerWidth, window.innerHeight);
+  drawHUDOverlay();
+}
+
+/* -------------------------
+   Animation loop
+   ------------------------- */
+
+function frame(t) {
+  const dt = Math.min(48, t - lastTime) / 1000;
+  lastTime = t;
+
+  update(dt);
+  draw();
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* -------------------------
+   Utility: simple aiming with mouse (update aim world)
+   ------------------------- */
+
+function aimUpdate() {
+  // set ship.aim in world coords using current mouse / touch
+  // prefer mouse, else first touch
+  let sx = input.mouse.x || window.innerWidth/2;
+  let sy = input.mouse.y || window.innerHeight/2;
+  const w = screenToWorld(sx, sy);
+  ship.aim.x = w.x;
+  ship.aim.y = w.y;
+}
+setInterval(aimUpdate, 20);
+
+/* -------------------------
+   UI & helpers
+   ------------------------- */
+updateLabelsUI();
+
+/* -------------------------
+   Grainy startup jitter to make things feel alive
+   ------------------------- */
+(function subtleJitter(){
+  setInterval(()=>{
+    for (let s of world.stars) {
+      s.x += (Math.random()-0.5) * 8;
+      s.y += (Math.random()-0.5) * 8;
+    }
+  }, 3000);
+})();
+
+</script>
+</body>
+</html>
+
