@@ -1,0 +1,102 @@
+\begin{thebibliography}{10}
+
+\bibitem{Awodey2010}
+Steve Awodey.
+\newblock {\em Category Theory}.
+\newblock Oxford University Press, 2 edition, 2010.
+
+\bibitem{Bennett2025}
+Michael~Timothy Bennett.
+\newblock {\em Conscious Machines}.
+\newblock PhD thesis, Australian National University, 2025.
+
+\bibitem{Bredon1997}
+Glen~E. Bredon.
+\newblock {\em Sheaf Theory}.
+\newblock Springer, 2 edition, 1997.
+
+\bibitem{Coquand1988}
+Thierry Coquand and G{\'e}rard Huet.
+\newblock Calculus of constructions.
+\newblock {\em Inf. Comput.}, 76(2--3):95--120, 1988.
+
+\bibitem{Girard1987}
+Jean-Yves Girard.
+\newblock Linear logic.
+\newblock {\em Theor. Comput. Sci.}, 50(1):1--101, 1987.
+
+\bibitem{Giry1982}
+Mich{\`e}le Giry.
+\newblock A categorical approach to probability theory.
+\newblock {\em Categorical Aspects of Topology and Analysis}, 915:68--85, 1982.
+
+\bibitem{Goguen1992}
+Joseph~A. Goguen.
+\newblock Sheaf semantics for concurrent objects.
+\newblock {\em Math. Struct. Comput. Sci.}, 2(2):159--191, 1992.
+
+\bibitem{Kock2004}
+Anders Kock.
+\newblock {\em Synthetic Differential Geometry}.
+\newblock Cambridge University Press, 2 edition, 2004.
+
+\bibitem{Lawvere2009}
+F.~William Lawvere and Steve~H. Schanuel.
+\newblock {\em Conceptual Mathematics}.
+\newblock Cambridge University Press, 2 edition, 2009.
+
+\bibitem{Liang2025}
+Zexi Liang, Melody~Xuan Lim, Qian-Ze Zhu, and Itai Cohen.
+\newblock Magnetic proofreading for self-assembly.
+\newblock {\em Proc. Natl. Acad. Sci.}, 122(35):e2502361122, 2025.
+
+\bibitem{MacLane1992}
+S.~Mac~Lane and I.~Moerdijk.
+\newblock {\em Sheaves in Geometry and Logic}.
+\newblock Springer, 1992.
+
+\bibitem{Nielsen2010}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock {\em Quantum Computation and Information}.
+\newblock Cambridge University Press, 10th anniversary edition, 2010.
+
+\bibitem{Ortega1931}
+Jos{\'e} Ortega~y Gasset.
+\newblock {\em The Revolt of the Masses}.
+\newblock Norton \& Company, 1931.
+
+\bibitem{Pearl2009}
+Judea Pearl.
+\newblock {\em Causality}.
+\newblock Cambridge University Press, 2 edition, 2009.
+
+\bibitem{Soares2023prb}
+S.~M. Soares, L.~Squillante, H.~S. Lima, C.~Tsallis, and M.~de~Souza.
+\newblock Non-diverging gr{\"u}neisen parameter.
+\newblock {\em Phys. Rev. B}, 108:L140403, 2023.
+
+\bibitem{Soares2024}
+S.~M. Soares, L.~Squillante, H.~S. Lima, C.~Tsallis, and M.~de~Souza.
+\newblock Non-diverging gr{\"u}neisen parameter, 2024.
+
+\bibitem{Soares2023physica}
+S.~M. Soares and C.~Tsallis.
+\newblock Quantum gr{\"u}neisen parameter.
+\newblock {\em Physica A}, 612:128374, 2023.
+
+\bibitem{Spivak2014}
+David~I. Spivak.
+\newblock {\em Category Theory for the Sciences}.
+\newblock MIT Press, 2014.
+
+\bibitem{Tsallis1988}
+C.~Tsallis.
+\newblock Generalization of boltzmann--gibbs statistics.
+\newblock {\em J. Stat. Phys.}, 52(1--2):479--487, 1988.
+
+\bibitem{Wadler1992}
+Philip Wadler.
+\newblock Essence of functional programming.
+\newblock In {\em ACM SIGPLAN-SIGACT Symposium}, pages 1--14, 1992.
+
+\end{thebibliography}

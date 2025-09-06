@@ -1,0 +1,92 @@
+\begin{thebibliography}{10}
+
+\bibitem{Awodey2010}
+Steve Awodey.
+\newblock {\em Category Theory}.
+\newblock Oxford University Press, 2 edition, 2010.
+
+\bibitem{Bennett2025}
+Michael~Timothy Bennett.
+\newblock {\em Building Conscious Machines}.
+\newblock PhD thesis, Australian National University, 2025.
+
+\bibitem{Bredon1997}
+Glen~E. Bredon.
+\newblock {\em Sheaf Theory}.
+\newblock Springer, 2 edition, 1997.
+
+\bibitem{Coquand1988}
+Thierry Coquand and G{\'e}rard Huet.
+\newblock The calculus of constructions.
+\newblock {\em Information and Computation}, 76(2--3):95--120, 1988.
+
+\bibitem{Girard1987}
+Jean-Yves Girard.
+\newblock Linear logic.
+\newblock {\em Theoretical Computer Science}, 50(1):1--101, 1987.
+
+\bibitem{Goguen1992}
+Joseph~A. Goguen.
+\newblock Sheaf semantics for concurrent interacting objects.
+\newblock {\em Mathematical Structures in Computer Science}, 2(2):159--191,
+  1992.
+
+\bibitem{Kock2004}
+Anders Kock.
+\newblock {\em Synthetic Differential Geometry}.
+\newblock Cambridge University Press, 2 edition, 2004.
+
+\bibitem{Lawvere2009}
+F.~William Lawvere and Steve~H. Schanuel.
+\newblock {\em Conceptual Mathematics: A First Introduction to Categories}.
+\newblock Cambridge University Press, 2 edition, 2009.
+
+\bibitem{Liang2025}
+Zexi Liang, Melody~Xuan Lim, Qian-Ze Zhu, and Itai Cohen.
+\newblock Magnetic proofreading for microscale self-assembly.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  122(35):e2502361122, 2025.
+
+\bibitem{MacLane1992}
+S.~Mac~Lane and I.~Moerdijk.
+\newblock {\em Sheaves in Geometry and Logic: A First Introduction to Topos
+  Theory}.
+\newblock Springer, 1992.
+
+\bibitem{Nielsen2010}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock {\em Quantum Computation and Quantum Information}.
+\newblock Cambridge University Press, 10th anniversary edition, 2010.
+
+\bibitem{Ortega1931}
+Jos{\'e} Ortega~y Gasset.
+\newblock {\em The Revolt of the Masses}.
+\newblock Norton \& Company, 1931.
+
+\bibitem{Pearl2009}
+Judea Pearl.
+\newblock {\em Causality: Models, Reasoning, and Inference}.
+\newblock Cambridge University Press, 2 edition, 2009.
+
+\bibitem{Soares2024}
+S.~M. Soares, L.~Squillante, H.~S. Lima, C.~Tsallis, and M.~de~Souza.
+\newblock Universally non-diverging gr{\"u}neisen parameter at critical points,
+  2024.
+
+\bibitem{Spivak2014}
+David~I. Spivak.
+\newblock {\em Category Theory for the Sciences}.
+\newblock MIT Press, 2014.
+
+\bibitem{Tsallis1988}
+C.~Tsallis.
+\newblock Possible generalization of boltzmann--gibbs statistics.
+\newblock {\em Journal of Statistical Physics}, 52(1--2):479--487, 1988.
+
+\bibitem{Wadler1992}
+Philip Wadler.
+\newblock The essence of functional programming.
+\newblock In {\em Proceedings of the 19th ACM SIGPLAN-SIGACT Symposium on
+  Principles of Programming Languages}, pages 1--14, 1992.
+
+\end{thebibliography}
