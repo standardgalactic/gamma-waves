@@ -1,0 +1,10 @@
+\contentsline {part}{I\hspace {1em}Foundations}{1}{}%
+\contentsline {part}{II\hspace {1em}Implementation and Scaling}{14}{}%
+\contentsline {paragraph}{Lattice Simulations}{21}{}%
+\contentsline {paragraph}{Agent-Based Embedding}{21}{}%
+\contentsline {paragraph}{GPU Acceleration}{21}{}%
+\contentsline {paragraph}{Phase 1: Prototype Simulation}{22}{}%
+\contentsline {paragraph}{Phase 2: Modular Integration}{22}{}%
+\contentsline {paragraph}{Phase 3: Applied Scenarios}{22}{}%
+\contentsline {paragraph}{Phase 4: Public Demonstration}{22}{}%
+\contentsline {part}{III\hspace {1em}Implications and Futures}{22}{}%

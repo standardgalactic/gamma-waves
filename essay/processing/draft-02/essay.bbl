@@ -1,0 +1,120 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Atiyah(1969)]{atiyah1969}
+Michael Atiyah.
+\newblock \emph{Introduction to Commutative Algebra}.
+\newblock Addison-Wesley, 1969.
+
+\bibitem[Baez and Stay(2011)]{baez2011}
+John Baez and Mike Stay.
+\newblock Physics, topology, logic and computation: A rosetta stone.
+\newblock \emph{New Structures for Physics}, 813, 2011.
+
+\bibitem[Bird and Wadler(1988)]{bird1988}
+Richard Bird and Philip Wadler.
+\newblock \emph{Introduction to Functional Programming}.
+\newblock Prentice Hall, 1988.
+
+\bibitem[Cover and Thomas(2006)]{cover2006}
+Thomas~M. Cover and Joy~A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley, 2006.
+
+\bibitem[Deleuze and Guattari(1987)]{deleuze1987}
+Gilles Deleuze and F\'{e}lix Guattari.
+\newblock \emph{A Thousand Plateaus}.
+\newblock University of Minnesota Press, 1987.
+
+\bibitem[Friston(2010)]{friston2010}
+Karl Friston.
+\newblock The free-energy principle: A unified brain theory?
+\newblock \emph{Nature Reviews Neuroscience}, 11\penalty0 (2):\penalty0
+  127--138, 2010.
+
+\bibitem[Gromov(1999)]{gromov1999}
+Mikhael Gromov.
+\newblock \emph{Metric Structures for Riemannian and Non-Riemannian Spaces}.
+\newblock Birkh\"{a}user, 1999.
+
+\bibitem[Hanson(2003)]{hanson2003}
+Robin Hanson.
+\newblock Shall we vote on values, but bet on beliefs?
+\newblock \emph{Journal of Political Philosophy}, 2003.
+
+\bibitem[Hatcher(2002)]{hatcher2002}
+Allen Hatcher.
+\newblock \emph{Algebraic Topology}.
+\newblock Cambridge University Press, 2002.
+
+\bibitem[Hohwy(2013)]{hohwy2013}
+Jakob Hohwy.
+\newblock \emph{The Predictive Mind}.
+\newblock Oxford University Press, 2013.
+
+\bibitem[Jaynes(2003)]{jaynes2003}
+E.~T. Jaynes.
+\newblock \emph{Probability Theory: The Logic of Science}.
+\newblock Cambridge University Press, 2003.
+
+\bibitem[Lanier(2018)]{lanier2018}
+Jaron Lanier.
+\newblock \emph{Ten Arguments for Deleting Your Social Media Accounts Right
+  Now}.
+\newblock Henry Holt, 2018.
+
+\bibitem[Lawvere and Schanuel(2009)]{lawvere2009}
+F.~William Lawvere and Steve~H. Schanuel.
+\newblock \emph{Conceptual Mathematics: A First Introduction to Categories}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem[Mac~Lane(1998)]{maclane1998}
+Saunders Mac~Lane.
+\newblock \emph{Categories for the Working Mathematician}.
+\newblock Springer, 1998.
+
+\bibitem[May(1999)]{may1999}
+J.~Peter May.
+\newblock \emph{A Concise Course in Algebraic Topology}.
+\newblock University of Chicago Press, 1999.
+
+\bibitem[Milewski(2018)]{milewski2018}
+Bartosz Milewski.
+\newblock \emph{Category Theory for Programmers}.
+\newblock Self-published, 2018.
+
+\bibitem[Ortega~y Gasset(1957)]{ortega1957}
+Jos\'{e} Ortega~y Gasset.
+\newblock \emph{The Revolt of the Masses}.
+\newblock Norton, 1957.
+
+\bibitem[Pearl(2009)]{pearl2009}
+Judea Pearl.
+\newblock \emph{Causality: Models, Reasoning and Inference}.
+\newblock Cambridge University Press, 2009.
+
+\bibitem[Shannon(1948)]{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27:\penalty0 379--423, 1948.
+
+\bibitem[Tononi(2004)]{tononi2004}
+Giulio Tononi.
+\newblock Integrated information theory of consciousness.
+\newblock \emph{BMC Neuroscience}, 5\penalty0 (42), 2004.
+
+\bibitem[Whitehead(1978)]{whitehead1978}
+Alfred~North Whitehead.
+\newblock \emph{Process and Reality}.
+\newblock Free Press, 1978.
+
+\bibitem[Zuboff(2019)]{zuboff2019}
+Shoshana Zuboff.
+\newblock \emph{The Age of Surveillance Capitalism}.
+\newblock PublicAffairs, 2019.
+
+\end{thebibliography}

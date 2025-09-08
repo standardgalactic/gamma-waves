@@ -1,0 +1,30 @@
+\contentsline {part}{I\hspace {1em}Foundations}{2}{}%
+\contentsline {section}{Chapter 1: Prelude: Of Attention and Entropy}{2}{}%
+\contentsline {section}{Chapter 2: RSVP Theory: The Relativistic Scalar-Vector Plenum}{3}{}%
+\contentsline {section}{Chapter 3: Semantic Infrastructure as Post-Git Architecture}{6}{}%
+\contentsline {section}{Chapter 4: Simulated Agency: Consciousness as Sparse Projection}{8}{}%
+\contentsline {section}{Chapter 5: Entropic Economics and the Cognitive Commons}{10}{}%
+\contentsline {section}{Chapter 6: Entropic Ethics—Toward Cognitive Sovereignty}{13}{}%
+\contentsline {part}{II\hspace {1em}Implementation and Scaling}{15}{}%
+\contentsline {section}{Chapter 7: HYDRA --- Hybrid Dynamic Reasoning Architecture}{15}{}%
+\contentsline {section}{Chapter 8: RSVP Futarchy --- Governance as Field Feedback}{18}{}%
+\contentsline {section}{Chapter 9: Geozotic Families and Community Fields}{20}{}%
+\contentsline {section}{Chapter 10: Simulation and Implementation Notes}{21}{}%
+\contentsline {paragraph}{Lattice Simulations}{21}{}%
+\contentsline {paragraph}{Agent-Based Embedding}{21}{}%
+\contentsline {paragraph}{GPU Acceleration}{22}{}%
+\contentsline {paragraph}{Phase 1: Prototype Simulation}{22}{}%
+\contentsline {paragraph}{Phase 2: Modular Integration}{23}{}%
+\contentsline {paragraph}{Phase 3: Applied Scenarios}{23}{}%
+\contentsline {paragraph}{Phase 4: Public Demonstration}{23}{}%
+\contentsline {part}{III\hspace {1em}Implications and Futures}{23}{}%
+\contentsline {section}{Chapter 11: Philosophical Horizons of the Plenum}{23}{}%
+\contentsline {section}{Chapter 12: Ethics and Political Economy in RSVP}{24}{}%
+\contentsline {section}{Chapter 13: Empirical Predictions and Testing}{26}{}%
+\contentsline {section}{Chapter 14: RSVP and Artificial Intelligence}{27}{}%
+\contentsline {section}{Chapter 15: Futures of Society and Consciousness}{28}{}%
+\contentsline {section}{Epilogue: The Rise of Coherence}{29}{}%
+\contentsline {section}{\numberline {A}RSVP Field Formalism}{30}{}%
+\contentsline {section}{\numberline {B}Sparse Projection and Simulated Agency}{30}{}%
+\contentsline {section}{\numberline {C}Category-Theoretic Semantic Infrastructure}{31}{}%
+\contentsline {section}{\numberline {D}HYDRA and TARTAN Formalism}{31}{}%

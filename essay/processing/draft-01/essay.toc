@@ -1,0 +1,150 @@
+\contentsline {part}{I\hspace {1em}Foundations}{4}{}%
+\contentsline {section}{\numberline {1}Chapter 1: Prelude: Of Attention and Entropy}{5}{}%
+\contentsline {subsection}{\numberline {1.1}1.1 Introduction: The Economy of Cognitive Capture}{5}{}%
+\contentsline {subsection}{\numberline {1.2}1.2 Entropy as the Hidden Currency}{5}{}%
+\contentsline {subsection}{\numberline {1.3}1.3 RSVP as a Counter-Architecture}{5}{}%
+\contentsline {subsection}{\numberline {1.4}1.4 From File Systems to Semantic Manifolds}{6}{}%
+\contentsline {subsection}{\numberline {1.5}1.5 Toward Cognitive Sovereignty}{6}{}%
+\contentsline {section}{\numberline {2}Chapter 2: RSVP Theory: The Relativistic Scalar-Vector Plenum}{6}{}%
+\contentsline {subsection}{\numberline {2.1}2.1 Introduction: From Attention to Semantic Fields}{6}{}%
+\contentsline {subsection}{\numberline {2.2}2.2 The RSVP Framework: Core Definitions}{6}{}%
+\contentsline {subsection}{\numberline {2.3}2.3 Governing Equations and Variational Principles}{7}{}%
+\contentsline {subsection}{\numberline {2.4}2.4 Category-Theoretic Formalization}{7}{}%
+\contentsline {subsection}{\numberline {2.5}2.5 RSVP as a Computational Substrate}{8}{}%
+\contentsline {subsection}{\numberline {2.6}2.6 Conclusion: Toward a Semantic Revolution}{8}{}%
+\contentsline {section}{\numberline {3}Chapter 3: Semantic Infrastructure as Post-Git Architecture}{8}{}%
+\contentsline {subsection}{\numberline {3.1}3.1 Introduction: Beyond Hierarchical File Systems}{8}{}%
+\contentsline {subsection}{\numberline {3.2}3.2 The Limitations of File-Based Systems in a Semantic Plenum}{9}{}%
+\contentsline {subsection}{\numberline {3.3}3.3 Fibered Symmetric Monoidal \(\infty \)-Categories as the Backbone}{9}{}%
+\contentsline {subsection}{\numberline {3.4}3.4 Homotopy Colimits for Semantic Merging}{9}{}%
+\contentsline {subsection}{\numberline {3.5}3.5 Practical Implementation: From Theory to Entropy-Respecting VCS}{10}{}%
+\contentsline {subsection}{\numberline {3.6}3.6 Conclusion: A Modular Substrate for Cognitive Commons}{10}{}%
+\contentsline {section}{\numberline {4}Chapter 4: Simulated Agency: Consciousness as Sparse Projection}{10}{}%
+\contentsline {subsection}{\numberline {4.1}4.1 Introduction: Agency in an Entropic Universe}{10}{}%
+\contentsline {subsection}{\numberline {4.2}4.2 The Chain of Memory: A Recursive Model}{11}{}%
+\contentsline {subsection}{\numberline {4.3}4.3 Variational Principles for Simulated Agency}{11}{}%
+\contentsline {subsection}{\numberline {4.4}4.4 Category-Theoretic Formalization of Agency}{11}{}%
+\contentsline {subsection}{\numberline {4.5}4.5 HYDRA and TARTAN: Distributed Agency Architectures}{12}{}%
+\contentsline {subsection}{\numberline {4.6}4.6 Consciousness as Emergent Sparse Projection}{12}{}%
+\contentsline {subsection}{\numberline {4.7}4.7 Conclusion: Toward Ethical Agency}{12}{}%
+\contentsline {section}{\numberline {5}Chapter 5: Entropic Economics and Cognitive Commons}{12}{}%
+\contentsline {subsection}{\numberline {5.1}5.1 Introduction: Reimagining Economics through Entropy}{12}{}%
+\contentsline {subsection}{\numberline {5.2}5.2 Attention as a Scalar Commodity: A Category-Theoretic Perspective}{13}{}%
+\contentsline {subsection}{\numberline {5.3}5.3 Sheaf-Theoretic Entropic Economics}{13}{}%
+\contentsline {subsection}{\numberline {5.4}5.4 Futarchy and Decentralized Governance}{13}{}%
+\contentsline {subsection}{\numberline {5.5}5.5 HYDRA and TARTAN in Economic Coordination}{14}{}%
+\contentsline {subsection}{\numberline {5.6}5.6 The Cognitive Commons: Breaking Monopolistic Collapse}{14}{}%
+\contentsline {subsection}{\numberline {5.7}5.7 Conclusion: Toward a Modular Economic Paradigm}{14}{}%
+\contentsline {section}{\numberline {6}Chapter 6: Entropic Ethics: Toward Cognitive Sovereignty}{14}{}%
+\contentsline {subsection}{\numberline {6.1}6.1 Introduction: The Moral Imperative of Semantic Autonomy}{14}{}%
+\contentsline {subsection}{\numberline {6.2}6.2 The Ethical Pathology of Attention Extraction}{14}{}%
+\contentsline {subsection}{\numberline {6.3}6.3 Category-Theoretic Ethics: Agency as a Functorial Principle}{15}{}%
+\contentsline {subsection}{\numberline {6.4}6.4 Sheaf-Theoretic Ethics: Local Coherence, Global Freedom}{15}{}%
+\contentsline {subsection}{\numberline {6.5}6.5 Entropic Ethics in Distributed Architectures}{15}{}%
+\contentsline {subsection}{\numberline {6.6}6.6 Toward Cognitive Sovereignty}{16}{}%
+\contentsline {subsection}{\numberline {6.7}6.7 Conclusion: A Moral Architecture for the Future}{16}{}%
+\contentsline {part}{II\hspace {1em}Implementation and Scaling}{16}{}%
+\contentsline {section}{\numberline {7}Chapter 7: HYDRA --- Hybrid Dynamic Reasoning Architecture}{16}{}%
+\contentsline {subsection}{\numberline {7.1}7.1 Introduction: From Centralized to Distributed Cognition}{16}{}%
+\contentsline {subsection}{\numberline {7.2}7.2 Architectural Overview}{17}{}%
+\contentsline {subsection}{\numberline {7.3}7.3 Field-Theoretic Interpretation}{17}{}%
+\contentsline {subsection}{\numberline {7.4}7.4 TARTAN: Functorial Global Coherence}{17}{}%
+\contentsline {subsection}{\numberline {7.5}7.5 Variational Principles for Distributed Agency}{18}{}%
+\contentsline {subsection}{\numberline {7.6}7.6 Applications}{18}{}%
+\contentsline {subsection}{\numberline {7.7}7.7 Conclusion}{18}{}%
+\contentsline {section}{\numberline {8}Chapter 8: RSVP Futarchy --- Governance as Field Feedback}{19}{}%
+\contentsline {subsection}{\numberline {8.1}8.1 Colonial and Patriarchal Roots}{19}{}%
+\contentsline {subsection}{\numberline {8.2}8.2 The RSVP Interpretation}{19}{}%
+\contentsline {subsection}{\numberline {8.3}8.3 Toward a Futarchy of Fields}{19}{}%
+\contentsline {subsection}{\numberline {8.4}8.4 Formal Principle}{20}{}%
+\contentsline {subsection}{\numberline {8.5}8.5 Practical Implications}{20}{}%
+\contentsline {subsection}{\numberline {8.6}8.6 Conclusion}{20}{}%
+\contentsline {section}{\numberline {9}Chapter 9: Geozotic Families and Community Fields}{20}{}%
+\contentsline {subsection}{\numberline {9.1}9.1 From Household Spikes to Community Wells}{20}{}%
+\contentsline {subsection}{\numberline {9.2}9.2 Mechanisms of Redistribution}{21}{}%
+\contentsline {subsection}{\numberline {9.3}9.3 Formal Expression}{21}{}%
+\contentsline {subsection}{\numberline {9.4}9.4 Ethical and Political Dimensions}{21}{}%
+\contentsline {subsection}{\numberline {9.5}9.5 Toward a Coherent Society}{22}{}%
+\contentsline {subsection}{\numberline {9.6}9.6 Conclusion}{22}{}%
+\contentsline {section}{\numberline {10}Chapter 10: Simulation and Implementation Notes}{22}{}%
+\contentsline {subsection}{\numberline {10.1}10.1 Modeling Frameworks}{22}{}%
+\contentsline {paragraph}{Lattice Simulations}{22}{}%
+\contentsline {paragraph}{Agent-Based Embedding}{22}{}%
+\contentsline {paragraph}{GPU Acceleration}{22}{}%
+\contentsline {subsection}{\numberline {10.2}10.2 Integrating HYDRA and TARTAN}{22}{}%
+\contentsline {subsection}{\numberline {10.3}10.3 Futarchy-Inspired Governance in Simulation}{23}{}%
+\contentsline {subsection}{\numberline {10.4}10.4 Geozotic Families in Simulation}{23}{}%
+\contentsline {subsection}{\numberline {10.5}10.5 Metrics and Outputs}{23}{}%
+\contentsline {subsection}{\numberline {10.6}10.6 Implementation Roadmap}{23}{}%
+\contentsline {paragraph}{Phase 1: Prototype Simulation}{23}{}%
+\contentsline {paragraph}{Phase 2: Modular Integration}{23}{}%
+\contentsline {paragraph}{Phase 3: Applied Scenarios}{23}{}%
+\contentsline {paragraph}{Phase 4: Public Demonstration}{23}{}%
+\contentsline {subsection}{\numberline {10.7}10.7 Conclusion}{24}{}%
+\contentsline {part}{III\hspace {1em}Implications and Futures}{24}{}%
+\contentsline {section}{\numberline {11}Chapter 11: Philosophical Horizons of the Plenum}{24}{}%
+\contentsline {subsection}{\numberline {11.1}11.1 From Substance to Process}{24}{}%
+\contentsline {subsection}{\numberline {11.2}11.2 Persons as Field Nodes}{24}{}%
+\contentsline {subsection}{\numberline {11.3}11.3 Coherence as a Moral Value}{24}{}%
+\contentsline {subsection}{\numberline {11.4}11.4 The Critique of Individualism}{25}{}%
+\contentsline {subsection}{\numberline {11.5}11.5 Horizons of Consciousness}{25}{}%
+\contentsline {subsection}{\numberline {11.6}11.6 Toward a Plenum Philosophy}{25}{}%
+\contentsline {subsection}{\numberline {11.7}11.7 Conclusion}{25}{}%
+\contentsline {section}{\numberline {12}Chapter 12: Ethics and Political Economy in RSVP}{25}{}%
+\contentsline {subsection}{\numberline {12.1}12.1 Entropic Ethics}{25}{}%
+\contentsline {subsection}{\numberline {12.2}12.2 Colonial and Patriarchal Distortions}{26}{}%
+\contentsline {subsection}{\numberline {12.3}12.3 Entropic Economics}{26}{}%
+\contentsline {subsection}{\numberline {12.4}12.4 Cognitive Sovereignty}{26}{}%
+\contentsline {subsection}{\numberline {12.5}12.5 RSVP Futarchy and Adaptive Justice}{26}{}%
+\contentsline {subsection}{\numberline {12.6}12.6 Conclusion}{26}{}%
+\contentsline {section}{\numberline {13}Chapter 13: Empirical Predictions and Testing}{27}{}%
+\contentsline {subsection}{\numberline {13.1}13.1 Cosmological Predictions}{27}{}%
+\contentsline {subsection}{\numberline {13.2}13.2 Neurocognitive Predictions}{27}{}%
+\contentsline {subsection}{\numberline {13.3}13.3 Social and Political Predictions}{27}{}%
+\contentsline {subsection}{\numberline {13.4}13.4 Simulation Benchmarks}{27}{}%
+\contentsline {subsection}{\numberline {13.5}13.5 Criteria of Falsification}{28}{}%
+\contentsline {subsection}{\numberline {13.6}13.6 Conclusion}{28}{}%
+\contentsline {section}{\numberline {14}Chapter 14: RSVP and Artificial Intelligence}{28}{}%
+\contentsline {subsection}{\numberline {14.1}14.1 HYDRA and Distributed Agency}{28}{}%
+\contentsline {subsection}{\numberline {14.2}14.2 TARTAN and Scaling}{28}{}%
+\contentsline {subsection}{\numberline {14.3}14.3 RSVP Futarchy for AI Alignment}{28}{}%
+\contentsline {subsection}{\numberline {14.4}14.4 Ethical Design: Protecting Cognitive Sovereignty}{29}{}%
+\contentsline {subsection}{\numberline {14.5}14.5 Consciousness and Machine Coherence}{29}{}%
+\contentsline {subsection}{\numberline {14.6}14.6 Futures of AI in RSVP}{29}{}%
+\contentsline {subsection}{\numberline {14.7}14.7 Conclusion}{29}{}%
+\contentsline {section}{\numberline {15}Chapter 15: Futures of Society and Consciousness}{29}{}%
+\contentsline {subsection}{\numberline {15.1}15.1 Post-Individualist Attractors}{29}{}%
+\contentsline {subsection}{\numberline {15.2}15.2 Governance by Coherence}{30}{}%
+\contentsline {subsection}{\numberline {15.3}15.3 Consciousness Beyond the Skull}{30}{}%
+\contentsline {subsection}{\numberline {15.4}15.4 Artificial Intelligence as Plenum Participant}{30}{}%
+\contentsline {subsection}{\numberline {15.5}15.5 Utopia, Dystopia, and the Choice of Fields}{30}{}%
+\contentsline {subsection}{\numberline {15.6}15.6 Conclusion}{30}{}%
+\contentsline {section}{\numberline {16}Epilogue: The Rise of Coherence}{30}{}%
+\contentsline {section}{\numberline {A}Appendix A: RSVP Field Formalism}{31}{}%
+\contentsline {subsection}{\numberline {A.1}A.1 Scalar Field (\(\Phi \))}{31}{}%
+\contentsline {subsection}{\numberline {A.2}A.2 Vector Field (\(\mathbf {v}\))}{31}{}%
+\contentsline {subsection}{\numberline {A.3}A.3 Entropy Field (\(S\))}{31}{}%
+\contentsline {section}{\numberline {B}Appendix B: Sparse Projection and Simulated Agency}{31}{}%
+\contentsline {subsection}{\numberline {B.1}B.1 Chain of Memory}{31}{}%
+\contentsline {subsection}{\numberline {B.2}B.2 Variational Objective}{31}{}%
+\contentsline {section}{\numberline {C}Appendix C: Category-Theoretic Semantic Infrastructure}{31}{}%
+\contentsline {subsection}{\numberline {C.1}C.1 Semantic Modules}{31}{}%
+\contentsline {subsection}{\numberline {C.2}C.2 Homotopy Colimits}{32}{}%
+\contentsline {subsection}{\numberline {C.3}C.3 Fibered Structure}{32}{}%
+\contentsline {section}{\numberline {D}Appendix D: HYDRA and TARTAN Formalism}{32}{}%
+\contentsline {subsection}{\numberline {D.1}D.1 HYDRA Nodes}{32}{}%
+\contentsline {subsection}{\numberline {D.2}D.2 TARTAN Coordination}{32}{}%
+\contentsline {section}{\numberline {E}Appendix E: Entropic Economics}{32}{}%
+\contentsline {subsection}{\numberline {E.1}E.1 Attention as Commodity}{32}{}%
+\contentsline {subsection}{\numberline {E.2}E.2 Attention–Entropy Tradeoff}{32}{}%
+\contentsline {section}{\numberline {F}Appendix F: Cosmological Analogy}{32}{}%
+\contentsline {subsection}{\numberline {F.1}F.1 Lamphron-Lamphrodyne Dynamics}{32}{}%
+\contentsline {section}{\numberline {G}Appendix G: Implementation Notes}{32}{}%
+\contentsline {section}{\numberline {H}Appendix H: HYDRA and TARTAN Formalism (Extended)}{33}{}%
+\contentsline {subsection}{\numberline {H.1}H.1 HYDRA Node Dynamics}{33}{}%
+\contentsline {subsection}{\numberline {H.2}H.2 Stability Analysis of HYDRA Networks}{33}{}%
+\contentsline {subsection}{\numberline {H.3}H.3 TARTAN Functorial Coherence}{33}{}%
+\contentsline {subsection}{\numberline {H.4}H.4 Natural Transformations and Alignment}{34}{}%
+\contentsline {subsection}{\numberline {H.5}H.5 Distributed Free-Energy Functional}{34}{}%
+\contentsline {subsection}{\numberline {H.6}H.6 Implementation Pathways}{34}{}%
+\contentsline {subsection}{\numberline {H.7}H.7 Conclusion}{34}{}%
