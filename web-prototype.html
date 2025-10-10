@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entropic Empire - Web Prototype</title>
+    <style>
+        body { font-family: sans-serif; background: #111; color: #eee; }
+        #grid { display: grid; grid-template-columns: repeat(10, 30px); grid-gap: 2px; margin-bottom: 20px; }
+        .cell { width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; font-size: 10px; }
+        #dashboard { margin-bottom: 20px; }
+        button { padding: 5px 10px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>Entropic Empire - Web Prototype</h1>
+    <div id="dashboard"></div>
+    <div id="grid"></div>
+    <button onclick="nextTurn()">Advance Turn</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <script>
+    const GRID_SIZE = 10;
+    const NUM_AGENTS = 5;
+    let grid = [];
+    let agents = [];
+
+    // Initialize grid
+    for(let i=0;i<GRID_SIZE;i++){
+        let row = [];
+        for(let j=0;j<GRID_SIZE;j++){
+            row.push({Phi: Math.random(), v: 0, S: 0.1, items: []});
+        }
+        grid.push(row);
+    }
+
+    // Initialize agents
+    class Agent {
+        constructor(name) {
+            this.name = name;
+            this.coherence = Math.random();
+            this.recentItems = [];
+        }
+        chooseAction() {
+            const actions = ['produce','maintain'];
+            return actions[Math.floor(Math.random()*actions.length)];
+        }
+        step() {
+            let action = this.chooseAction();
+            let i = Math.floor(Math.random()*GRID_SIZE);
+            let j = Math.floor(Math.random()*GRID_SIZE);
+            let cell = grid[i][j];
+            if(action==='produce') this.produce(cell);
+            else this.maintain(cell);
+        }
+        produce(cell){
+            let content = new TextEncoder().encode(`${this.name}-${Math.random()}`);
+            let compressed = pako.deflate(content);
+            let C = 1 - compressed.length/content.length;
+            let deltaS = (1-C)*0.05;
+            cell.S += deltaS;
+            cell.Phi += 0.01;
+            cell.v += 0.01;
+            this.recentItems.push({content, C});
+        }
+        maintain(cell){
+            cell.S = Math.max(0, cell.S - 0.02);
+            cell.Phi += 0.01;
+        }
+    }
+
+    for(let n=0;n<NUM_AGENTS;n++) agents.push(new Agent(`Agent${n+1}`));
+
+    // Render grid
+    function renderGrid() {
+        const gridDiv = document.getElementById("grid");
+        gridDiv.innerHTML = '';
+        for(let i=0;i<GRID_SIZE;i++){
+            for(let j=0;j<GRID_SIZE;j++){
+                let cellDiv = document.createElement("div");
+                cellDiv.className = "cell";
+                let cell = grid[i][j];
+                let hue = Math.min(120, 120*(1-cell.S/0.5));
+                cellDiv.style.background = `hsl(${hue}, 80%, 40%)`;
+                cellDiv.title = `Φ: ${cell.Phi.toFixed(2)}\nS: ${cell.S.toFixed(2)}`;
+                gridDiv.appendChild(cellDiv);
+            }
+        }
+    }
+
+    // Update dashboard
+    function updateDashboard() {
+        let Phi_avg = 0, S_total = 0;
+        grid.forEach(row => row.forEach(cell => {
+            Phi_avg += cell.Phi;
+            S_total += cell.S;
+        }));
+        Phi_avg /= (GRID_SIZE*GRID_SIZE);
+        document.getElementById("dashboard").innerHTML = `
+            <b>Average Φ:</b> ${Phi_avg.toFixed(2)} | <b>Total S:</b> ${S_total.toFixed(2)}
+        `;
+    }
+
+    // Advance one turn
+    function nextTurn(){
+        agents.forEach(a => a.step());
+        // Apply decay/damping
+        grid.forEach(row => row.forEach(cell => {
+            cell.Phi *= 0.99;
+            cell.v *= 0.95;
+            cell.S += Math.random()*0.005; // noise
+        }));
+        renderGrid();
+        updateDashboard();
+    }
+
+    renderGrid();
+    updateDashboard();
+    </script>
+</body>
+</html>
+

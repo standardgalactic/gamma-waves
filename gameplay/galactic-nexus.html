@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Entropic Empire - Galactic Nexus</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(to bottom, #0a0a23, #1b1b4f);
+      color: #e0e0ff;
+      text-align: center;
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      border: 2px solid #444;
+      background: #111;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    #metrics {
+      width: 90%;
+      margin: 20px auto;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      font-size: 18px;
+    }
+    .controls {
+      margin: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-family: 'Courier New', monospace;
+      background: #333;
+      color: #e0e0ff;
+      border: 2px solid #666;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background: #555;
+      transform: scale(1.05);
+    }
+    h1 {
+      font-size: 36px;
+      text-shadow: 0 0 10px #66f;
+      margin: 20px;
+    }
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Entropic Empire - Galactic Nexus</h1>
+  <canvas id="spaceCanvas" width="1000" height="700"></canvas>
+  <div id="metrics"></div>
+  <div class="controls">
+    <button onclick="stepWorld()">Next Turn</button>
+    <button onclick="togglePause()">Pause/Resume</button>
+    <button onclick="resetWorld()">Reset</button>
+  </div>
+
+  <script>
+    // -----------------------------
+    // Configuration
+    // -----------------------------
+    const NUM_STARS = 5;
+    const PLANETS_PER_STAR = 5;
+    const AGENTS_PER_PLANET = 15;
+
+    // Field params
+    const ALPHA_CREATE = 0.05;
+    const ALPHA_RESTORE = 0.08;
+    const ALPHA_DECAY = 0.001;
+    const BETA_DAMP = 0.05;
+    const KAPPA_DIV = 0.03;
+
+    // Canvas config
+    const WIDTH = 1000;
+    const HEIGHT = 700;
+
+    // Game state
+    let paused = false;
+    let animationFrameId = null;
+
+    // -----------------------------
+    // Utilities
+    // -----------------------------
+    function randomChoice(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+    function distance(x1, y1, x2, y2) { return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2); }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    // -----------------------------
+    // Entities
+    // -----------------------------
+    class Planet {
+      constructor(x, y, name, star) {
+        this.x = x;
+        this.y = y;
+        this.name = name;
+        this.star = star;
+        this.phi = 0.8;
+        this.v = 0.0;
+        this.s = 0.1;
+        this.agents = [];
+        this.resources = 100;
+        this.orbitAngle = Math.random() * 2 * Math.PI;
+        this.orbitRadius = 30 + Math.random() * 20;
+        this.orbitSpeed = 0.01 + Math.random() * 0.02;
+      }
+
+      updateOrbit() {
+        this.orbitAngle += this.orbitSpeed;
+        this.x = this.star.x + Math.cos(this.orbitAngle) * this.orbitRadius;
+        this.y = this.star.y + Math.sin(this.orbitAngle) * this.orbitRadius;
+      }
+    }
+
+    class Agent {
+      constructor(planet) {
+        this.planet = planet;
+        this.type = randomChoice(['producer', 'maintainer', 'corporate', 'commons', 'explorer']);
+        this.currency = 100;
+        this.reputation = 0;
+        this.energy = 100;
+      }
+
+      act() {
+        if (this.energy < 10) return; // Exhausted agents can't act
+        this.energy -= 5;
+        const action = randomChoice(['produce', 'maintain', 'automate', 'trade', 'moveStar', 'explore']);
+        if (action === 'produce') {
+          const deltaS = 0.01 * Math.random();
+          this.planet.s += deltaS;
+          this.planet.phi += ALPHA_CREATE * 0.01;
+          this.currency += 2;
+        } else if (action === 'maintain') {
+          const delta = ALPHA_RESTORE * 0.02;
+          this.planet.s = Math.max(0, this.planet.s - delta);
+          this.planet.phi += ALPHA_RESTORE * 0.005;
+          this.reputation += 0.02;
+          this.planet.resources += 5;
+        } else if (action === 'automate') {
+          const extraS = 0.02 * Math.random();
+          this.planet.s += extraS;
+          this.planet.v += 0.05;
+          this.currency += 0.1;
+          this.energy -= 10;
+        } else if (action === 'trade') {
+          const other = randomChoice(world.stars.flatMap(s => s.planets.filter(p => p !== this.planet)));
+          const trade_amount = Math.min(this.currency, 5);
+          this.currency -= trade_amount;
+          other.phi += trade_amount * 0.002;
+          other.resources += trade_amount;
+        } else if (action === 'moveStar') {
+          const other = randomChoice(world.stars.flatMap(s => s.planets));
+          this.planet = other;
+          this.energy -= 20;
+        } else if (action === 'explore') {
+          this.planet.resources += Math.random() * 10;
+          this.reputation += 0.05;
+          this.energy -= 15;
+        }
+        this.energy = Math.min(100, this.energy + 2); // Energy recovery
+      }
+    }
+
+    class Star {
+      constructor(x, y, name) {
+        this.x = x;
+        this.y = y;
+        this.name = name;
+        this.planets = [];
+        this.pulse = 0;
+      }
+
+      updatePulse() {
+        this.pulse += 0.05;
+      }
+    }
+
+    // -----------------------------
+    // World
+    // -----------------------------
+    class World {
+      constructor() {
+        this.stars = [];
+        for (let i = 0; i < NUM_STARS; i++) {
+          const x = Math.random() * WIDTH * 0.8 + WIDTH * 0.1;
+          const y = Math.random() * HEIGHT * 0.6 + HEIGHT * 0.2;
+          const star = new Star(x, y, `Star ${i + 1}`);
+          for (let j = 0; j < PLANETS_PER_STAR; j++) {
+            const planet = new Planet(x, y, `P${i + 1}-${j + 1}`, star);
+            for (let k = 0; k < AGENTS_PER_PLANET; k++) {
+              planet.agents.push(new Agent(planet));
+            }
+            star.planets.push(planet);
+          }
+          this.stars.push(star);
+        }
+        this.time = 0;
+        this.hoveredPlanet = null;
+      }
+
+      step() {
+        if (paused) return;
+        this.stars.forEach(star => {
+          star.updatePulse();
+          star.planets.forEach(planet => {
+            planet.updateOrbit();
+            planet.agents.forEach(agent => agent.act());
+            planet.phi = Math.max(0, planet.phi - ALPHA_DECAY * planet.phi);
+            planet.v *= (1 - BETA_DAMP);
+            planet.s += 0.001 * (Math.random() - 0.5);
+            planet.resources = Math.max(0, planet.resources - 0.1);
+          });
+        });
+        this.time++;
+        this.draw();
+        this.logMetrics();
+      }
+
+      draw() {
+        const canvas = document.getElementById('spaceCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#111';
+        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+        // Draw star connections
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.lineWidth = 1;
+        this.stars.forEach((star1, i) => {
+          this.stars.slice(i + 1).forEach(star2 => {
+            ctx.beginPath();
+            ctx.moveTo(star1.x, star1.y);
+            ctx.lineTo(star2.x, star2.y);
+            ctx.stroke();
+          });
+        });
+
+        // Draw stars and planets
+        this.stars.forEach(star => {
+          // Star glow effect
+          const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, 15);
+          gradient.addColorStop(0, 'rgba(255, 255, 0, 1)');
+          gradient.addColorStop(1, 'rgba(255, 255, 0, 0)');
+          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, 15 + Math.sin(star.pulse) * 2, 0, 2 * Math.PI);
+          ctx.fill();
+
+          // Draw planets
+          star.planets.forEach(planet => {
+            const brightness = Math.min(1, planet.s * 5);
+            ctx.fillStyle = `hsl(${planet.phi * 360}, 70%, ${brightness * 50 + 50}%)`;
+            ctx.beginPath();
+            ctx.arc(planet.x, planet.y, 6, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // Orbit path
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, planet.orbitRadius, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            // Highlight hovered planet
+            if (planet === this.hoveredPlanet) {
+              ctx.strokeStyle = '#fff';
+              ctx.lineWidth = 2;
+              ctx.beginPath();
+              ctx.arc(planet.x, planet.y, 8, 0, 2 * Math.PI);
+              ctx.stroke();
+            }
+          });
+        });
+      }
+
+      logMetrics() {
+        let totalS = 0, totalPhi = 0, totalAgents = 0, totalResources = 0;
+        this.stars.forEach(star => {
+          star.planets.forEach(p => {
+            totalS += p.s;
+            totalPhi += p.phi;
+            totalAgents += p.agents.length;
+            totalResources += p.resources;
+          });
+        });
+        const avgPhi = totalPhi / this.stars.flatMap(s => s.planets).length;
+        document.getElementById('metrics').innerHTML = `
+          Turn: ${this.time} | Total S: ${totalS.toFixed(2)} | Avg Phi: ${avgPhi.toFixed(2)} | 
+          Agents: ${totalAgents} | Resources: ${totalResources.toFixed(2)}
+        `;
+        if (this.hoveredPlanet) {
+          const p = this.hoveredPlanet;
+          document.getElementById('metrics').innerHTML += `<br>Selected: ${p.name} | S: ${p.s.toFixed(2)} | Phi: ${p.phi.toFixed(2)} | Resources: ${p.resources.toFixed(2)}`;
+        }
+      }
+
+      checkHover(x, y) {
+        this.hoveredPlanet = null;
+        for (const star of this.stars) {
+          for (const planet of star.planets) {
+            if (distance(x, y, planet.x, planet.y) < 10) {
+              this.hoveredPlanet = planet;
+              break;
+            }
+          }
+        }
+        this.draw();
+        this.logMetrics();
+      }
+    }
+
+    const world = new World();
+    world.draw();
+
+    function stepWorld() {
+      world.step();
+    }
+
+    function togglePause() {
+      paused = !paused;
+      if (!paused) {
+        const animate = () => {
+          if (!paused) {
+            world.step();
+            animationFrameId = requestAnimationFrame(animate);
+          }
+        };
+        animationFrameId = requestAnimationFrame(animate);
+      } else if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    }
+
+    function resetWorld() {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      paused = false;
+      world.stars = [];
+      world.time = 0;
+      for (let i = 0; i < NUM_STARS; i++) {
+        const x = Math.random() * WIDTH * 0.8 + WIDTH * 0.1;
+        const y = Math.random() * HEIGHT * 0.6 + HEIGHT * 0.2;
+        const star = new Star(x, y, `Star ${i + 1}`);
+        for (let j = 0; j < PLANETS_PER_STAR; j++) {
+          const planet = new Planet(x, y, `P${i + 1}-${j + 1}`, star);
+          for (let k = 0; k < AGENTS_PER_PLANET; k++) {
+            planet.agents.push(new Agent(planet));
+          }
+          star.planets.push(planet);
+        }
+        world.stars.push(star);
+      }
+      world.draw();
+      world.logMetrics();
+    }
+
+    // Mouse interaction
+    const canvas = document.getElementById('spaceCanvas');
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      world.checkHover(x, y);
+    });
+  </script>
+</body>
+</html>
