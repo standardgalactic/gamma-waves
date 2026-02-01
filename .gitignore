@@ -1,2 +1,6 @@
+.venv/
+venv/
+.env/
+
 data/text/*.pdf
 data/text/*.epub

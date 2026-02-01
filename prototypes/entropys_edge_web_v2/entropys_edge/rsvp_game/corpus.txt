@@ -1,0 +1,402 @@
+# rsvp_game/__init__.py
+# rsvp_game/diplomacy.py
+import numpy as np
+
+def ethics_tensor(Phi, vx, vy, h):
+    # E_i ~ grad v · grad Phi (trace-like)
+    # Use central diffs via np.roll (periodic)
+    def grad(U):
+        gx = (np.roll(U, -1, 1) - np.roll(U, 1, 1)) / (2*h)
+        gy = (np.roll(U, -1, 0) - np.roll(U, 1, 0)) / (2*h)
+        return gx, gy
+    gPx, gPy = grad(Phi)
+    gvx_x, gvx_y = grad(vx)
+    gvy_x, gvy_y = grad(vy)
+    # contraction: sum_d d v^d * d Phi
+    E = gvx_x * gPx + gvy_y * gPy
+    return E
+
+def alignment_matrix(owners, E, num_factions=None):
+    if num_factions is None:
+        num_factions = int(owners.max()) + 1
+    means = []
+    for f in range(num_factions):
+        mask = (owners == f)
+        if mask.any():
+            means.append(E[mask].mean())
+        else:
+            means.append(0.0)
+    means = np.array(means)
+    # cosine over 1D vectors reduces to normalized dot product; here keep simple outer
+    # Create symmetric alignment by product normalized
+    denom = np.linalg.norm(means) + 1e-9
+    if denom == 0: 
+        denom = 1.0
+    v = means / denom
+    A = np.outer(v, v)
+    return A, means
+# rsvp_game/kernels.py
+import numpy as np
+
+def laplace(U, h):
+    return (
+        np.roll(U, 1, 0) + np.roll(U, -1, 0) +
+        np.roll(U, 1, 1) + np.roll(U, -1, 1) - 4*U
+    ) / (h*h)
+
+def grad(U, h):
+    gx = (np.roll(U, -1, 1) - np.roll(U, 1, 1)) / (2*h)  # x ~ cols
+    gy = (np.roll(U, -1, 0) - np.roll(U, 1, 0)) / (2*h)  # y ~ rows
+    return gx, gy
+
+def div(vx, vy, h):
+    dvx_dx = (np.roll(vx, -1, 1) - np.roll(vx, 1, 1)) / (2*h)
+    dvy_dy = (np.roll(vy, -1, 0) - np.roll(vy, 1, 0)) / (2*h)
+    return dvx_dx + dvy_dy
+
+def clamp(U, lo, hi):
+    return np.minimum(np.maximum(U, lo), hi)
+# rsvp_game/kernels_hex.py
+import numpy as np
+
+# Axial coords (a,b) with 6 neighbors
+NEIGH = np.array([[1,0],[1,-1],[0,-1],[-1,0],[-1,1],[0,1]], dtype=int)
+
+def laplace_hex(U, h):
+    # U is (H,W) where rows ~ b, cols ~ a (axial)
+    s = np.zeros_like(U)
+    for da, db in NEIGH:
+        s += np.roll(np.roll(U, db, axis=0), da, axis=1)
+    return (s - 6*U) / (h*h)
+
+def gradmag_hex(U, h):
+    # approximate |grad U|^2 as mean of squared directional differences
+    acc = np.zeros_like(U)
+    for da, db in NEIGH:
+        acc += ((np.roll(np.roll(U, db, axis=0), da, axis=1) - U) / h) ** 2
+    return acc / 6.0
+
+def grad_hex(U, h):
+    # least-squares gradient estimate in embedded skew coords
+    # Embed axial (a,b) to 2D: x = a + 0.5*b, y = (sqrt(3)/2)*b
+    # We'll approximate partials by finite differences along neighbor directions and invert
+    sqrt3 = np.sqrt(3.0)
+    dirs = np.array([
+        [1,0],
+        [1,-1],
+        [0,-1],
+        [-1,0],
+        [-1,1],
+        [0,1]
+    ], dtype=float)
+    # Convert axial dir to embedded (x,y)
+    emb = np.stack([dirs[:,0] + 0.5*dirs[:,1], (sqrt3/2.0)*dirs[:,1]], axis=1)  # shape (6,2)
+
+    # Build (A^T A)^{-1} A^T pre-matrix for LS; do once
+    At = emb.T  # 2x6
+    inv = np.linalg.pinv(At @ emb) @ At  # (2x2)@(2x6) = 2x6
+
+    gx = np.zeros_like(U)
+    gy = np.zeros_like(U)
+    for k,(da,db) in enumerate(dirs.astype(int)):
+        diff = np.roll(np.roll(U, int(db), axis=0), int(da), axis=1) - U  # directional difference
+        if k == 0:
+            stack = diff[np.newaxis,...]
+        else:
+            stack = np.concatenate([stack, diff[np.newaxis,...]], axis=0)
+    # stack: (6,H,W). Apply LS per-pixel: [gx,gy]^T = inv @ (stack/h)
+    # Compute linear combination
+    gx = (inv[0,0]*stack[0] + inv[0,1]*stack[1] + inv[0,2]*stack[2] + inv[0,3]*stack[3] + inv[0,4]*stack[4] + inv[0,5]*stack[5]) / h
+    gy = (inv[1,0]*stack[0] + inv[1,1]*stack[1] + inv[1,2]*stack[2] + inv[1,3]*stack[3] + inv[1,4]*stack[4] + inv[1,5]*stack[5]) / h
+    return gx, gy
+
+def div_hex(vx, vy, h):
+    # divergence via LS gradient of components
+    gvxx, gvxy = grad_hex(vx, h)
+    gvyx, gvyy = grad_hex(vy, h)
+    return gvxx + gvyy
+# rsvp_game/params.py
+
+from dataclasses import dataclass
+
+@dataclass
+class Params:
+    h: float = 1.0
+    dt: float = 0.15
+    kPhi: float = 0.8
+    kS: float = 0.6
+    kv: float = 0.4
+    lmbd: float = 0.2
+    gamma: float = 0.3
+    muS: float = 0.05
+    muv: float = 0.08
+    Phi_max: float = 3.0
+    S_max: float = 3.0
+
+# Meta-phase multipliers
+LAM_MULT = {
+    "kPhi": 1.25,
+    "gamma": 1.25,
+    "muS": 0.8,
+    "lmbd": 0.8
+}
+
+DYN_MULT = {
+    "kS": 1.25,
+    "kv": 1.25,
+    "lmbd": 1.25,
+    "muS": 1.5
+}
+# rsvp_game/sim.py
+import numpy as np
+from .kernels import laplace, grad, div, clamp
+from .params import Params
+from .state import GameState
+
+class Simulator:
+    def __init__(self, width=40, height=30, seed=0, params: Params | None = None):
+        self.rng = np.random.default_rng(seed)
+        self.params = params or Params()
+        self.state = self._new_state(width, height)
+
+        self.phase = "Lamphron"  # or "Lamphrodyne"
+        self.phase_length = 20
+        self.phase_counter = 0
+
+    def _new_state(self, w, h):
+        # Initialize with smooth random fields for Phi and S
+        Phi = self._smooth_noise(h, w, scale=0.5) + 0.8
+        S   = self._smooth_noise(h, w, scale=0.4) + 0.4
+        vx  = self._smooth_noise(h, w, scale=0.05)
+        vy  = self._smooth_noise(h, w, scale=0.05)
+        owners = self.rng.integers(0, 3, size=(h, w), endpoint=True)  # 0..3 factions
+        buildings = {}
+        return GameState(0, w, h, Phi, S, vx, vy, owners, buildings)
+
+    def _smooth_noise(self, h, w, scale=1.0):
+        base = self.rng.normal(0, 1, size=(h, w))
+        # crude smoothing via repeated averaging
+        for _ in range(5):
+            base = (np.roll(base,1,0)+np.roll(base,-1,0)+np.roll(base,1,1)+np.roll(base,-1,1)+base)/5.0
+        base = (base - base.min()) / (base.max()-base.min()+1e-9)  # 0..1
+        return scale * base
+
+    def _apply_phase_multipliers(self, p: Params) -> Params:
+        from .params import LAM_MULT, DYN_MULT
+        p = Params(**vars(p))  # shallow copy
+        mult = LAM_MULT if self.phase == "Lamphron" else DYN_MULT
+        for k,v in mult.items():
+            if hasattr(p, k):
+                setattr(p, k, getattr(p, k) * v)
+        return p
+
+    def step(self):
+        st = self.state
+        p = self._apply_phase_multipliers(self.params)
+        h = p.h; dt = p.dt
+
+        # finite differences
+        lap_Phi = laplace(st.Phi, h)
+        lap_S   = laplace(st.S, h)
+        gPx, gPy = grad(st.Phi, h)
+        gSx, gSy = grad(st.S, h)
+
+        # curlcurl(v) = grad(div v) - lap v
+        divv = div(st.vx, st.vy, h)
+        gdivx, gdivy = grad(divv, h)
+        lap_vx = laplace(st.vx, h)
+        lap_vy = laplace(st.vy, h)
+        ccx, ccy = gdivx - lap_vx, gdivy - lap_vy
+
+        # PDE updates
+        st.Phi = st.Phi + dt * (p.kPhi * lap_Phi - p.lmbd * st.S)
+        st.S   = st.S   + dt * (p.kS   * lap_S + p.gamma * (gPx**2 + gPy**2) - p.muS * st.S)
+        st.vx  = st.vx  + dt * (p.kv * ccx - gSx - p.muv * st.vx)
+        st.vy  = st.vy  + dt * (p.kv * ccy - gSy - p.muv * st.vy)
+
+        # Clamp for sanity
+        st.Phi = clamp(st.Phi, 0.0, p.Phi_max)
+        st.S   = clamp(st.S,   0.0, p.S_max)
+
+        # Buildings (minimal examples): entropy pump on a few tiles
+        for (y, x), blist in list(st.buildings.items()):
+            if "Entropy Pump" in blist:
+                pump = 0.05
+                take = pump * st.S[y, x]
+                st.Phi[y, x] += take
+                st.S[y, x]   -= take
+
+        # Phase scheduling
+        self.phase_counter += 1
+        if self.phase_counter >= self.phase_length:
+            self.phase_counter = 0
+            self.phase = "Lamphrodyne" if self.phase == "Lamphron" else "Lamphron"
+
+        st.turn += 1
+
+    def add_building(self, x, y, name="Entropy Pump"):
+        st = self.state
+        st.buildings.setdefault((y, x), [])
+        if name not in st.buildings[(y, x)]:
+            st.buildings[(y, x)].append(name)
+
+    def snapshot(self):
+        return self.state.serialize()
+# rsvp_game/sim_hex.py
+import numpy as np
+from .kernels_hex import laplace_hex, gradmag_hex, grad_hex, div_hex
+from .params import Params
+from .state import GameState
+
+class SimulatorHex:
+    def __init__(self, width=30, height=24, seed=0, params: Params | None = None):
+        self.rng = np.random.default_rng(seed)
+        self.params = params or Params()
+        self.state = self._new_state(width, height)
+        self.phase = "Lamphron"
+        self.phase_length = 20
+        self.phase_counter = 0
+
+    def _new_state(self, w, h):
+        Phi = self._smooth_noise(h, w, 0.5) + 0.8
+        S   = self._smooth_noise(h, w, 0.4) + 0.4
+        vx  = self._smooth_noise(h, w, 0.05)
+        vy  = self._smooth_noise(h, w, 0.05)
+        owners = self.rng.integers(0, 3, size=(h, w), endpoint=True)
+        buildings = {}
+        return GameState(0, w, h, Phi, S, vx, vy, owners, buildings)
+
+    def _smooth_noise(self, h, w, scale=1.0):
+        base = self.rng.normal(0,1,size=(h,w))
+        for _ in range(5):
+            base = (np.roll(base,1,0)+np.roll(base,-1,0)+np.roll(base,1,1)+np.roll(base,-1,1)+base)/5.0
+        base = (base - base.min()) / (base.max()-base.min()+1e-9)
+        return scale * base
+
+    def _apply_phase_multipliers(self, p: Params) -> Params:
+        from .params import LAM_MULT, DYN_MULT
+        p = Params(**vars(p))
+        mult = LAM_MULT if self.phase == "Lamphron" else DYN_MULT
+        for k,v in mult.items():
+            if hasattr(p,k):
+                setattr(p,k,getattr(p,k)*v)
+        return p
+
+    def step(self):
+        st = self.state
+        p = self._apply_phase_multipliers(self.params)
+        h = p.h; dt = p.dt
+
+        lap_Phi = laplace_hex(st.Phi, h)
+        lap_S   = laplace_hex(st.S, h)
+        gPx, gPy = grad_hex(st.Phi, h)
+        gSx, gSy = grad_hex(st.S, h)
+
+        # approximate curlcurl on hex by -lap v + grad(div v)
+        divv = div_hex(st.vx, st.vy, h)
+        gdivx, gdivy = grad_hex(divv, h)
+        lap_vx = laplace_hex(st.vx, h)
+        lap_vy = laplace_hex(st.vy, h)
+        ccx, ccy = gdivx - lap_vx, gdivy - lap_vy
+
+        st.Phi = st.Phi + dt * (p.kPhi * lap_Phi - p.lmbd * st.S)
+        st.S   = st.S   + dt * (p.kS   * lap_S + p.gamma * (gPx**2 + gPy**2) - p.muS * st.S)
+        st.vx  = st.vx  + dt * (p.kv * ccx - gSx - p.muv * st.vx)
+        st.vy  = st.vy  + dt * (p.kv * ccy - gSy - p.muv * st.vy)
+
+        # buildings
+        for (y,x), blist in list(st.buildings.items()):
+            if "Entropy Pump" in blist:
+                pump = 0.05
+                take = pump * st.S[y,x]
+                st.Phi[y,x] += take
+                st.S[y,x]   -= take
+
+        # phase toggle
+        self.phase_counter += 1
+        if self.phase_counter >= self.phase_length:
+            self.phase_counter = 0
+            self.phase = "Lamphrodyne" if self.phase == "Lamphron" else "Lamphron"
+
+        st.turn += 1
+
+    def add_building(self, x, y, name="Entropy Pump"):
+        st = self.state
+        st.buildings.setdefault((y, x), [])
+        if name not in st.buildings[(y, x)]:
+            st.buildings[(y, x)].append(name)
+
+    def snapshot(self):
+        return self.state.serialize()
+# rsvp_game/state.py
+from dataclasses import dataclass
+import numpy as np
+
+@dataclass
+class GameState:
+    turn: int
+    width: int
+    height: int
+    Phi: np.ndarray
+    S: np.ndarray
+    vx: np.ndarray
+    vy: np.ndarray
+    owners: np.ndarray  # int ids
+    buildings: dict     # {(y,x): [str,...]}
+
+    def serialize(self, sample_arrows_step=3):
+        # Downsampled arrows for UI
+        arrows = []
+        for y in range(0, self.height, sample_arrows_step):
+            for x in range(0, self.width, sample_arrows_step):
+                arrows.append({
+                    "x": x, "y": y,
+                    "vx": float(self.vx[y, x]),
+                    "vy": float(self.vy[y, x]),
+                })
+        tiles = []
+        for y in range(self.height):
+            for x in range(self.width):
+                tiles.append({
+                    "x": x, "y": y,
+                    "phi": float(self.Phi[y, x]),
+                    "S": float(self.S[y, x]),
+                    "owner": int(self.owners[y, x]),
+                    "buildings": self.buildings.get((y, x), []),
+                })
+        return {
+            "turn": self.turn,
+            "width": self.width, "height": self.height,
+            "tiles": tiles,
+            "arrows": arrows,
+        }
+# rsvp_game/tech.py
+from dataclasses import dataclass, field
+
+TECH_TREE = {
+    "Entropy Pump": {"desc":"Convert local S -> Φ each turn.", "prereq": []},
+    "Lamphrodyne Mirror": {"desc":"Diffuse S to neighbors after step.", "prereq": ["Entropy Pump"]},
+    "Torsion–Landauer Filter": {"desc":"Damp incoherent vorticity.", "prereq": ["Lamphrodyne Mirror"]},
+    "Inflaton Seed": {"desc":"Trigger rebirth event at freeze.", "prereq": ["Torsion–Landauer Filter"]},
+}
+
+@dataclass
+class ResearchState:
+    # unlocked tech per faction id -> set
+    unlocked: dict = field(default_factory=lambda: {})
+
+    def is_unlocked(self, faction:int, tech:str) -> bool:
+        return tech in self.unlocked.get(faction, set())
+
+    def unlock(self, faction:int, tech:str) -> bool:
+        if tech not in TECH_TREE:
+            return False
+        # check prereqs
+        prereq = TECH_TREE[tech]["prereq"]
+        cur = self.unlocked.get(faction, set())
+        if not all(p in cur for p in prereq):
+            return False
+        cur = set(cur)
+        cur.add(tech)
+        self.unlocked[faction] = cur
+        return True

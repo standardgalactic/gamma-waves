@@ -1,0 +1,25 @@
+.
+├── README.md
+├── file.list
+├── requirements.txt
+├── rsvp_game
+│   ├── __init__.py
+│   ├── corpus.txt
+│   ├── diplomacy.py
+│   ├── kernels.py
+│   ├── kernels_hex.py
+│   ├── params.py
+│   ├── sim.py
+│   ├── sim_hex.py
+│   ├── state.py
+│   └── tech.py
+├── server.py
+├── static
+│   ├── css
+│   │   └── style.css
+│   └── js
+│       └── app.js
+└── templates
+    └── index.html
+
+5 directories, 17 files

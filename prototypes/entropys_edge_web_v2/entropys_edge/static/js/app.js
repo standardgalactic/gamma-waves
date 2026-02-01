@@ -9,6 +9,14 @@ let state = null;
 let tileSize = 22;
 let margin = 60;
 
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+
 function S_to_color(S) {
   // Map S in [0, ~3] to hue 240->0
   const s = Math.max(0, Math.min(1, S / 3.0));
