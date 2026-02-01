@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  background: #000;
+  color: #e7e7e7;
+  font-family: system-ui, sans-serif;
+}
+
+.ui {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15,15,20,0.7);
+  padding: 8px 12px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls button {
+  margin-right: 8px;
+  background: #222;
+  color: #ddd;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.controls button:hover { background: #444; }
+
+#status {
+  font-weight: bold;
+  margin-left: 16px;
+}
+
+canvas {
+  display: block;
+  margin: 70px auto 0;
+  border: 1px solid #222;
+  background: radial-gradient(circle at 50% 50%, #030303 0%, #000 100%);
+}
+
+.legend {
+  margin: 20px auto;
+  max-width: 800px;
+  background: rgba(30,30,40,0.8);
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  line-height: 1.4;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9em;
+}

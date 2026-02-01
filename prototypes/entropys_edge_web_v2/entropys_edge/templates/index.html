@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entropy’s Edge — Prototype</title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+  <div class="ui">
+    <h1>Entropy’s Edge — RSVP Prototype</h1>
+    <div class="controls">
+      <button id="btn-next">Next Turn</button>
+      <button id="btn-10">+10 Turns</button>
+      <button id="btn-reseed">New Game</button>
+      <span id="status"></span>
+    </div>
+    <div class="panel">
+      <button id="btn-diplo">Diplomacy</button>
+      <button id="btn-tech">Tech</button>
+      <label>Grid:
+        <select id="grid-select">
+          <option value="square">Square</option>
+          <option value="hex">Hex</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <canvas id="galaxy" width="1000" height="700"></canvas>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="modal-title"></span>
+        <button id="modal-close">×</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

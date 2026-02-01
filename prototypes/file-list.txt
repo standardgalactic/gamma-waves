@@ -1,0 +1,103 @@
+.
+├── Entropy's Edge.pdf
+├── entropys_edge.tex
+├── entropys_edge_v9_specsheet.pdf
+├── entropys_edge_web_v1
+│   └── entropys_edge_web
+│       ├── README.md
+│       ├── css
+│       │   └── style.css
+│       ├── data
+│       │   ├── state0.json
+│       │   ├── state1.json
+│       │   ├── state2.json
+│       │   ├── state3.json
+│       │   ├── state4.json
+│       │   └── state5.json
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── entropys_edge_web_v2
+│   └── entropys_edge
+│       ├── README.md
+│       ├── requirements.txt
+│       ├── rsvp_game
+│       │   ├── __init__.py
+│       │   ├── diplomacy.py
+│       │   ├── kernels.py
+│       │   ├── kernels_hex.py
+│       │   ├── params.py
+│       │   ├── sim.py
+│       │   ├── sim_hex.py
+│       │   ├── state.py
+│       │   └── tech.py
+│       ├── server.py
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   └── js
+│       │       └── app.js
+│       └── templates
+│           └── index.html
+├── entropys_edge_web_v3
+│   └── entropys_edge_web_v3
+│       ├── README.md
+│       ├── css
+│       │   └── style.css
+│       ├── data
+│       │   ├── state0.json
+│       │   ├── state1.json
+│       │   ├── state2.json
+│       │   ├── state3.json
+│       │   ├── state4.json
+│       │   └── state5.json
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── entropys_edge_web_v4
+│   └── entropys_edge_web_v4
+│       ├── css
+│       │   └── style.css
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── entropys_edge_web_v5
+│   └── entropys_edge_web_v5
+│       ├── css
+│       │   └── style.css
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── entropys_edge_web_v6
+│   └── entropys_edge_web_v6
+│       ├── css
+│       │   └── style.css
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── entropys_edge_web_v7
+│   └── entropys_edge_web_v7
+│       ├── css
+│       │   └── style.css
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── entropys_edge_web_v8
+│   └── entropys_edge_web_v8
+│       ├── css
+│       │   └── style.css
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── entropys_edge_web_v9
+│   └── entropys_edge_web_v9
+│       ├── css
+│       │   └── style.css
+│       ├── index.html
+│       └── js
+│           └── app.js
+├── file-list.txt
+├── frequency.txt
+└── trope_engine.py
+
+41 directories, 59 files

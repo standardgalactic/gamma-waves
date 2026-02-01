@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entropy’s Edge — RSVP Field Simulation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="ui">
+    <h1>Entropy’s Edge</h1>
+    <div class="controls">
+      <button id="btn-prev">◀ Prev</button>
+      <button id="btn-next">Next ▶</button>
+      <button id="btn-auto">Auto</button>
+      <button id="btn-restart">Restart</button>
+      <span id="status"></span>
+    </div>
+  </div>
+
+  <canvas id="galaxy" width="1000" height="700"></canvas>
+
+  <div class="legend">
+    <h2>RSVP Field Legend</h2>
+    <p><b>Φ (Phi):</b> scalar capacity / potential — controls brightness.</p>
+    <p><b>𝒗 (Vector Flow):</b> energy / attention flow — shown as small arrows.</p>
+    <p><b>S (Entropy):</b> disorder / smoothing — controls color (blue → red).</p>
+    <p>The simulation visualizes the entropic smoothing of a galactic plenum.</p>
+  </div>
+
+  <footer>
+    <p>Entropy’s Edge © 2025 | RSVP Cosmology Simulator | Flyxion Project</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

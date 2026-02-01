@@ -1,0 +1,16 @@
+body { margin: 0; background: #000; color: #e7e7e7; font-family: system-ui, sans-serif; }
+.ui { position: fixed; top: 0; left: 0; right: 0; background: rgba(15,15,20,0.7); padding: 8px 12px; backdrop-filter: blur(8px); }
+.controls button { margin-right: 8px; }
+#galaxy { display: block; margin: 64px auto 0 auto; border: 1px solid #222; }
+.tile { cursor: pointer; }
+
+
+.panel { position: fixed; top: 44px; left: 12px; background: rgba(20,20,28,0.7); padding: 6px 10px; border-radius: 8px; }
+.modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.6); }
+.modal.hidden { display: none; }
+.modal-content { width: 760px; background: #121318; border: 1px solid #333; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid #333; }
+.modal-body { padding: 10px 14px; max-height: 60vh; overflow: auto; }
+.modal-header button { background: #222; color: #ddd; border: 1px solid #333; border-radius: 6px; padding: 4px 8px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #333; padding: 6px 8px; text-align: center; }

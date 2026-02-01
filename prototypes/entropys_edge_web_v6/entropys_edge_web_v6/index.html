@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entropy’s Edge — RSVP Simulator (v6)</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="ui">
+    <h1>Entropy’s Edge — RSVP Simulator</h1>
+    <div class="controls">
+      <button id="btn-start">▶ Start</button>
+      <button id="btn-pause">⏸ Pause</button>
+      <button id="btn-step">Step</button>
+      <button id="btn-reset">Reset</button>
+      <button id="btn-rand">Randomize</button>
+      <button id="btn-snap">📸 Snapshot</button>
+
+      <label>Grid
+        <select id="grid-size">
+          <option value="small">Small (48x36)</option>
+          <option value="medium" selected>Medium (72x54)</option>
+          <option value="large">Large (96x72)</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="hexMode"> Hex render</label>
+
+      <button id="btn-save-file">💾 Save</button>
+      <label class="file-btn">📂 Load<input type="file" id="file-load" accept=".json"/></label>
+      <button id="btn-save-local">💾 QuickSave</button>
+      <button id="btn-load-local">📂 QuickLoad</button>
+
+      <span id="status"></span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Parameters</h2>
+    <div class="slider"><label>κΦ <input type="range" id="kPhi" min="0.1" max="1.5" step="0.05" value="0.8"></label><span id="kPhiVal">0.80</span></div>
+    <div class="slider"><label>κS <input type="range" id="kS" min="0.1" max="1.5" step="0.05" value="0.6"></label><span id="kSVal">0.60</span></div>
+    <div class="slider"><label>κᵥ <input type="range" id="kv" min="0.1" max="1.5" step="0.05" value="0.4"></label><span id="kvVal">0.40</span></div>
+    <div class="slider"><label>λ <input type="range" id="lambda" min="0.0" max="1.0" step="0.02" value="0.2"></label><span id="lambdaVal">0.20</span></div>
+    <div class="slider"><label>γ <input type="range" id="gamma" min="0.0" max="1.5" step="0.05" value="0.3"></label><span id="gammaVal">0.30</span></div>
+    <div class="slider"><label>μS <input type="range" id="muS" min="0.0" max="0.5" step="0.01" value="0.05"></label><span id="muSVal">0.05</span></div>
+    <div class="slider"><label>μᵥ <input type="range" id="muV" min="0.0" max="0.5" step="0.01" value="0.08"></label><span id="muVVal">0.08</span></div>
+    <div class="slider"><label>Δt <input type="range" id="dt" min="0.01" max="0.3" step="0.01" value="0.15"></label><span id="dtVal">0.15</span></div>
+
+    <h3>Display</h3>
+    <label><input type="checkbox" id="showPhi" checked> Φ brightness</label><br/>
+    <label><input type="checkbox" id="showEntropy" checked> S color</label><br/>
+    <label><input type="checkbox" id="showVectors" checked> Vector field</label><br/>
+    <label><input type="checkbox" id="showFactions"> Faction overlay</label><br/>
+    <label>Arrows <input type="range" id="arrowStep" min="2" max="8" step="1" value="3"></label>
+
+    <h3>Phases</h3>
+    <div class="slider"><label>Cycle Length <input type="range" id="cycle" min="10" max="60" step="2" value="20"></label><span id="cycleVal">20</span></div>
+    <label>Lamphron boost (κΦ, γ): <input type="range" id="lamBoost" min="1.0" max="2.0" step="0.05" value="1.25"></label>
+    <label>Lamphrodyne boost (κS, κᵥ, λ): <input type="range" id="dynBoost" min="1.0" max="2.0" step="0.05" value="1.25"></label>
+    <div class="phase-indicator">
+      <span>Phase: <b id="phaseName">Lamphron</b></span>
+      <button id="btn-toggle-phase">Toggle</button>
+    </div>
+
+    <h3>Expyrosis</h3>
+    <div class="slider"><label>Freeze ε <input type="range" id="epsilon" min="0.001" max="0.05" step="0.001" value="0.01"></label><span id="epsilonVal">0.010</span></div>
+    <button id="btn-inflaton" disabled>Inflaton Seed (Rebirth)</button>
+
+    <h3>Build</h3>
+    <label>Mode:
+      <select id="build-select">
+        <option value="none" selected>None</option>
+        <option value="pump">Entropy Pump</option>
+        <option value="mirror">Lamphrodyne Mirror</option>
+        <option value="torsion">Torsion–Landauer Node</option>
+      </select>
+    </label>
+    <p class="hint">Click the map to place building for owning faction.</p>
+
+    <h3>Meta</h3>
+    <button id="btn-diplomacy">Diplomacy / Ethics</button>
+    <button id="btn-tech">Technology</button>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="modal-title"></span>
+        <button id="modal-close">×</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <canvas id="galaxy" width="1180" height="820"></canvas>
+
+  <footer>
+    <p>Entropy’s Edge © 2025 | RSVP Cosmology Simulator | Flyxion Project</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

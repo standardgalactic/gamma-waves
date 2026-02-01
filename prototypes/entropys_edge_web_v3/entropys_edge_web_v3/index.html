@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entropy’s Edge — Interactive RSVP Simulator</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="ui">
+    <h1>Entropy’s Edge</h1>
+    <div class="controls">
+      <button id="btn-prev">◀ Prev</button>
+      <button id="btn-next">Next ▶</button>
+      <button id="btn-auto">Auto</button>
+      <button id="btn-restart">Restart</button>
+      <button id="btn-save">📸 Snapshot</button>
+      <span id="status"></span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Field Controls</h2>
+    <div class="slider">
+      <label>κΦ <input type="range" id="kPhi" min="0.1" max="2" step="0.1" value="1"></label>
+      <span id="kPhiVal">1.0</span>
+    </div>
+    <div class="slider">
+      <label>κS <input type="range" id="kS" min="0.1" max="2" step="0.1" value="1"></label>
+      <span id="kSVal">1.0</span>
+    </div>
+    <div class="slider">
+      <label>λ <input type="range" id="lambda" min="0" max="1" step="0.05" value="0.2"></label>
+      <span id="lambdaVal">0.2</span>
+    </div>
+    <div class="slider">
+      <label>γ <input type="range" id="gamma" min="0" max="1" step="0.05" value="0.3"></label>
+      <span id="gammaVal">0.3</span>
+    </div>
+    <div class="slider">
+      <label>μS <input type="range" id="muS" min="0" max="1" step="0.05" value="0.05"></label>
+      <span id="muSVal">0.05</span>
+    </div>
+
+    <h3>Display Options</h3>
+    <label><input type="checkbox" id="showPhi" checked> Show Φ brightness</label><br>
+    <label><input type="checkbox" id="showEntropy" checked> Show entropy color</label><br>
+    <label><input type="checkbox" id="showVectors" checked> Show vector field</label><br>
+    <label><input type="checkbox" id="showFactions"> Show faction overlay</label><br>
+    <label>Vector Density <input type="range" id="arrowStep" min="2" max="6" step="1" value="3"></label>
+  </div>
+
+  <canvas id="galaxy" width="1000" height="700"></canvas>
+
+  <footer>
+    <p>Entropy’s Edge © 2025 | RSVP Cosmology Simulator | Flyxion Project</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

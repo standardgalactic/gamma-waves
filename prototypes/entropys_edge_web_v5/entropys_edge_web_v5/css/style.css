@@ -1,0 +1,23 @@
+body { margin:0; background:#000; color:#e7e7e7; font-family:system-ui, sans-serif; }
+.ui { position:fixed; top:0; left:0; right:0; background:rgba(15,15,20,0.7); padding:8px 12px; backdrop-filter:blur(8px);
+      display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.controls button, .controls select, .controls label { margin-right:6px; background:#222; color:#ddd; border:1px solid #444; border-radius:6px; padding:4px 10px; cursor:pointer; }
+.controls label { padding: 2px 8px; }
+.controls button:hover { background:#444; }
+#status { font-weight:bold; margin-left:6px; }
+.panel { position:fixed; top:64px; right:10px; width:300px; background:rgba(30,30,40,0.92); border:1px solid #333; border-radius:10px; padding:10px 14px; font-size:0.9em; max-height:85vh; overflow:auto; }
+.panel h2, .panel h3 { margin:8px 0 6px; }
+.slider { display:flex; align-items:center; justify-content:space-between; margin:4px 0; gap:8px; }
+.slider input { width:150px; }
+.phase-indicator { display:flex; align-items:center; gap:8px; margin:6px 0; }
+canvas { display:block; margin:90px auto 0; border:1px solid #222; background: radial-gradient(circle at 50% 50%, #030303 0%, #000 100%); }
+footer { text-align:center; color:#888; font-size:0.8em; padding:10px; margin-top:10px; }
+
+.modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.6); }
+.modal.hidden { display: none; }
+.modal-content { width: 880px; background: #121318; border: 1px solid #333; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid #333; }
+.modal-body { padding: 10px 14px; max-height: 65vh; overflow: auto; }
+.modal-header button { background: #222; color: #ddd; border: 1px solid #333; border-radius: 6px; padding: 4px 8px; cursor:pointer;}
+table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+th, td { border: 1px solid #333; padding: 6px 8px; text-align: center; }
